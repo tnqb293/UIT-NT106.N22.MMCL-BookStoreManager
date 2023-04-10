@@ -43,3 +43,23 @@ F:\NT106\Project_test\BookstoreOnline - Copy - Copy\BookstoreOnline\obj\Debug\Bo
 F:\NT106\Project_test\BookstoreOnline - Copy - Copy\BookstoreOnline\obj\Debug\BookstoreOnline.User_controls.UC_Cart.resources
 F:\NT106\Project_test\BookstoreOnline - Copy - Copy\BookstoreOnline\obj\Debug\BookstoreOnline.User_controls.UC_Dashboard.resources
 F:\NT106\Project_test\BookstoreOnline - Copy - Copy\BookstoreOnline\obj\Debug\BookstoreOnline.User_controls.UC_Addbook.resources
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\bin\Debug\BookstoreOnline.exe.config
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\bin\Debug\BookstoreOnline.exe
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\bin\Debug\BookstoreOnline.pdb
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\bin\Debug\Guna.UI2.dll
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\obj\Debug\BookstoreOnline.csproj.AssemblyReference.cache
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\obj\Debug\BookstoreOnline.csproj.SuggestedBindingRedirects.cache
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\obj\Debug\BookstoreOnline.Login_Form.resources
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\obj\Debug\BookstoreOnline.Forms.User.resources
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\obj\Debug\BookstoreOnline.Properties.Resources.resources
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\obj\Debug\BookstoreOnline.SplashScreenForm.resources
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\obj\Debug\BookstoreOnline.User_controls.UC_AddbookAdmin.resources
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\obj\Debug\BookstoreOnline.User_controls.UC_ItemListBook.resources
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\obj\Debug\BookstoreOnline.User_controls.UC_ListBookAdmin.resources
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\obj\Debug\BookstoreOnline.User_controls.UC_Cart.resources
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\obj\Debug\BookstoreOnline.User_controls.UC_Dashboard.resources
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\obj\Debug\BookstoreOnline.csproj.GenerateResource.cache
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\obj\Debug\BookstoreOnline.csproj.CoreCompileInputs.cache
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\obj\Debug\BookstoreOnline.csproj.CopyComplete
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\obj\Debug\BookstoreOnline.exe
+F:\NT106\Project_test\UIT-NT106.N22.MMCL-BookStoreManager\BookstoreOnline - main\BookstoreOnline\obj\Debug\BookstoreOnline.pdb

@@ -87,17 +87,23 @@
     <Compile Include="Forms\SplashScreenForm.Designer.cs">
       <DependentUpon>SplashScreenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="User controls\UC_Addbook.cs">
+    <Compile Include="User controls\UC_AddbookAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User controls\UC_Addbook.Designer.cs">
-      <DependentUpon>UC_Addbook.cs</DependentUpon>
+    <Compile Include="User controls\UC_AddbookAdmin.Designer.cs">
+      <DependentUpon>UC_AddbookAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="User controls\UC_Book.cs">
+    <Compile Include="User controls\UC_ItemListBook.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User controls\UC_Book.Designer.cs">
-      <DependentUpon>UC_Book.cs</DependentUpon>
+    <Compile Include="User controls\UC_ItemListBook.Designer.cs">
+      <DependentUpon>UC_ItemListBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User controls\UC_ListBookAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User controls\UC_ListBookAdmin.Designer.cs">
+      <DependentUpon>UC_ListBookAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="User controls\UC_Cart.cs">
       <SubType>UserControl</SubType>
@@ -129,11 +135,14 @@
     <EmbeddedResource Include="Forms\SplashScreenForm.resx">
       <DependentUpon>SplashScreenForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User controls\UC_Addbook.resx">
-      <DependentUpon>UC_Addbook.cs</DependentUpon>
+    <EmbeddedResource Include="User controls\UC_AddbookAdmin.resx">
+      <DependentUpon>UC_AddbookAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User controls\UC_Book.resx">
-      <DependentUpon>UC_Book.cs</DependentUpon>
+    <EmbeddedResource Include="User controls\UC_ItemListBook.resx">
+      <DependentUpon>UC_ItemListBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User controls\UC_ListBookAdmin.resx">
+      <DependentUpon>UC_ListBookAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User controls\UC_Cart.resx">
       <DependentUpon>UC_Cart.cs</DependentUpon>

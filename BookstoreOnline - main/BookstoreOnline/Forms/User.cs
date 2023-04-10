@@ -32,7 +32,7 @@ namespace BookstoreOnline.Forms
 
         private void btnBookPanel_Click(object sender, EventArgs e)
         {
-            UC_Book uc = new UC_Book();
+            UC_ListBookAdmin uc = new UC_ListBookAdmin();
             addUserControl(uc);
         }
 
@@ -50,7 +50,7 @@ namespace BookstoreOnline.Forms
 
         private void btnAddBook_Click(object sender, EventArgs e)
         {
-            UC_Addbook uc = new UC_Addbook();
+            UC_AddbookAdmin uc = new UC_AddbookAdmin();
             addUserControl(uc);
         }
     }
