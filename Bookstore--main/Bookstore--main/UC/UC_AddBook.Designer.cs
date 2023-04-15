@@ -222,7 +222,7 @@
             this.Guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.Guna2ControlBox2.FillColor = System.Drawing.Color.White;
             this.Guna2ControlBox2.IconColor = System.Drawing.Color.DimGray;
-            this.Guna2ControlBox2.Location = new System.Drawing.Point(710, 3);
+            this.Guna2ControlBox2.Location = new System.Drawing.Point(813, 3);
             this.Guna2ControlBox2.Name = "Guna2ControlBox2";
             this.Guna2ControlBox2.Size = new System.Drawing.Size(27, 25);
             this.Guna2ControlBox2.TabIndex = 62;
@@ -232,7 +232,7 @@
             this.Guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Guna2ControlBox1.FillColor = System.Drawing.Color.White;
             this.Guna2ControlBox1.IconColor = System.Drawing.Color.DimGray;
-            this.Guna2ControlBox1.Location = new System.Drawing.Point(743, 3);
+            this.Guna2ControlBox1.Location = new System.Drawing.Point(846, 3);
             this.Guna2ControlBox1.Name = "Guna2ControlBox1";
             this.Guna2ControlBox1.Size = new System.Drawing.Size(27, 25);
             this.Guna2ControlBox1.TabIndex = 61;
@@ -264,7 +264,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UC_AddBook";
-            this.Size = new System.Drawing.Size(773, 435);
+            this.Size = new System.Drawing.Size(876, 482);
             ((System.ComponentModel.ISupportInitialize)(this.pbImageBook__AddBook)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

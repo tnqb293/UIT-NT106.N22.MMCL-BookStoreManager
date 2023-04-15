@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.pnButton = new Guna.UI2.WinForms.Guna2Panel();
-            this.pnContent = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnAddBookPanel = new Guna.UI2.WinForms.Guna2Button();
             this.btnListBookPanel = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboardPanel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddBookPanel = new Guna.UI2.WinForms.Guna2Button();
+            this.pnContent = new Guna.UI2.WinForms.Guna2Panel();
             this.pnButton.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,32 +55,6 @@
             this.pnButton.Name = "pnButton";
             this.pnButton.Size = new System.Drawing.Size(180, 720);
             this.pnButton.TabIndex = 0;
-            // 
-            // pnContent
-            // 
-            this.pnContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContent.Location = new System.Drawing.Point(180, 0);
-            this.pnContent.Name = "pnContent";
-            this.pnContent.Size = new System.Drawing.Size(844, 720);
-            this.pnContent.TabIndex = 1;
-            // 
-            // btnAddBookPanel
-            // 
-            this.btnAddBookPanel.Animated = true;
-            this.btnAddBookPanel.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddBookPanel.BorderRadius = 20;
-            this.btnAddBookPanel.FillColor = System.Drawing.Color.Transparent;
-            this.btnAddBookPanel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnAddBookPanel.ForeColor = System.Drawing.Color.White;
-            this.btnAddBookPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.btnAddBookPanel.Location = new System.Drawing.Point(-34, 354);
-            this.btnAddBookPanel.Name = "btnAddBookPanel";
-            this.btnAddBookPanel.Size = new System.Drawing.Size(211, 45);
-            this.btnAddBookPanel.TabIndex = 12;
-            this.btnAddBookPanel.Text = "Add book";
-            this.btnAddBookPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddBookPanel.TextOffset = new System.Drawing.Point(60, 0);
-            this.btnAddBookPanel.Click += new System.EventHandler(this.btnAddBookPanel_Click_1);
             // 
             // btnListBookPanel
             // 
@@ -118,12 +92,39 @@
             this.btnDashboardPanel.TextOffset = new System.Drawing.Point(60, 0);
             this.btnDashboardPanel.Click += new System.EventHandler(this.btnDashboardPanel_Click_1);
             // 
+            // btnAddBookPanel
+            // 
+            this.btnAddBookPanel.Animated = true;
+            this.btnAddBookPanel.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddBookPanel.BorderRadius = 20;
+            this.btnAddBookPanel.FillColor = System.Drawing.Color.Transparent;
+            this.btnAddBookPanel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAddBookPanel.ForeColor = System.Drawing.Color.White;
+            this.btnAddBookPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
+            this.btnAddBookPanel.Location = new System.Drawing.Point(-34, 354);
+            this.btnAddBookPanel.Name = "btnAddBookPanel";
+            this.btnAddBookPanel.Size = new System.Drawing.Size(211, 45);
+            this.btnAddBookPanel.TabIndex = 12;
+            this.btnAddBookPanel.Text = "Add book";
+            this.btnAddBookPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAddBookPanel.TextOffset = new System.Drawing.Point(60, 0);
+            this.btnAddBookPanel.Click += new System.EventHandler(this.btnAddBookPanel_Click_1);
+            // 
+            // pnContent
+            // 
+            this.pnContent.AutoSize = true;
+            this.pnContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnContent.Location = new System.Drawing.Point(180, 0);
+            this.pnContent.Name = "pnContent";
+            this.pnContent.Size = new System.Drawing.Size(881, 720);
+            this.pnContent.TabIndex = 1;
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1024, 720);
+            this.ClientSize = new System.Drawing.Size(1061, 720);
             this.Controls.Add(this.pnContent);
             this.Controls.Add(this.pnButton);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

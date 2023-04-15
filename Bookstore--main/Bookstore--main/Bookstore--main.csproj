@@ -70,6 +70,7 @@
     <Compile Include="Class\AddBook.cs" />
     <Compile Include="Class\CreateAccount.cs" />
     <Compile Include="Class\DbConnection.cs" />
+    <Compile Include="Class\ItemBook.cs" />
     <Compile Include="Class\LoginAccount.cs" />
     <Compile Include="FormsBookstore\AdminForm.cs">
       <SubType>Form</SubType>
@@ -103,6 +104,12 @@
     <Compile Include="UC\UC_Dashboard.Designer.cs">
       <DependentUpon>UC_Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UC_ItemListBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_ItemListBook.Designer.cs">
+      <DependentUpon>UC_ItemListBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UC_ListBook.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -132,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_Dashboard.resx">
       <DependentUpon>UC_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_ItemListBook.resx">
+      <DependentUpon>UC_ItemListBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_ListBook.resx">
       <DependentUpon>UC_ListBook.cs</DependentUpon>
