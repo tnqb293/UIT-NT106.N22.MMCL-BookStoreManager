@@ -14,7 +14,7 @@ namespace Bookstore__main.Class
 {
     internal class AddBook
     {
-        string connectionString = @"Data Source=DESKTOP-OJKQD5I\SQLEXPRESS;Initial Catalog=DBBookstore;Integrated Security=True";
+        string connectionString = @"Data Source=LAPTOP-67KGLN6P\SQLEXPRESS;Initial Catalog=BookStoreManager;Integrated Security=True";
         public void addBook(string BookName, string WriterName, string NationBook, decimal PriceBook, int QuantityBook, string CategoryBook, Image PictureBook)
         {
             if (string.IsNullOrEmpty(BookName) || string.IsNullOrEmpty(WriterName) || string.IsNullOrEmpty(NationBook)

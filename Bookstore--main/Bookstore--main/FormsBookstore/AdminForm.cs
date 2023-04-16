@@ -53,5 +53,12 @@ namespace Bookstore__main.FormsBookstore
             UC_ListBook uc = new UC_ListBook();
             addUserControl(uc);
         }
+
+        private void btnListAdmin_Click(object sender, EventArgs e)
+        {
+            UC_ListUser uc = new UC_ListUser();
+            addUserControl(uc);
+
+        }
     }
 }

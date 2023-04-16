@@ -23,7 +23,7 @@ namespace Bookstore__main.UC
             InitializeComponent();
         }
         List<ItemBook> itemBook = new List<ItemBook>();
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-OJKQD5I\SQLEXPRESS;Initial Catalog=DBBookstore;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-67KGLN6P\SQLEXPRESS;Initial Catalog=BookStoreManager;Integrated Security=True");
         private void UC_ListBook_Load(object sender, EventArgs e)
         {
             try

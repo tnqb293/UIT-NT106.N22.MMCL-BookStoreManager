@@ -116,6 +116,12 @@
     <Compile Include="UC\UC_ListBook.Designer.cs">
       <DependentUpon>UC_ListBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UC_ListUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_ListUser.Designer.cs">
+      <DependentUpon>UC_ListUser.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormsBookstore\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_ListBook.resx">
       <DependentUpon>UC_ListBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_ListUser.resx">
+      <DependentUpon>UC_ListUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

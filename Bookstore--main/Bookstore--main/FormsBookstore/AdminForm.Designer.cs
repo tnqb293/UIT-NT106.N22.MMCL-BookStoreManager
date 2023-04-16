@@ -35,6 +35,7 @@
             this.btnDashboardPanel = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddBookPanel = new Guna.UI2.WinForms.Guna2Button();
             this.pnContent = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnListAdmin = new Guna.UI2.WinForms.Guna2Button();
             this.pnButton.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             // pnButton
             // 
             this.pnButton.AutoSize = true;
+            this.pnButton.Controls.Add(this.btnListAdmin);
             this.pnButton.Controls.Add(this.btnListBookPanel);
             this.pnButton.Controls.Add(this.btnDashboardPanel);
             this.pnButton.Controls.Add(this.btnAddBookPanel);
@@ -119,9 +121,27 @@
             this.pnContent.Size = new System.Drawing.Size(881, 720);
             this.pnContent.TabIndex = 1;
             // 
+            // btnListAdmin
+            // 
+            this.btnListAdmin.Animated = true;
+            this.btnListAdmin.BackColor = System.Drawing.Color.Transparent;
+            this.btnListAdmin.BorderRadius = 20;
+            this.btnListAdmin.FillColor = System.Drawing.Color.Transparent;
+            this.btnListAdmin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnListAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnListAdmin.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
+            this.btnListAdmin.Location = new System.Drawing.Point(-34, 405);
+            this.btnListAdmin.Name = "btnListAdmin";
+            this.btnListAdmin.Size = new System.Drawing.Size(211, 45);
+            this.btnListAdmin.TabIndex = 15;
+            this.btnListAdmin.Text = "List";
+            this.btnListAdmin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnListAdmin.TextOffset = new System.Drawing.Point(60, 0);
+            this.btnListAdmin.Click += new System.EventHandler(this.btnListAdmin_Click);
+            // 
             // AdminForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1061, 720);
@@ -147,5 +167,6 @@
         internal Guna.UI2.WinForms.Guna2Button btnDashboardPanel;
         internal Guna.UI2.WinForms.Guna2Button btnAddBookPanel;
         private Guna.UI2.WinForms.Guna2Panel pnContent;
+        internal Guna.UI2.WinForms.Guna2Button btnListAdmin;
     }
 }

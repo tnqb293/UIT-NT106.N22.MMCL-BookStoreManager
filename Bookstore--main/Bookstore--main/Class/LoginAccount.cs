@@ -12,7 +12,7 @@ namespace Bookstore__main.Class
 {
     internal class LoginAccount
     {
-        string connectionString = "Data Source=DESKTOP-OJKQD5I\\SQLEXPRESS;Initial Catalog=DBBookstore;Integrated Security=True";
+        string connectionString = "Data Source=LAPTOP-67KGLN6P\\SQLEXPRESS;Initial Catalog=BookStoreManager;Integrated Security=True";
         public bool loginAccount(string username, string password)
         {
             if(string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
