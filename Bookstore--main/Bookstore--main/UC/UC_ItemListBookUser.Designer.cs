@@ -30,13 +30,13 @@
         {
             this.PictureBook = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.Guna2Button17 = new Guna.UI2.WinForms.Guna2Button();
             this.QuantityBook = new System.Windows.Forms.Label();
             this.NationBook = new System.Windows.Forms.Label();
             this.PriceBook = new System.Windows.Forms.Label();
             this.CategoryBook = new System.Windows.Forms.Label();
             this.BookName = new System.Windows.Forms.Label();
             this.WriterName = new System.Windows.Forms.Label();
-            this.Guna2Button17 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBook)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -67,11 +67,25 @@
             this.guna2Panel1.Controls.Add(this.BookName);
             this.guna2Panel1.Controls.Add(this.WriterName);
             this.guna2Panel1.Controls.Add(this.PictureBook);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(237, 110);
             this.guna2Panel1.TabIndex = 1;
+            // 
+            // Guna2Button17
+            // 
+            this.Guna2Button17.Animated = true;
+            this.Guna2Button17.BackColor = System.Drawing.Color.Transparent;
+            this.Guna2Button17.BorderRadius = 10;
+            this.Guna2Button17.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
+            this.Guna2Button17.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Guna2Button17.ForeColor = System.Drawing.Color.White;
+            this.Guna2Button17.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
+            this.Guna2Button17.Location = new System.Drawing.Point(166, 63);
+            this.Guna2Button17.Name = "Guna2Button17";
+            this.Guna2Button17.Size = new System.Drawing.Size(62, 26);
+            this.Guna2Button17.TabIndex = 58;
+            this.Guna2Button17.Text = "Buy Now";
             // 
             // QuantityBook
             // 
@@ -141,21 +155,6 @@
             this.WriterName.Size = new System.Drawing.Size(107, 13);
             this.WriterName.TabIndex = 52;
             this.WriterName.Text = "Gun Gun Febrianza";
-            // 
-            // Guna2Button17
-            // 
-            this.Guna2Button17.Animated = true;
-            this.Guna2Button17.BackColor = System.Drawing.Color.Transparent;
-            this.Guna2Button17.BorderRadius = 10;
-            this.Guna2Button17.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
-            this.Guna2Button17.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Guna2Button17.ForeColor = System.Drawing.Color.White;
-            this.Guna2Button17.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.Guna2Button17.Location = new System.Drawing.Point(166, 63);
-            this.Guna2Button17.Name = "Guna2Button17";
-            this.Guna2Button17.Size = new System.Drawing.Size(62, 26);
-            this.Guna2Button17.TabIndex = 58;
-            this.Guna2Button17.Text = "Buy Now";
             // 
             // UC_ItemListBookUser
             // 
