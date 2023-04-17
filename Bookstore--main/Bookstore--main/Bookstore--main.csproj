@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.Charts.WinForms, Version=1.0.8.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.Charts.WinForms.1.0.8\lib\net472\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
@@ -56,6 +59,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -90,31 +94,85 @@
     <Compile Include="FormsBookstore\SplashScreenForm.Designer.cs">
       <DependentUpon>SplashScreenForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsBookstore\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsBookstore\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UC\UC_AddBook.cs">
+    <Compile Include="UC\UC_ItemListBookUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\UC_AddBook.Designer.cs">
-      <DependentUpon>UC_AddBook.cs</DependentUpon>
+    <Compile Include="UC\UC_ItemListBookUser.Designer.cs">
+      <DependentUpon>UC_ItemListBookUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UC_Dashboard.cs">
+    <Compile Include="UC\UC_ItemShoppingCartUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\UC_Dashboard.Designer.cs">
-      <DependentUpon>UC_Dashboard.cs</DependentUpon>
+    <Compile Include="UC\UC_ItemShoppingCartUser.Designer.cs">
+      <DependentUpon>UC_ItemShoppingCartUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UC_ItemListBook.cs">
+    <Compile Include="UC\UC_ListBookUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\UC_ItemListBook.Designer.cs">
-      <DependentUpon>UC_ItemListBook.cs</DependentUpon>
+    <Compile Include="UC\UC_ListBookUser.Designer.cs">
+      <DependentUpon>UC_ListBookUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UC_ListBook.cs">
+    <Compile Include="UC\UC_AddBookAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\UC_ListBook.Designer.cs">
-      <DependentUpon>UC_ListBook.cs</DependentUpon>
+    <Compile Include="UC\UC_AddBookAdmin.Designer.cs">
+      <DependentUpon>UC_AddBookAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_DashboardAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_DashboardAdmin.Designer.cs">
+      <DependentUpon>UC_DashboardAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_DashboardUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_DashboardUser.Designer.cs">
+      <DependentUpon>UC_DashboardUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_ItemListBookAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_ItemListBookAdmin.Designer.cs">
+      <DependentUpon>UC_ItemListBookAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_ListBookAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_ListBookAdmin.Designer.cs">
+      <DependentUpon>UC_ListBookAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_ListUserAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_ListUserAdmin.Designer.cs">
+      <DependentUpon>UC_ListUserAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_PurchaseHistoryUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_PurchaseHistoryUser.Designer.cs">
+      <DependentUpon>UC_PurchaseHistoryUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_SettingUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_SettingUser.Designer.cs">
+      <DependentUpon>UC_SettingUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_ShopingCartUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_ShopingCartUser.Designer.cs">
+      <DependentUpon>UC_ShopingCartUser.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormsBookstore\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
@@ -125,6 +183,9 @@
     <EmbeddedResource Include="FormsBookstore\SplashScreenForm.resx">
       <DependentUpon>SplashScreenForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormsBookstore\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -134,17 +195,41 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UC\UC_AddBook.resx">
-      <DependentUpon>UC_AddBook.cs</DependentUpon>
+    <EmbeddedResource Include="UC\UC_AddBookAdmin.resx">
+      <DependentUpon>UC_AddBookAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\UC_Dashboard.resx">
-      <DependentUpon>UC_Dashboard.cs</DependentUpon>
+    <EmbeddedResource Include="UC\UC_DashboardAdmin.resx">
+      <DependentUpon>UC_DashboardAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\UC_ItemListBook.resx">
-      <DependentUpon>UC_ItemListBook.cs</DependentUpon>
+    <EmbeddedResource Include="UC\UC_DashboardUser.resx">
+      <DependentUpon>UC_DashboardUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\UC_ListBook.resx">
-      <DependentUpon>UC_ListBook.cs</DependentUpon>
+    <EmbeddedResource Include="UC\UC_ItemListBookAdmin.resx">
+      <DependentUpon>UC_ItemListBookAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_ItemListBookUser.resx">
+      <DependentUpon>UC_ItemListBookUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_ItemShoppingCartUser.resx">
+      <DependentUpon>UC_ItemShoppingCartUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_ListBookAdmin.resx">
+      <DependentUpon>UC_ListBookAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_ListBookUser.resx">
+      <DependentUpon>UC_ListBookUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_ListUserAdmin.resx">
+      <DependentUpon>UC_ListUserAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_PurchaseHistoryUser.resx">
+      <DependentUpon>UC_PurchaseHistoryUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_SettingUser.resx">
+      <DependentUpon>UC_SettingUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_ShopingCartUser.resx">
+      <DependentUpon>UC_ShopingCartUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

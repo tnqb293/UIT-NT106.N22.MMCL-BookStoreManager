@@ -20,14 +20,14 @@ namespace Bookstore__main.FormsBookstore
 
         private void btnDashboardPanel_Click(object sender, EventArgs e)
         {
-            UC_Dashboard uc = new UC_Dashboard();
+            UC_DashboardAdmin uc = new UC_DashboardAdmin();
             addUserControl(uc);
         }
         private void addUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
-            pnContent.Controls.Clear();
-            pnContent.Controls.Add(userControl);
+            pnContentAdmin.Controls.Clear();
+            pnContentAdmin.Controls.Add(userControl);
             userControl.BringToFront();
         }
 
@@ -36,22 +36,33 @@ namespace Bookstore__main.FormsBookstore
             
         }
 
-        private void btnAddBookPanel_Click_1(object sender, EventArgs e)
+        private void btnDashboardPanel_Click_2(object sender, EventArgs e)
         {
-            UC_AddBook uC_AddBook = new UC_AddBook();
-            addUserControl(uC_AddBook);
-        }
-
-        private void btnDashboardPanel_Click_1(object sender, EventArgs e)
-        {
-            UC_Dashboard uC_Dashboard = new UC_Dashboard();
+            UC_DashboardAdmin uC_Dashboard = new UC_DashboardAdmin();
             addUserControl(uC_Dashboard);
         }
 
-        private void btnListBookPanel_Click(object sender, EventArgs e)
+        private void btnListBookPanel_Click_1(object sender, EventArgs e)
         {
-            UC_ListBook uc = new UC_ListBook();
+            UC_ListBookAdmin uc = new UC_ListBookAdmin();
             addUserControl(uc);
+        }
+
+        private void btnAddBookPanel_Click(object sender, EventArgs e)
+        {
+            UC_AddBookAdmin uC_AddBook = new UC_AddBookAdmin();
+            addUserControl(uC_AddBook);
+        }
+
+        private void btnListUserPanel_Click(object sender, EventArgs e)
+        {
+            UC_ListUserAdmin uc = new UC_ListUserAdmin();
+            addUserControl(uc);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

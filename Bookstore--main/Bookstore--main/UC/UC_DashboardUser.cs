@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Bookstore__main.UC
 {
-    public partial class UC_Dashboard : UserControl
+    public partial class UC_DashboardUser : UserControl
     {
-        public UC_Dashboard()
+        public UC_DashboardUser()
         {
             InitializeComponent();
         }

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Bookstore__main.UC
 {
-    public partial class UC_ItemListBook : UserControl
+    public partial class UC_ItemListBookAdmin : UserControl
     {
-        public UC_ItemListBook()
+        public UC_ItemListBookAdmin()
         {
             InitializeComponent();
         }

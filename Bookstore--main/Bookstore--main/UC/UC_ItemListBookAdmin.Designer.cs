@@ -1,6 +1,6 @@
 ﻿namespace Bookstore__main.UC
 {
-    partial class UC_ItemListBook
+    partial class UC_ItemListBookAdmin
     {
         /// <summary> 
         /// Required designer variable.
@@ -56,7 +56,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(231, 105);
+            this.guna2Panel1.Size = new System.Drawing.Size(231, 95);
             this.guna2Panel1.TabIndex = 0;
             // 
             // QuantityBook
@@ -64,7 +64,7 @@
             this.QuantityBook.AutoSize = true;
             this.QuantityBook.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuantityBook.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.QuantityBook.Location = new System.Drawing.Point(185, 81);
+            this.QuantityBook.Location = new System.Drawing.Point(185, 73);
             this.QuantityBook.Name = "QuantityBook";
             this.QuantityBook.Size = new System.Drawing.Size(35, 12);
             this.QuantityBook.TabIndex = 57;
@@ -85,11 +85,11 @@
             // PriceBook
             // 
             this.PriceBook.AutoSize = true;
-            this.PriceBook.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceBook.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PriceBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.PriceBook.Location = new System.Drawing.Point(69, 81);
+            this.PriceBook.Location = new System.Drawing.Point(69, 69);
             this.PriceBook.Name = "PriceBook";
-            this.PriceBook.Size = new System.Drawing.Size(57, 12);
+            this.PriceBook.Size = new System.Drawing.Size(83, 17);
             this.PriceBook.TabIndex = 55;
             this.PriceBook.Text = "100000 VND";
             this.PriceBook.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -135,19 +135,19 @@
             this.PictureBook.ImageRotate = 0F;
             this.PictureBook.Location = new System.Drawing.Point(3, 2);
             this.PictureBook.Name = "PictureBook";
-            this.PictureBook.Size = new System.Drawing.Size(63, 100);
+            this.PictureBook.Size = new System.Drawing.Size(63, 93);
             this.PictureBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBook.TabIndex = 51;
             this.PictureBook.TabStop = false;
             // 
-            // UC_ItemListBook
+            // UC_ItemListBookAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2Panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "UC_ItemListBook";
-            this.Size = new System.Drawing.Size(231, 105);
+            this.Name = "UC_ItemListBookAdmin";
+            this.Size = new System.Drawing.Size(231, 95);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBook)).EndInit();

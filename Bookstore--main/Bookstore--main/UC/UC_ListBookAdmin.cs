@@ -10,15 +10,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Bookstore__main.UC.UC_ListBook;
+using static Bookstore__main.UC.UC_ListBookAdmin;
 
 namespace Bookstore__main.UC
 {
-    public partial class UC_ListBook : UserControl
+    public partial class UC_ListBookAdmin : UserControl
     {
         public event EventHandler OnSelect = null;
 
-        public UC_ListBook()
+        public UC_ListBookAdmin()
         {
             InitializeComponent();
         }
@@ -65,7 +65,7 @@ namespace Bookstore__main.UC
         }
         private void AddItems(string bookname, string writename, string nationbook, decimal pricebook, int quantitybook, string categorybook, Image image)
         {
-            var w = new UC_ItemListBook()
+            var w = new UC_ItemListBookAdmin()
             {
                 bookName = bookname,
                 writerName = writename,
@@ -78,6 +78,34 @@ namespace Bookstore__main.UC
             flowLayoutPanel1.Controls.Add(w);
         }
 
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+        private void Guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Guna2Button13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

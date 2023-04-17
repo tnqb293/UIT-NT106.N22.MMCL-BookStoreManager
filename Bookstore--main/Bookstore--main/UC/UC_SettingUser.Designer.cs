@@ -1,6 +1,6 @@
 ﻿namespace Bookstore__main.UC
 {
-    partial class UC_Dashboard
+    partial class UC_SettingUser
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,13 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // UC_Dashboard
+            // UC_SettingUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "UC_Dashboard";
-            this.Size = new System.Drawing.Size(210, 162);
+            this.Name = "UC_SettingUser";
+            this.Size = new System.Drawing.Size(711, 460);
             this.ResumeLayout(false);
 
         }
