@@ -26,7 +26,7 @@ namespace Bookstore__main.UC
 
         private void UC_ListUser_Load(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=DESKTOP-OJKQD5I\SQLEXPRESS;Initial Catalog=DBBookstore;Integrated Security=True";
+            string connectionString = @"Data Source=LAPTOP-5OR18CU3;Initial Catalog=DBBookstore;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             string query = "select * from Account";

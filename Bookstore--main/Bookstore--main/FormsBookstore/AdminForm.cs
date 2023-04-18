@@ -50,7 +50,7 @@ namespace Bookstore__main.FormsBookstore
 
         private void btnAddBookPanel_Click(object sender, EventArgs e)
         {
-            UC_AddBookAdmin uC_AddBook = new UC_AddBookAdmin();
+            cbCategory_AddBook uC_AddBook = new cbCategory_AddBook();
             addUserControl(uC_AddBook);
         }
 

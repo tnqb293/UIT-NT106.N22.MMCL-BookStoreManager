@@ -42,8 +42,17 @@ namespace Bookstore__main.UC
             get { return NationBook.Text; }
             set { NationBook.Text = value; }
         }
-        public int quantityBook { get; set; }
-        public decimal priceBook { get; set; }
+        public int quantityBook
+        {
+            get { return int.Parse(QuantityBook.Text); }
+            set { QuantityBook.Text = value.ToString(); }
+        }
+        public decimal priceBook
+        {
+            get { return decimal.Parse(PriceBook.Text); }
+            set { PriceBook.Text = value.ToString(); }
+        }
+
         public string categoryBook
         {
             get { return CategoryBook.Text; }

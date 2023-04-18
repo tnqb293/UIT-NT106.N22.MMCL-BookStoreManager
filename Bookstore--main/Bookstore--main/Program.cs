@@ -17,7 +17,7 @@ namespace Bookstore__main
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UserForm());
+            Application.Run(new LoginRegisterForm());
         }
     }
 }

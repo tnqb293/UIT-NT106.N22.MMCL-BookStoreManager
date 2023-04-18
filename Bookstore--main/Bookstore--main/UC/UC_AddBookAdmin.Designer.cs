@@ -1,6 +1,6 @@
 ﻿namespace Bookstore__main.UC
 {
-    partial class UC_AddBookAdmin
+    partial class cbCategory_AddBook
     {
         /// <summary> 
         /// Required designer variable.
@@ -42,10 +42,10 @@
             this.Guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.tbName_AddBook = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbAuthorName_AddBook = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cbCategory_AddBook = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tbPrice_AddBook = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbNationAddBook = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbQuantity_AddBook = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbCategory_Addbook = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImageBook__AddBook)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@
             this.label7.Location = new System.Drawing.Point(426, 389);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 21);
+            this.label7.Size = new System.Drawing.Size(96, 28);
             this.label7.TabIndex = 59;
             this.label7.Text = "Số lượng:";
             // 
@@ -65,7 +65,7 @@
             this.label6.Location = new System.Drawing.Point(427, 299);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 21);
+            this.label6.Size = new System.Drawing.Size(95, 28);
             this.label6.TabIndex = 57;
             this.label6.Text = "Quốc gia:";
             // 
@@ -76,7 +76,7 @@
             this.label5.Location = new System.Drawing.Point(371, 93);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 30);
+            this.label5.Size = new System.Drawing.Size(143, 37);
             this.label5.TabIndex = 56;
             this.label5.Text = "Add Book";
             // 
@@ -103,7 +103,7 @@
             this.label3.Location = new System.Drawing.Point(435, 254);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 21);
+            this.label3.Size = new System.Drawing.Size(84, 28);
             this.label3.TabIndex = 52;
             this.label3.Text = "Thể loại:";
             // 
@@ -113,7 +113,7 @@
             this.label4.Location = new System.Drawing.Point(436, 347);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 21);
+            this.label4.Size = new System.Drawing.Size(83, 28);
             this.label4.TabIndex = 51;
             this.label4.Text = "Giá tiền:";
             // 
@@ -123,7 +123,7 @@
             this.label2.Location = new System.Drawing.Point(417, 211);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 21);
+            this.label2.Size = new System.Drawing.Size(108, 28);
             this.label2.TabIndex = 48;
             this.label2.Text = "Tên tác giả:";
             // 
@@ -133,7 +133,7 @@
             this.label1.Location = new System.Drawing.Point(431, 169);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 21);
+            this.label1.Size = new System.Drawing.Size(88, 28);
             this.label1.TabIndex = 47;
             this.label1.Text = "Tên sách:";
             // 
@@ -201,6 +201,7 @@
             this.tbName_AddBook.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbName_AddBook.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbName_AddBook.Location = new System.Drawing.Point(509, 163);
+            this.tbName_AddBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbName_AddBook.Name = "tbName_AddBook";
             this.tbName_AddBook.PasswordChar = '\0';
             this.tbName_AddBook.PlaceholderText = "";
@@ -221,28 +222,13 @@
             this.tbAuthorName_AddBook.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbAuthorName_AddBook.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbAuthorName_AddBook.Location = new System.Drawing.Point(509, 205);
+            this.tbAuthorName_AddBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbAuthorName_AddBook.Name = "tbAuthorName_AddBook";
             this.tbAuthorName_AddBook.PasswordChar = '\0';
             this.tbAuthorName_AddBook.PlaceholderText = "";
             this.tbAuthorName_AddBook.SelectedText = "";
             this.tbAuthorName_AddBook.Size = new System.Drawing.Size(238, 36);
             this.tbAuthorName_AddBook.TabIndex = 64;
-            // 
-            // cbCategory_AddBook
-            // 
-            this.cbCategory_AddBook.BackColor = System.Drawing.Color.Transparent;
-            this.cbCategory_AddBook.BorderRadius = 8;
-            this.cbCategory_AddBook.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbCategory_AddBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCategory_AddBook.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbCategory_AddBook.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbCategory_AddBook.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbCategory_AddBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbCategory_AddBook.ItemHeight = 30;
-            this.cbCategory_AddBook.Location = new System.Drawing.Point(509, 248);
-            this.cbCategory_AddBook.Name = "cbCategory_AddBook";
-            this.cbCategory_AddBook.Size = new System.Drawing.Size(238, 36);
-            this.cbCategory_AddBook.TabIndex = 65;
             // 
             // tbPrice_AddBook
             // 
@@ -257,6 +243,7 @@
             this.tbPrice_AddBook.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbPrice_AddBook.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbPrice_AddBook.Location = new System.Drawing.Point(509, 341);
+            this.tbPrice_AddBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbPrice_AddBook.Name = "tbPrice_AddBook";
             this.tbPrice_AddBook.PasswordChar = '\0';
             this.tbPrice_AddBook.PlaceholderText = "";
@@ -277,6 +264,7 @@
             this.tbNationAddBook.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbNationAddBook.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbNationAddBook.Location = new System.Drawing.Point(509, 293);
+            this.tbNationAddBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbNationAddBook.Name = "tbNationAddBook";
             this.tbNationAddBook.PasswordChar = '\0';
             this.tbNationAddBook.PlaceholderText = "";
@@ -297,6 +285,7 @@
             this.tbQuantity_AddBook.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbQuantity_AddBook.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbQuantity_AddBook.Location = new System.Drawing.Point(509, 383);
+            this.tbQuantity_AddBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbQuantity_AddBook.Name = "tbQuantity_AddBook";
             this.tbQuantity_AddBook.PasswordChar = '\0';
             this.tbQuantity_AddBook.PlaceholderText = "";
@@ -304,16 +293,37 @@
             this.tbQuantity_AddBook.Size = new System.Drawing.Size(238, 36);
             this.tbQuantity_AddBook.TabIndex = 68;
             // 
-            // UC_AddBook
+            // tbCategory_Addbook
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.tbCategory_Addbook.BorderRadius = 8;
+            this.tbCategory_Addbook.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCategory_Addbook.DefaultText = "";
+            this.tbCategory_Addbook.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbCategory_Addbook.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbCategory_Addbook.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCategory_Addbook.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCategory_Addbook.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCategory_Addbook.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbCategory_Addbook.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCategory_Addbook.Location = new System.Drawing.Point(509, 249);
+            this.tbCategory_Addbook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbCategory_Addbook.Name = "tbCategory_Addbook";
+            this.tbCategory_Addbook.PasswordChar = '\0';
+            this.tbCategory_Addbook.PlaceholderText = "";
+            this.tbCategory_Addbook.SelectedText = "";
+            this.tbCategory_Addbook.Size = new System.Drawing.Size(238, 36);
+            this.tbCategory_Addbook.TabIndex = 69;
+            // 
+            // cbCategory_AddBook
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.tbCategory_Addbook);
             this.Controls.Add(this.tbQuantity_AddBook);
             this.Controls.Add(this.tbNationAddBook);
             this.Controls.Add(this.tbPrice_AddBook);
-            this.Controls.Add(this.cbCategory_AddBook);
             this.Controls.Add(this.tbAuthorName_AddBook);
             this.Controls.Add(this.tbName_AddBook);
             this.Controls.Add(this.Guna2ControlBox2);
@@ -330,7 +340,7 @@
             this.Controls.Add(this.pbImageBook__AddBook);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "UC_AddBook";
+            this.Name = "cbCategory_AddBook";
             this.Size = new System.Drawing.Size(987, 612);
             ((System.ComponentModel.ISupportInitialize)(this.pbImageBook__AddBook)).EndInit();
             this.ResumeLayout(false);
@@ -353,9 +363,9 @@
         internal Guna.UI2.WinForms.Guna2ControlBox Guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2TextBox tbName_AddBook;
         private Guna.UI2.WinForms.Guna2TextBox tbAuthorName_AddBook;
-        private Guna.UI2.WinForms.Guna2ComboBox cbCategory_AddBook;
         private Guna.UI2.WinForms.Guna2TextBox tbPrice_AddBook;
         private Guna.UI2.WinForms.Guna2TextBox tbNationAddBook;
         private Guna.UI2.WinForms.Guna2TextBox tbQuantity_AddBook;
+        private Guna.UI2.WinForms.Guna2TextBox tbCategory_Addbook;
     }
 }

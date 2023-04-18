@@ -1,4 +1,6 @@
-﻿namespace Bookstore__main.UC
+﻿using System.Drawing;
+
+namespace Bookstore__main.UC
 {
     partial class UC_ListBookAdmin
     {
@@ -32,14 +34,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ListBookAdmin));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.Guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.Guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.Guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnZA = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.Guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSortByPriceDesc = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSortByPriceAsc = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAZ = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -54,7 +58,8 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 50;
-            this.guna2Panel1.Controls.Add(this.Guna2TextBox1);
+            this.guna2Panel1.Controls.Add(this.btnSearch);
+            this.guna2Panel1.Controls.Add(this.txtSearch);
             this.guna2Panel1.Controls.Add(this.Guna2ControlBox2);
             this.guna2Panel1.Controls.Add(this.Guna2ControlBox1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -64,30 +69,50 @@
             this.guna2Panel1.TabIndex = 1;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
-            // Guna2TextBox1
+            // btnSearch
             // 
-            this.Guna2TextBox1.Animated = true;
-            this.Guna2TextBox1.BorderRadius = 18;
-            this.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Guna2TextBox1.DefaultText = "";
-            this.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Guna2TextBox1.IconLeft = ((System.Drawing.Image)(resources.GetObject("Guna2TextBox1.IconLeft")));
-            this.Guna2TextBox1.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.Guna2TextBox1.Location = new System.Drawing.Point(184, 6);
-            this.Guna2TextBox1.Name = "Guna2TextBox1";
-            this.Guna2TextBox1.PasswordChar = '\0';
-            this.Guna2TextBox1.PlaceholderText = "Search Books";
-            this.Guna2TextBox1.SelectedText = "";
-            this.Guna2TextBox1.Size = new System.Drawing.Size(429, 36);
-            this.Guna2TextBox1.TabIndex = 24;
-            this.Guna2TextBox1.TextChanged += new System.EventHandler(this.Guna2TextBox1_TextChanged);
+            this.btnSearch.Animated = true;
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(65)))), ((int)(((byte)(54)))));
+            this.btnSearch.BorderRadius = 13;
+            this.btnSearch.BorderThickness = 1;
+            this.btnSearch.FillColor = System.Drawing.Color.Transparent;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.DimGray;
+            this.btnSearch.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
+            this.btnSearch.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(621, 12);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(97, 28);
+            this.btnSearch.TabIndex = 16;
+            this.btnSearch.Text = "Tìm";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Animated = true;
+            this.txtSearch.BorderRadius = 18;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch.IconLeft")));
+            this.txtSearch.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.txtSearch.Location = new System.Drawing.Point(184, 6);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderText = "Search Books";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(429, 36);
+            this.txtSearch.TabIndex = 24;
+            this.txtSearch.TextChanged += new System.EventHandler(this.Guna2TextBox1_TextChanged);
             // 
             // Guna2ControlBox2
             // 
@@ -114,15 +139,36 @@
             // 
             this.guna2Panel2.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel2.BorderRadius = 13;
+            this.guna2Panel2.Controls.Add(this.btnZA);
             this.guna2Panel2.Controls.Add(this.guna2Button3);
-            this.guna2Panel2.Controls.Add(this.guna2Button2);
-            this.guna2Panel2.Controls.Add(this.guna2Button1);
-            this.guna2Panel2.Controls.Add(this.Guna2Button13);
+            this.guna2Panel2.Controls.Add(this.btnSortByPriceDesc);
+            this.guna2Panel2.Controls.Add(this.btnSortByPriceAsc);
+            this.guna2Panel2.Controls.Add(this.btnAZ);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 48);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(948, 40);
             this.guna2Panel2.TabIndex = 2;
+            // 
+            // btnZA
+            // 
+            this.btnZA.Animated = true;
+            this.btnZA.AutoRoundedCorners = true;
+            this.btnZA.BackColor = System.Drawing.Color.Transparent;
+            this.btnZA.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(65)))), ((int)(((byte)(54)))));
+            this.btnZA.BorderRadius = 13;
+            this.btnZA.BorderThickness = 1;
+            this.btnZA.FillColor = System.Drawing.Color.Transparent;
+            this.btnZA.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnZA.ForeColor = System.Drawing.Color.DimGray;
+            this.btnZA.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
+            this.btnZA.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnZA.Location = new System.Drawing.Point(197, 6);
+            this.btnZA.Name = "btnZA";
+            this.btnZA.Size = new System.Drawing.Size(97, 28);
+            this.btnZA.TabIndex = 16;
+            this.btnZA.Text = "Z đến A";
+            this.btnZA.Click += new System.EventHandler(this.btnZA_Click);
             // 
             // guna2Button3
             // 
@@ -136,74 +182,75 @@
             this.guna2Button3.ForeColor = System.Drawing.Color.DimGray;
             this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
             this.guna2Button3.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(552, 6);
+            this.guna2Button3.Location = new System.Drawing.Point(734, 6);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(97, 28);
             this.guna2Button3.TabIndex = 15;
             this.guna2Button3.Text = "Mới nhất";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
-            // guna2Button2
+            // btnSortByPriceDesc
             // 
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(65)))), ((int)(((byte)(54)))));
-            this.guna2Button2.BorderRadius = 13;
-            this.guna2Button2.BorderThickness = 1;
-            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
-            this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(410, 6);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(97, 28);
-            this.guna2Button2.TabIndex = 14;
-            this.guna2Button2.Text = "Giá bán";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.btnSortByPriceDesc.Animated = true;
+            this.btnSortByPriceDesc.BackColor = System.Drawing.Color.Transparent;
+            this.btnSortByPriceDesc.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(65)))), ((int)(((byte)(54)))));
+            this.btnSortByPriceDesc.BorderRadius = 13;
+            this.btnSortByPriceDesc.BorderThickness = 1;
+            this.btnSortByPriceDesc.FillColor = System.Drawing.Color.Transparent;
+            this.btnSortByPriceDesc.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortByPriceDesc.ForeColor = System.Drawing.Color.DimGray;
+            this.btnSortByPriceDesc.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
+            this.btnSortByPriceDesc.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSortByPriceDesc.Location = new System.Drawing.Point(519, 6);
+            this.btnSortByPriceDesc.Name = "btnSortByPriceDesc";
+            this.btnSortByPriceDesc.Size = new System.Drawing.Size(170, 28);
+            this.btnSortByPriceDesc.TabIndex = 14;
+            this.btnSortByPriceDesc.Text = "Giá từ thấp đến cao";
+            this.btnSortByPriceDesc.Click += new System.EventHandler(this.btnSortByPriceDesc_Click);
             // 
-            // guna2Button1
+            // btnSortByPriceAsc
             // 
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(65)))), ((int)(((byte)(54)))));
-            this.guna2Button1.BorderRadius = 13;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
-            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(261, 6);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(97, 28);
-            this.guna2Button1.TabIndex = 13;
-            this.guna2Button1.Text = "Doanh thu";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnSortByPriceAsc.Animated = true;
+            this.btnSortByPriceAsc.BackColor = System.Drawing.Color.Transparent;
+            this.btnSortByPriceAsc.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(65)))), ((int)(((byte)(54)))));
+            this.btnSortByPriceAsc.BorderRadius = 13;
+            this.btnSortByPriceAsc.BorderThickness = 1;
+            this.btnSortByPriceAsc.FillColor = System.Drawing.Color.Transparent;
+            this.btnSortByPriceAsc.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortByPriceAsc.ForeColor = System.Drawing.Color.DimGray;
+            this.btnSortByPriceAsc.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
+            this.btnSortByPriceAsc.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSortByPriceAsc.Location = new System.Drawing.Point(323, 6);
+            this.btnSortByPriceAsc.Name = "btnSortByPriceAsc";
+            this.btnSortByPriceAsc.Size = new System.Drawing.Size(190, 28);
+            this.btnSortByPriceAsc.TabIndex = 13;
+            this.btnSortByPriceAsc.Text = "Giá từ cao đến thấp";
+            this.btnSortByPriceAsc.Click += new System.EventHandler(this.btnSortByPriceAsc_Click);
             // 
-            // Guna2Button13
+            // btnAZ
             // 
-            this.Guna2Button13.Animated = true;
-            this.Guna2Button13.AutoRoundedCorners = true;
-            this.Guna2Button13.BackColor = System.Drawing.Color.Transparent;
-            this.Guna2Button13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(65)))), ((int)(((byte)(54)))));
-            this.Guna2Button13.BorderRadius = 13;
-            this.Guna2Button13.BorderThickness = 1;
-            this.Guna2Button13.FillColor = System.Drawing.Color.Transparent;
-            this.Guna2Button13.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.Guna2Button13.ForeColor = System.Drawing.Color.DimGray;
-            this.Guna2Button13.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
-            this.Guna2Button13.HoverState.ForeColor = System.Drawing.Color.White;
-            this.Guna2Button13.Location = new System.Drawing.Point(109, 6);
-            this.Guna2Button13.Name = "Guna2Button13";
-            this.Guna2Button13.Size = new System.Drawing.Size(97, 28);
-            this.Guna2Button13.TabIndex = 12;
-            this.Guna2Button13.Text = "A đến Z";
-            this.Guna2Button13.Click += new System.EventHandler(this.Guna2Button13_Click);
+            this.btnAZ.Animated = true;
+            this.btnAZ.AutoRoundedCorners = true;
+            this.btnAZ.BackColor = System.Drawing.Color.Transparent;
+            this.btnAZ.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(65)))), ((int)(((byte)(54)))));
+            this.btnAZ.BorderRadius = 13;
+            this.btnAZ.BorderThickness = 1;
+            this.btnAZ.FillColor = System.Drawing.Color.Transparent;
+            this.btnAZ.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAZ.ForeColor = System.Drawing.Color.DimGray;
+            this.btnAZ.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(79)))), ((int)(((byte)(101)))));
+            this.btnAZ.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnAZ.Location = new System.Drawing.Point(94, 6);
+            this.btnAZ.Name = "btnAZ";
+            this.btnAZ.Size = new System.Drawing.Size(97, 28);
+            this.btnAZ.TabIndex = 12;
+            this.btnAZ.Text = "A đến Z";
+            this.btnAZ.Click += new System.EventHandler(this.btnAZ_Click);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 88);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -212,7 +259,7 @@
             // 
             // UC_ListBookAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.flowLayoutPanel1);
@@ -235,11 +282,13 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2ControlBox Guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox Guna2ControlBox1;
-        internal Guna.UI2.WinForms.Guna2Button Guna2Button13;
-        internal Guna.UI2.WinForms.Guna2TextBox Guna2TextBox1;
-        internal Guna.UI2.WinForms.Guna2Button guna2Button1;
+        internal Guna.UI2.WinForms.Guna2Button btnAZ;
+        internal Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        internal Guna.UI2.WinForms.Guna2Button btnSortByPriceAsc;
         internal Guna.UI2.WinForms.Guna2Button guna2Button3;
-        internal Guna.UI2.WinForms.Guna2Button guna2Button2;
+        internal Guna.UI2.WinForms.Guna2Button btnSortByPriceDesc;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        internal Guna.UI2.WinForms.Guna2Button btnSearch;
+        internal Guna.UI2.WinForms.Guna2Button btnZA;
     }
 }

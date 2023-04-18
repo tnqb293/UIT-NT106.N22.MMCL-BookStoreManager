@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Bookstore__main.UC
 {
-    public partial class UC_AddBookAdmin : UserControl
+    public partial class cbCategory_AddBook : UserControl
     {
-        public UC_AddBookAdmin()
+        public cbCategory_AddBook()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace Bookstore__main.UC
             string NationBook = tbNationAddBook.Text;
             decimal PriceBook = decimal.Parse(tbPrice_AddBook.Text);
             int QuantityBook = int.Parse(tbQuantity_AddBook.Text);
-            string CategoryBook = cbCategory_AddBook.Text;
+            string CategoryBook = tbCategory_Addbook.Text;
             Image PictureBook = pbImageBook__AddBook.Image;
             AddBook addBook = new AddBook();
             addBook.addBook(BookName, WriterName, NationBook, PriceBook, QuantityBook, CategoryBook, PictureBook);

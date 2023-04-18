@@ -10,7 +10,7 @@ namespace Bookstore__main.Class
 {
     internal class CreateAccount
     {
-        string connectionString = "Data Source=DESKTOP-OJKQD5I\\SQLEXPRESS;Initial Catalog=DBBookstore;Integrated Security=True";
+        string connectionString = "Data Source=LAPTOP-5OR18CU3;Initial Catalog=DBBookstore;Integrated Security=True";
         public void createAccount(string username, string password, string email)
         {
             //Kiểm tra thông tin nhập có bị thiếu không
