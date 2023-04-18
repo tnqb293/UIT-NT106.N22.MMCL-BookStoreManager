@@ -56,3 +56,5 @@ F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Bookstore--main\Bookstore--main\obj
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Bookstore--main\Bookstore--main\obj\Debug\Bookstore__main.UC.UC_ListUserAdmin.resources
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Bookstore--main\Bookstore--main\obj\Debug\Bookstore__main.UC.UC_PurchaseHistoryUser.resources
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Bookstore--main\Bookstore--main\obj\Debug\Bookstore__main.UC.UC_ShopingCartUser.resources
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Bookstore--main\Bookstore--main\obj\Debug\Bookstore__main.UC.UC_ItemShoppingCartUser.resources
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Bookstore--main\Bookstore--main\obj\Debug\Bookstore__main.UC.UC_SettingUser.resources
