@@ -1,0 +1,13 @@
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\bin\Debug\Database\Database.mdf
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\bin\Debug\Database\Database_log.ldf
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\bin\Debug\Server.exe.config
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\bin\Debug\Server.exe
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\bin\Debug\Server.pdb
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\obj\Debug\Server.csproj.SuggestedBindingRedirects.cache
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\obj\Debug\Server.Form1.resources
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\obj\Debug\Server.Properties.Resources.resources
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\obj\Debug\Server.csproj.GenerateResource.cache
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\obj\Debug\Server.exe
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\obj\Debug\Server.pdb
