@@ -43,5 +43,33 @@ namespace Server.Class
                 return "Error from server";
             }
         }
+        
+        internal string LoginDB(string username, string password)
+        {
+            try
+            {
+                connection.ConnectionOpen();
+                string request = "select count(*) from Customer where Username = @username and Password = @password";
+                SqlCommand command = new SqlCommand(request, connection.sqlConnection);
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+                int count = (int)command.ExecuteScalar();
+                if(count > 0)
+                {
+                    connection.ConnectionClose();
+                    return "login success";
+                }
+                else
+                {
+                    connection.ConnectionClose();
+                    return "login failed";
+                }
+               
+            }
+            catch
+            {
+                return "Error from server";
+            }
+        }
     }
 }

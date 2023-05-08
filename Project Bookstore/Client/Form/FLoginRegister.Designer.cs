@@ -264,6 +264,7 @@
             this.btnLoginLogin.Size = new System.Drawing.Size(243, 45);
             this.btnLoginLogin.TabIndex = 7;
             this.btnLoginLogin.Text = "LOGIN";
+            this.btnLoginLogin.Click += new System.EventHandler(this.btnLoginLogin_Click);
             // 
             // tsRememberMe
             // 

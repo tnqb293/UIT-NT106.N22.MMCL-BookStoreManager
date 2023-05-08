@@ -13,7 +13,7 @@ namespace Server.Class
     {
         internal static TcpListener listener { get; private set; }
         public List<ClientObject> clients = new List<ClientObject> ();
-        internal string IPAddr = "172.16.0.201";
+        internal string IPAddr = "192.168.1.10";
         internal int port = 8888;
         internal DBHandler dataBaseHandler = new DBHandler();
         internal void AddConnection(ClientObject client)
@@ -42,26 +42,6 @@ namespace Server.Class
                 return;
             }
         }
-        internal void Listen()
-        {
-            try
-            {
-                listener = new TcpListener(IPAddress.Parse(IPAddr), port);
-                listener.Start();
-                while(true)
-                {
-                    TcpClient client = listener.AcceptTcpClient();
-                    ClientObject clientObj = new ClientObject(client, this);
-                    Thread clientThread = new Thread(new ThreadStart(clientObj.ProcessRegister));
-                    clientThread.IsBackground = true;
-                    clientThread.Start();
-                }
-            }
-            catch
-            {
-                return;
-            }
-        }
         internal void Disconnect()
         {
             for(int i = 0; i < clients.Count; i++)
@@ -76,15 +56,41 @@ namespace Server.Class
             byte[] data = Encoding.Unicode.GetBytes(message);
             client.stream.Write(data, 0, data.Length);
         }
-        internal void BroadcastMessage(string message, string id)
+        internal void Listen()
         {
-            byte[] data = Encoding.Unicode.GetBytes(message);
-            for (int i = 0; i < clients.Count; i++)
+            try
             {
-                if (clients[i].ID != id)
+                listener = new TcpListener(IPAddress.Parse(IPAddr), port);
+                listener.Start();
+                while (true)
                 {
-                    clients[i].stream.Write(data, 0, data.Length);
+                    TcpClient client = listener.AcceptTcpClient();
+                    ClientObject clientObj = new ClientObject(client, this);
+                    ThreadPool.QueueUserWorkItem((clientObj.ProcessRegister), client);
+
                 }
+            }
+            catch
+            {
+                return;
+            }
+        }
+        internal void ListenLogin()
+        {
+            try
+            {
+                listener = new TcpListener(IPAddress.Parse(IPAddr), port);
+                listener.Start();
+                while (true)
+                {
+                    TcpClient client = listener.AcceptTcpClient();
+                    ClientObject clientObj = new ClientObject(client, this);
+                    ThreadPool.QueueUserWorkItem((clientObj.ProcessRegister), client);
+                }
+            }
+            catch
+            {
+                return;
             }
         }
     }

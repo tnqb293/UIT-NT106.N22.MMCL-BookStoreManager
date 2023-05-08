@@ -19,7 +19,9 @@ namespace Server
             InitializeComponent();
         }
         internal static ServerObject server;
+
         static Thread listenThread;
+        static Thread thread;
         private void Form1_Load(object sender, EventArgs e)
         {
             try
@@ -28,7 +30,7 @@ namespace Server
                 listenThread = new Thread(new ThreadStart(server.Listen));
                 listenThread.IsBackground = true;
                 listenThread.Start();
-                MessageBox.Show("Tạo server thành công");
+
             }
             catch(Exception ex)
             {
