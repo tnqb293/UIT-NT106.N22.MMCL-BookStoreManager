@@ -13,7 +13,7 @@ namespace Server.Class
     {
         internal static TcpListener listener { get; private set; }
         public List<ClientObject> clients = new List<ClientObject> ();
-        internal string IPAddr = "192.168.1.118";
+        internal string IPAddr = "192.168.3.251";
         internal int port = 8888;
         internal DBHandler dataBaseHandler = new DBHandler();
         internal void AddConnection(ClientObject client)
@@ -66,26 +66,9 @@ namespace Server.Class
                 {
                     TcpClient client = listener.AcceptTcpClient();
                     ClientObject clientObj = new ClientObject(client, this);
-                    ThreadPool.QueueUserWorkItem((clientObj.ProcessRegister), client);
-
-                }
-            }
-            catch
-            {
-                return;
-            }
-        }
-        internal void ListenLogin()
-        {
-            try
-            {
-                listener = new TcpListener(IPAddress.Parse(IPAddr), port);
-                listener.Start();
-                while (true)
-                {
-                    TcpClient client = listener.AcceptTcpClient();
-                    ClientObject clientObj = new ClientObject(client, this);
-                    ThreadPool.QueueUserWorkItem((clientObj.ProcessRegister), client);
+                    Thread clientThread = new Thread(new ThreadStart(clientObj.ProcessRegister));
+                    clientThread.IsBackground = true;
+                    clientThread.Start();
                 }
             }
             catch

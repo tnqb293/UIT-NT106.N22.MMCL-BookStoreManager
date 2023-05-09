@@ -24,7 +24,7 @@ namespace Client
         //Khởi tạo get set cho các thuộc tính có trong FLoginRegister
         TcpClient client { get; set; }
         NetworkStream stream { get; set; }
-        IPAddress ipAddr = IPAddress.Parse("192.168.1.118");
+        IPAddress ipAddr = IPAddress.Parse("192.168.3.251");
         int port = 8888;
         string username { get; set; }
         string password { get; set; }

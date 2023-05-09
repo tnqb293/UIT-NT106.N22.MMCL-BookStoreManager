@@ -34,7 +34,7 @@ namespace Server.Class
             stream = client.GetStream();
             return GetMessage();
         }
-        internal void ProcessRegister(object obj)
+        internal void ProcessRegister()
         {
             try
             {
