@@ -13,7 +13,7 @@ namespace Server.Class
     {
         internal static TcpListener listener { get; private set; }
         public List<ClientObject> clients = new List<ClientObject> ();
-        internal string IPAddr = "192.168.3.251";
+        internal string IPAddr = "192.168.1.10";
         internal int port = 8888;
         internal DBHandler dataBaseHandler = new DBHandler();
         internal void AddConnection(ClientObject client)

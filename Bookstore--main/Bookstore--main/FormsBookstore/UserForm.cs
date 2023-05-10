@@ -59,5 +59,11 @@ namespace Bookstore__main.FormsBookstore
             UC_SettingUser uc = new UC_SettingUser();
             addUserControl(uc);
         }
+
+        private void pnContentUser_Paint(object sender, PaintEventArgs e)
+        {
+            UC_DashboardUser uC_Dashboard = new UC_DashboardUser();
+            addUserControl(uC_Dashboard);
+        }
     }
 }

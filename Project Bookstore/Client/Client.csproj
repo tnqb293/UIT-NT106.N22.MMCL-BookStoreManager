@@ -52,16 +52,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form\FLoginRegister.cs">
+    <Compile Include="Forms\FLoginRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\FLoginRegister.Designer.cs">
+    <Compile Include="Forms\FLoginRegister.Designer.cs">
       <DependentUpon>FLoginRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FMainCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FMainCustomer.Designer.cs">
+      <DependentUpon>FMainCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form\FLoginRegister.resx">
+    <Compile Include="UC\UCDashboardCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCDashboardCustomer.Designer.cs">
+      <DependentUpon>UCDashboardCustomer.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\FLoginRegister.resx">
       <DependentUpon>FLoginRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FMainCustomer.resx">
+      <DependentUpon>FMainCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -72,6 +87,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC\UCDashboardCustomer.resx">
+      <DependentUpon>UCDashboardCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -88,7 +106,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Class\" />
-    <Folder Include="UC\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

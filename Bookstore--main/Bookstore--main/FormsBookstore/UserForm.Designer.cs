@@ -33,6 +33,7 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnButtonUser = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.pnButtonAdmin = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.btnShoppingCartPanelUser = new Guna.UI2.WinForms.Guna2Button();
             this.btnSettingPanelUser = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -45,7 +46,6 @@
             this.btnDashboardPanelUser = new Guna.UI2.WinForms.Guna2Button();
             this.btnListBookPanelUser = new Guna.UI2.WinForms.Guna2Button();
             this.pnContentUser = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.btnShoppingCartPanelUser = new Guna.UI2.WinForms.Guna2Button();
             this.pnButtonUser.SuspendLayout();
             this.pnButtonAdmin.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
@@ -85,6 +85,24 @@
             this.pnButtonAdmin.Name = "pnButtonAdmin";
             this.pnButtonAdmin.Size = new System.Drawing.Size(200, 720);
             this.pnButtonAdmin.TabIndex = 2;
+            // 
+            // btnShoppingCartPanelUser
+            // 
+            this.btnShoppingCartPanelUser.Animated = true;
+            this.btnShoppingCartPanelUser.BackColor = System.Drawing.Color.Transparent;
+            this.btnShoppingCartPanelUser.BorderRadius = 20;
+            this.btnShoppingCartPanelUser.FillColor = System.Drawing.Color.Transparent;
+            this.btnShoppingCartPanelUser.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShoppingCartPanelUser.ForeColor = System.Drawing.Color.White;
+            this.btnShoppingCartPanelUser.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
+            this.btnShoppingCartPanelUser.Location = new System.Drawing.Point(-32, 421);
+            this.btnShoppingCartPanelUser.Name = "btnShoppingCartPanelUser";
+            this.btnShoppingCartPanelUser.Size = new System.Drawing.Size(226, 45);
+            this.btnShoppingCartPanelUser.TabIndex = 19;
+            this.btnShoppingCartPanelUser.Text = "Shopping cart";
+            this.btnShoppingCartPanelUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnShoppingCartPanelUser.TextOffset = new System.Drawing.Point(60, 0);
+            this.btnShoppingCartPanelUser.Click += new System.EventHandler(this.btnShoppingCartPanelUser_Click);
             // 
             // btnSettingPanelUser
             // 
@@ -254,24 +272,7 @@
             this.pnContentUser.Name = "pnContentUser";
             this.pnContentUser.Size = new System.Drawing.Size(861, 720);
             this.pnContentUser.TabIndex = 1;
-            // 
-            // btnShoppingCartPanelUser
-            // 
-            this.btnShoppingCartPanelUser.Animated = true;
-            this.btnShoppingCartPanelUser.BackColor = System.Drawing.Color.Transparent;
-            this.btnShoppingCartPanelUser.BorderRadius = 20;
-            this.btnShoppingCartPanelUser.FillColor = System.Drawing.Color.Transparent;
-            this.btnShoppingCartPanelUser.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShoppingCartPanelUser.ForeColor = System.Drawing.Color.White;
-            this.btnShoppingCartPanelUser.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.btnShoppingCartPanelUser.Location = new System.Drawing.Point(-32, 421);
-            this.btnShoppingCartPanelUser.Name = "btnShoppingCartPanelUser";
-            this.btnShoppingCartPanelUser.Size = new System.Drawing.Size(226, 45);
-            this.btnShoppingCartPanelUser.TabIndex = 19;
-            this.btnShoppingCartPanelUser.Text = "Shopping cart";
-            this.btnShoppingCartPanelUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnShoppingCartPanelUser.TextOffset = new System.Drawing.Point(60, 0);
-            this.btnShoppingCartPanelUser.Click += new System.EventHandler(this.btnShoppingCartPanelUser_Click);
+            this.pnContentUser.Paint += new System.Windows.Forms.PaintEventHandler(this.pnContentUser_Paint);
             // 
             // UserForm
             // 
