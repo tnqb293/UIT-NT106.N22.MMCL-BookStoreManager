@@ -44,22 +44,22 @@
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.Guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnExitDashboardCustomer = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnStatistics = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.pnNumberOfBooksPurchase = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbNumberOfBooksPurchase = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.pnAmountPaid = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbAmountPaid = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.TopCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,14 +70,14 @@
             this.bookname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.booksold = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
+            this.pnStatistics.SuspendLayout();
             this.guna2GradientPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
-            this.guna2GradientPanel3.SuspendLayout();
+            this.pnNumberOfBooksPurchase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            this.guna2GradientPanel1.SuspendLayout();
+            this.pnAmountPaid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).BeginInit();
@@ -211,17 +211,17 @@
             this.btnExitDashboardCustomer.TabIndex = 26;
             this.btnExitDashboardCustomer.Click += new System.EventHandler(this.btnExitDashboardCustomer_Click);
             // 
-            // guna2Panel2
+            // pnStatistics
             // 
-            this.guna2Panel2.Controls.Add(this.guna2GradientPanel4);
-            this.guna2Panel2.Controls.Add(this.guna2GradientPanel3);
-            this.guna2Panel2.Controls.Add(this.guna2GradientPanel2);
-            this.guna2Panel2.Controls.Add(this.guna2GradientPanel1);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 42);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(863, 115);
-            this.guna2Panel2.TabIndex = 7;
+            this.pnStatistics.Controls.Add(this.guna2GradientPanel4);
+            this.pnStatistics.Controls.Add(this.pnNumberOfBooksPurchase);
+            this.pnStatistics.Controls.Add(this.guna2GradientPanel2);
+            this.pnStatistics.Controls.Add(this.pnAmountPaid);
+            this.pnStatistics.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnStatistics.Location = new System.Drawing.Point(0, 42);
+            this.pnStatistics.Name = "pnStatistics";
+            this.pnStatistics.Size = new System.Drawing.Size(863, 115);
+            this.pnStatistics.TabIndex = 7;
             // 
             // guna2GradientPanel4
             // 
@@ -273,18 +273,18 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Books sold";
             // 
-            // guna2GradientPanel3
+            // pnNumberOfBooksPurchase
             // 
-            this.guna2GradientPanel3.BorderRadius = 20;
-            this.guna2GradientPanel3.Controls.Add(this.guna2PictureBox3);
-            this.guna2GradientPanel3.Controls.Add(this.label5);
-            this.guna2GradientPanel3.Controls.Add(this.label6);
-            this.guna2GradientPanel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.guna2GradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.guna2GradientPanel3.Location = new System.Drawing.Point(434, 6);
-            this.guna2GradientPanel3.Name = "guna2GradientPanel3";
-            this.guna2GradientPanel3.Size = new System.Drawing.Size(200, 100);
-            this.guna2GradientPanel3.TabIndex = 2;
+            this.pnNumberOfBooksPurchase.BorderRadius = 20;
+            this.pnNumberOfBooksPurchase.Controls.Add(this.guna2PictureBox3);
+            this.pnNumberOfBooksPurchase.Controls.Add(this.lbNumberOfBooksPurchase);
+            this.pnNumberOfBooksPurchase.Controls.Add(this.label6);
+            this.pnNumberOfBooksPurchase.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.pnNumberOfBooksPurchase.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.pnNumberOfBooksPurchase.Location = new System.Drawing.Point(228, 6);
+            this.pnNumberOfBooksPurchase.Name = "pnNumberOfBooksPurchase";
+            this.pnNumberOfBooksPurchase.Size = new System.Drawing.Size(200, 100);
+            this.pnNumberOfBooksPurchase.TabIndex = 2;
             // 
             // guna2PictureBox3
             // 
@@ -299,17 +299,17 @@
             this.guna2PictureBox3.TabStop = false;
             this.guna2PictureBox3.UseTransparentBackground = true;
             // 
-            // label5
+            // lbNumberOfBooksPurchase
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(14, 60);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 25);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "10000";
+            this.lbNumberOfBooksPurchase.AutoSize = true;
+            this.lbNumberOfBooksPurchase.BackColor = System.Drawing.Color.Transparent;
+            this.lbNumberOfBooksPurchase.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNumberOfBooksPurchase.ForeColor = System.Drawing.Color.Transparent;
+            this.lbNumberOfBooksPurchase.Location = new System.Drawing.Point(14, 60);
+            this.lbNumberOfBooksPurchase.Name = "lbNumberOfBooksPurchase";
+            this.lbNumberOfBooksPurchase.Size = new System.Drawing.Size(67, 25);
+            this.lbNumberOfBooksPurchase.TabIndex = 1;
+            this.lbNumberOfBooksPurchase.Text = "10000";
             // 
             // label6
             // 
@@ -320,7 +320,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(130, 49);
             this.label6.TabIndex = 0;
-            this.label6.Text = "number of books purchased";
+            this.label6.Text = "Số sách đã mua";
             // 
             // guna2GradientPanel2
             // 
@@ -330,7 +330,7 @@
             this.guna2GradientPanel2.Controls.Add(this.label4);
             this.guna2GradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(39)))), ((int)(((byte)(176)))));
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(228, 6);
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(434, 6);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(200, 100);
             this.guna2GradientPanel2.TabIndex = 1;
@@ -372,18 +372,19 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Order number";
             // 
-            // guna2GradientPanel1
+            // pnAmountPaid
             // 
-            this.guna2GradientPanel1.BorderRadius = 20;
-            this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
-            this.guna2GradientPanel1.Controls.Add(this.label2);
-            this.guna2GradientPanel1.Controls.Add(this.label1);
-            this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(22, 6);
-            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(200, 100);
-            this.guna2GradientPanel1.TabIndex = 0;
+            this.pnAmountPaid.BorderRadius = 20;
+            this.pnAmountPaid.Controls.Add(this.guna2PictureBox1);
+            this.pnAmountPaid.Controls.Add(this.lbAmountPaid);
+            this.pnAmountPaid.Controls.Add(this.label1);
+            this.pnAmountPaid.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.pnAmountPaid.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
+            this.pnAmountPaid.Location = new System.Drawing.Point(22, 6);
+            this.pnAmountPaid.Name = "pnAmountPaid";
+            this.pnAmountPaid.Size = new System.Drawing.Size(200, 100);
+            this.pnAmountPaid.TabIndex = 0;
+            this.pnAmountPaid.Paint += new System.Windows.Forms.PaintEventHandler(this.pnAmountPaid_Paint);
             // 
             // guna2PictureBox1
             // 
@@ -398,17 +399,17 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
             // 
-            // label2
+            // lbAmountPaid
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(12, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "10000";
+            this.lbAmountPaid.AutoSize = true;
+            this.lbAmountPaid.BackColor = System.Drawing.Color.Transparent;
+            this.lbAmountPaid.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAmountPaid.ForeColor = System.Drawing.Color.Transparent;
+            this.lbAmountPaid.Location = new System.Drawing.Point(12, 60);
+            this.lbAmountPaid.Name = "lbAmountPaid";
+            this.lbAmountPaid.Size = new System.Drawing.Size(67, 25);
+            this.lbAmountPaid.TabIndex = 1;
+            this.lbAmountPaid.Text = "10000";
             // 
             // label1
             // 
@@ -418,9 +419,9 @@
             this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(13, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 21);
+            this.label1.Size = new System.Drawing.Size(113, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Amount paid";
+            this.label1.Text = "Số tiền đã chi";
             // 
             // guna2DataGridView1
             // 
@@ -569,25 +570,26 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.guna2DataGridView2);
-            this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.pnStatistics);
             this.Controls.Add(this.guna2Panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UCDashboardCustomer";
             this.Size = new System.Drawing.Size(863, 663);
+            this.Load += new System.EventHandler(this.UCDashboardCustomer_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            this.guna2Panel2.ResumeLayout(false);
+            this.pnStatistics.ResumeLayout(false);
             this.guna2GradientPanel4.ResumeLayout(false);
             this.guna2GradientPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
-            this.guna2GradientPanel3.ResumeLayout(false);
-            this.guna2GradientPanel3.PerformLayout();
+            this.pnNumberOfBooksPurchase.ResumeLayout(false);
+            this.pnNumberOfBooksPurchase.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2GradientPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            this.guna2GradientPanel1.ResumeLayout(false);
-            this.guna2GradientPanel1.PerformLayout();
+            this.pnAmountPaid.ResumeLayout(false);
+            this.pnAmountPaid.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).EndInit();
@@ -606,22 +608,22 @@
         internal Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2ControlBox Guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox btnExitDashboardCustomer;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel pnStatistics;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
+        private Guna.UI2.WinForms.Guna2GradientPanel pnNumberOfBooksPurchase;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbNumberOfBooksPurchase;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2GradientPanel pnAmountPaid;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbAmountPaid;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn TopCustomer;

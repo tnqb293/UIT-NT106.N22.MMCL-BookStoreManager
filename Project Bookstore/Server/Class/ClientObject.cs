@@ -14,10 +14,12 @@ namespace Server.Class
         internal string username { get; private set; }
         internal string[] userNameAndPasswordandEmail { get; private set; }
         internal string[] userNameAndPassword { get; private set; }
+        internal string[] InforUsernameDashboard { get; private set; }
         internal string password { get; private set; }
         internal string email { get; private set; }
         internal TcpClient client { get; private set; }
         internal ServerObject server { get; private set; }
+        internal string inforDashboardCustomer { get; private set; }
         internal ClientObject(TcpClient client, ServerObject server)
         {
             ID = Guid.NewGuid().ToString();
@@ -25,15 +27,15 @@ namespace Server.Class
             this.server = server;
             server.AddConnection(this);
         }
-        internal void ReceiveMessage()
-        {
-            stream = client.GetStream();
-        }
-        internal string Process()
-        {
-            stream = client.GetStream();
-            return GetMessage();
-        }
+        //internal void ReceiveMessage()
+        //{
+        //    stream = client.GetStream();
+        //}
+        //internal string Process()
+        //{
+        //    stream = client.GetStream();
+        //    return GetMessage();
+        //}
         internal void ProcessRegister()
         {
             try
@@ -72,6 +74,13 @@ namespace Server.Class
                         Close();
                     }
                 }
+
+                else if (checkGetstream(message) == 3)
+                {
+                    InforUsernameDashboard = message.Split(' ');
+                    username = InforUsernameDashboard[0];
+                    server.SendMessage(server.dataBaseHandler.InforDashboardCustomerDB(username), this);
+                }
             }
             catch
             {
@@ -88,8 +97,10 @@ namespace Server.Class
                     return 1;
                 case "register":
                     return 2;
-                default:
+                case "dashboardcustomer":
                     return 3;
+                default:
+                    return 4;
             }
         }
         internal void Getstream()

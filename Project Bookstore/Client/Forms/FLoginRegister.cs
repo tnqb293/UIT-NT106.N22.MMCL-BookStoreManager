@@ -1,4 +1,5 @@
 ﻿using Client.Forms;
+using Client.UC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,17 +24,20 @@ namespace Client
             InitializeComponent();
         }
         //Khởi tạo get set cho các thuộc tính có trong FLoginRegister
-        TcpClient client { get; set; }
-        NetworkStream stream { get; set; }
-        IPAddress ipAddr = IPAddress.Parse("192.168.1.10");
-        int port = 8888;
-        string username { get; set; }
-        string password { get; set; }
-        string email { get; set; }
-        string repassword { get; set; }
-        Thread receiveThread { get; set; }
-        string passwordEncrypt { get; set; }
-        
+        private TcpClient client { get; set; }
+        private NetworkStream stream { get; set; }
+        private readonly IPAddress ipAddr = IPAddress.Parse("192.168.1.10");
+        private readonly int port = 8888;
+        public class InfoLogin : EventArgs
+        {
+            public string username { get; set; }
+            public string password { get; set; }
+            public string email { get; set; }
+            public string repassword { get; set; }
+            public Thread receiveThread { get; set; }
+            public string passwordEncrypt { get; set; }
+        }
+        public string TheValue;
         //Đây là chức năng hiện form Login bằng nút Login
         private void btnLoginRegister_Click(object sender, EventArgs e)
         {
@@ -91,14 +95,15 @@ namespace Client
                 client.Close();
             }
         }
-        //
+
         private void btnCreateAccountRegister_Click(object sender, EventArgs e)
         {
-            username = tbUsernameResgister.Text;
-            password = tbPasswordRegister.Text;
-            email = tbEmailRegister.Text;
-            passwordEncrypt = Encrypt(password);
-            repassword = tbReEnterPasswordRegister.Text;
+            InfoLogin infoLogin = new InfoLogin();
+            infoLogin.username = tbUsernameResgister.Text;
+            infoLogin.password = tbPasswordRegister.Text;
+            infoLogin.email = tbEmailRegister.Text;
+            infoLogin.passwordEncrypt = Encrypt(infoLogin.password);
+            infoLogin.repassword = tbReEnterPasswordRegister.Text;
             //Kiểm tra người dùng đã nhập đủ thông tin chưa, nếu chưa thì yêu cầu người dùng nhập lại
             if (tbUsernameResgister != null && string.IsNullOrEmpty(tbUsernameResgister.Text)
                 || tbPasswordRegister != null && string.IsNullOrEmpty(tbPasswordRegister.Text)
@@ -108,7 +113,7 @@ namespace Client
                 return;
             }
             //Kiểm tra người dùng đã nhập xác minh mật khẩu đã đúng hay chưa
-            else if (password != repassword)
+            else if (infoLogin.password != infoLogin.repassword)
             {
                 this.Invoke(new Action(() => MessageBox.Show("Mật khẩu không khớp với mật khẩu đã nhập.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)));
             }
@@ -118,10 +123,11 @@ namespace Client
                 int length;
                 try
                 {
+                    TheValue = infoLogin.username;
                     client = new TcpClient();
                     client.Connect(ipAddr, port);
                     stream = client.GetStream();
-                    string message = username + " " + passwordEncrypt + " " + email + " register";
+                    string message = infoLogin.username + " " + infoLogin.passwordEncrypt + " " + infoLogin.email + " register";
                     byte[] bytes = Encoding.Unicode.GetBytes(message);
                     stream.Write(bytes, 0, bytes.Length);
                     do
@@ -133,9 +139,9 @@ namespace Client
                     } while (stream.DataAvailable);
                     if (builder.ToString() == "register success")
                     {
-                        receiveThread = new Thread(new ThreadStart(receiveMessage));
-                        receiveThread.IsBackground = true;
-                        receiveThread.Start();
+                        infoLogin.receiveThread = new Thread(new ThreadStart(receiveMessage));
+                        infoLogin.receiveThread.IsBackground = true;
+                        infoLogin.receiveThread.Start();
                         this.Invoke(new Action(() => MessageBox.Show("Đăng ký thành công")));
 
                     }
@@ -157,6 +163,7 @@ namespace Client
                 }
             }
         }
+        //Mã hóa mật khẩu người dùng
         private string Encrypt(string value)
         {
             using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
@@ -169,9 +176,10 @@ namespace Client
 
         private void btnLoginLogin_Click(object sender, EventArgs e)
         {
-            username = tbUsernameLogin.Text;
-            password = tbPasswordLogin.Text;
-            passwordEncrypt = Encrypt(tbPasswordLogin.Text);
+            InfoLogin infoLogin = new InfoLogin();
+            infoLogin.username = tbUsernameLogin.Text;
+            infoLogin.password = tbPasswordLogin.Text;
+            infoLogin.passwordEncrypt = Encrypt(tbPasswordLogin.Text);
             if (tbUsernameLogin != null && string.IsNullOrEmpty(tbUsernameLogin.Text)
                 || tbPasswordLogin != null && string.IsNullOrEmpty(tbPasswordLogin.Text))
             {
@@ -186,10 +194,11 @@ namespace Client
                 {
                     //ipAddr = IPAddress.Parse("192.168.1.10");
                     //port = 8888;
+                    TheValue = "flinta";
                     client = new TcpClient();
                     client.Connect(ipAddr, port);
                     stream = client.GetStream();
-                    string message = username + " " + passwordEncrypt + " login";
+                    string message = infoLogin.username + " " + infoLogin.passwordEncrypt + " login";
                     byte[] bytes = Encoding.Unicode.GetBytes(message);
                     stream.Write(bytes, 0, bytes.Length);
                     do
@@ -201,11 +210,13 @@ namespace Client
                     } while (stream.DataAvailable);
                     if (builder.ToString() == "login success")
                     {
-                        receiveThread = new Thread(new ThreadStart(receiveMessage));
-                        receiveThread.IsBackground = true;
-                        receiveThread.Start();
+
+                        infoLogin.receiveThread = new Thread(new ThreadStart(receiveMessage));
+                        infoLogin.receiveThread.IsBackground = true;
+                        infoLogin.receiveThread.Start();
                         this.Invoke(new Action(() => MessageBox.Show("Đăng nhập thành công")));
-                        Form welcome = new FMainCustomer();
+                        Form welcome = new FMainCustomer(infoLogin.username);
+                        welcome.Enabled = true;
                         welcome.Show();
                         this.Hide();
                     }

@@ -71,5 +71,35 @@ namespace Server.Class
                 return "Error from server";
             }
         }
+
+        internal string InforDashboardCustomerDB(string username)
+        {
+            try
+            {
+                string inforDashboardCustomer;
+                connection.ConnectionOpen();
+                string request = "select Money, AmountPaid, NumberOfBookPurchase from Customer where Username = @username";
+                SqlCommand command = new SqlCommand(request, connection.sqlConnection);
+                command.Parameters.AddWithValue("@username", username);
+                //int count = (int)command.ExecuteScalar();
+                //command.ExecuteScalar();
+                SqlDataReader reader = command.ExecuteReader();
+                InfoDashboardCustomer info = new InfoDashboardCustomer();
+                while (reader.Read())
+                {
+                    info.Money = reader.GetInt32(0);
+                    info.AmountPaid = reader.GetInt32(1);
+                    info.NumberofBooksPurchase = reader.GetInt32(2);
+                }
+                inforDashboardCustomer = info.Money.ToString() + " " + info.AmountPaid.ToString() + " " + info.NumberofBooksPurchase.ToString();
+                connection.ConnectionClose();
+                return inforDashboardCustomer;
+
+            }
+            catch
+            {
+                return "Error from server";
+            }
+        }
     }
 }
