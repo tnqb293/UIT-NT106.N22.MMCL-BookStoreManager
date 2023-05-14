@@ -13,3 +13,4 @@ F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.pdb
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.Forms.FMainCustomer.resources
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.UC.UCDashboardCustomer.resources
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.Forms.FMainAdmin.resources

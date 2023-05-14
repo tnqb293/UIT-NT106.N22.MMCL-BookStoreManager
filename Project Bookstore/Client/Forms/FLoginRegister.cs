@@ -1,4 +1,5 @@
-﻿using Client.Forms;
+﻿using Client.Class;
+using Client.Forms;
 using Client.UC;
 using System;
 using System.Collections.Generic;
@@ -24,20 +25,8 @@ namespace Client
             InitializeComponent();
         }
         //Khởi tạo get set cho các thuộc tính có trong FLoginRegister
-        private TcpClient client { get; set; }
-        private NetworkStream stream { get; set; }
-        private readonly IPAddress ipAddr = IPAddress.Parse("192.168.1.10");
-        private readonly int port = 8888;
-        public class InfoLogin : EventArgs
-        {
-            public string username { get; set; }
-            public string password { get; set; }
-            public string email { get; set; }
-            public string repassword { get; set; }
-            public Thread receiveThread { get; set; }
-            public string passwordEncrypt { get; set; }
-        }
-        public string TheValue;
+        private IpConnection ipConnection = new IpConnection();
+        private InfoLogin infoLogin;
         //Đây là chức năng hiện form Login bằng nút Login
         private void btnLoginRegister_Click(object sender, EventArgs e)
         {
@@ -50,55 +39,9 @@ namespace Client
             pnRegister.Visible = true;
             guna2Transition1.ShowSync(pnRegister);
         }
-        // Hàm receiveMessage nhận message từ phía server gửi về
-        private void receiveMessage()
-        {
-            StringBuilder builder;
-            int length;
-            try
-            {
-                while(true)
-                {
-                    try
-                    {
-                        do
-                        {
-                            byte[] bytes = new byte[1024];
-                            builder = new StringBuilder();
-                            length = stream.Read(bytes, 0, bytes.Length);
-                            builder.Append(Encoding.Unicode.GetString(bytes, 0, length));
-                        }
-                        while (stream.DataAvailable);
-                    }
-                    catch
-                    {
-                        Disconnect();
-                        MessageBox.Show("Không thể giao tiếp được với server, vui lòng thử lại sau");
-                        Environment.Exit(0);
-                    }
-                }
-            }
-            catch
-            {
-                
-            }
-        }
-        //Ngắt kết nối với server
-        private void Disconnect()
-        {
-            if(stream != null)
-            {
-                stream.Close();
-            }
-            if(client != null)
-            {
-                client.Close();
-            }
-        }
-
         private void btnCreateAccountRegister_Click(object sender, EventArgs e)
         {
-            InfoLogin infoLogin = new InfoLogin();
+            infoLogin = new InfoLogin();
             infoLogin.username = tbUsernameResgister.Text;
             infoLogin.password = tbPasswordRegister.Text;
             infoLogin.email = tbEmailRegister.Text;
@@ -119,27 +62,13 @@ namespace Client
             }
             else
             {
-                StringBuilder builder;
-                int length;
                 try
                 {
-                    TheValue = infoLogin.username;
-                    client = new TcpClient();
-                    client.Connect(ipAddr, port);
-                    stream = client.GetStream();
                     string message = infoLogin.username + " " + infoLogin.passwordEncrypt + " " + infoLogin.email + " register";
-                    byte[] bytes = Encoding.Unicode.GetBytes(message);
-                    stream.Write(bytes, 0, bytes.Length);
-                    do
-                    {
-                        byte[] receiveBytes = new byte[1024];
-                        builder = new StringBuilder();
-                        length = stream.Read(receiveBytes, 0, receiveBytes.Length);
-                        builder.Append(Encoding.Unicode.GetString(receiveBytes, 0, length));
-                    } while (stream.DataAvailable);
+                    StringBuilder builder = ipConnection.messageFromServer(message);
                     if (builder.ToString() == "register success")
                     {
-                        infoLogin.receiveThread = new Thread(new ThreadStart(receiveMessage));
+                        infoLogin.receiveThread = new Thread(new ThreadStart(ipConnection.receiveMessage));
                         infoLogin.receiveThread.IsBackground = true;
                         infoLogin.receiveThread.Start();
                         this.Invoke(new Action(() => MessageBox.Show("Đăng ký thành công")));
@@ -158,7 +87,7 @@ namespace Client
                 }
                 catch
                 {
-                    this.Invoke(new Action(() => MessageBox.Show($"Không tìm thấy máy chủ {ipAddr}.")));
+                    this.Invoke(new Action(() => MessageBox.Show($"Không tìm thấy máy chủ {ipConnection.ipAddr}.")));
 
                 }
             }
@@ -176,7 +105,7 @@ namespace Client
 
         private void btnLoginLogin_Click(object sender, EventArgs e)
         {
-            InfoLogin infoLogin = new InfoLogin();
+            infoLogin = new InfoLogin();
             infoLogin.username = tbUsernameLogin.Text;
             infoLogin.password = tbPasswordLogin.Text;
             infoLogin.passwordEncrypt = Encrypt(tbPasswordLogin.Text);
@@ -188,35 +117,28 @@ namespace Client
             }
             else
             {
-                StringBuilder builder;
-                int length;
                 try
                 {
-                    //ipAddr = IPAddress.Parse("192.168.1.10");
-                    //port = 8888;
-                    TheValue = "flinta";
-                    client = new TcpClient();
-                    client.Connect(ipAddr, port);
-                    stream = client.GetStream();
                     string message = infoLogin.username + " " + infoLogin.passwordEncrypt + " login";
-                    byte[] bytes = Encoding.Unicode.GetBytes(message);
-                    stream.Write(bytes, 0, bytes.Length);
-                    do
-                    {
-                        byte[] receiveBytes = new byte[1024];
-                        builder = new StringBuilder();
-                        length = stream.Read(receiveBytes, 0, receiveBytes.Length);
-                        builder.Append(Encoding.Unicode.GetString(receiveBytes, 0, length));
-                    } while (stream.DataAvailable);
+                    StringBuilder builder = ipConnection.messageFromServer(message);
                     if (builder.ToString() == "login success")
                     {
 
-                        infoLogin.receiveThread = new Thread(new ThreadStart(receiveMessage));
+                        infoLogin.receiveThread = new Thread(new ThreadStart(ipConnection.receiveMessage));
                         infoLogin.receiveThread.IsBackground = true;
                         infoLogin.receiveThread.Start();
                         this.Invoke(new Action(() => MessageBox.Show("Đăng nhập thành công")));
                         Form welcome = new FMainCustomer(infoLogin.username);
-                        welcome.Enabled = true;
+                        welcome.Show();
+                        this.Hide();
+                    }
+                    else if(builder.ToString() == "login admin success")
+                    {
+                        infoLogin.receiveThread = new Thread(new ThreadStart(ipConnection.receiveMessage));
+                        infoLogin.receiveThread.IsBackground = true;
+                        infoLogin.receiveThread.Start();
+                        this.Invoke(new Action(() => MessageBox.Show("Đăng nhập thành công")));
+                        Form welcome = new FMainAdmin();
                         welcome.Show();
                         this.Hide();
                     }
@@ -233,7 +155,7 @@ namespace Client
                 }
                 catch
                 {
-                    this.Invoke(new Action(() => MessageBox.Show($"Không tìm thấy máy chủ {ipAddr}.")));
+                    this.Invoke(new Action(() => MessageBox.Show($"Không tìm thấy máy chủ {ipConnection.ipAddr}.")));
 
                 }
             }

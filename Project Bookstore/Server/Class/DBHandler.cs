@@ -56,6 +56,11 @@ namespace Server.Class
                 int count = (int)command.ExecuteScalar();
                 if(count > 0)
                 {
+                    if(username == "admin")
+                    {
+                        connection.ConnectionClose();
+                        return "login admin success";
+                    }
                     connection.ConnectionClose();
                     return "login success";
                 }

@@ -34,17 +34,17 @@
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnControlCustomer = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnPurchasedBooksPanel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDashboardPanel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnListBookPanel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCartBookPanel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lbMoney = new System.Windows.Forms.Label();
             this.lbNameCustomer = new System.Windows.Forms.Label();
-            this.btnListUserPanel = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDashboardPanel = new Guna.UI2.WinForms.Guna2Button();
-            this.btnListBookPanel = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAddBookPanel = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnControlCustomer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnContentCustomer
@@ -68,10 +68,10 @@
             // 
             // pnControlCustomer
             // 
-            this.pnControlCustomer.Controls.Add(this.btnListUserPanel);
+            this.pnControlCustomer.Controls.Add(this.btnPurchasedBooksPanel);
             this.pnControlCustomer.Controls.Add(this.btnDashboardPanel);
             this.pnControlCustomer.Controls.Add(this.btnListBookPanel);
-            this.pnControlCustomer.Controls.Add(this.btnAddBookPanel);
+            this.pnControlCustomer.Controls.Add(this.btnCartBookPanel);
             this.pnControlCustomer.Controls.Add(this.guna2PictureBox2);
             this.pnControlCustomer.Controls.Add(this.lbMoney);
             this.pnControlCustomer.Controls.Add(this.lbNameCustomer);
@@ -85,18 +85,73 @@
             this.pnControlCustomer.TabIndex = 4;
             this.pnControlCustomer.Paint += new System.Windows.Forms.PaintEventHandler(this.pnControlCustomer_Paint);
             // 
-            // guna2PictureBox1
+            // btnPurchasedBooksPanel
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 33);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(172, 68);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 1;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
+            this.btnPurchasedBooksPanel.Animated = true;
+            this.btnPurchasedBooksPanel.BackColor = System.Drawing.Color.Transparent;
+            this.btnPurchasedBooksPanel.BorderRadius = 20;
+            this.btnPurchasedBooksPanel.FillColor = System.Drawing.Color.Transparent;
+            this.btnPurchasedBooksPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPurchasedBooksPanel.ForeColor = System.Drawing.Color.White;
+            this.btnPurchasedBooksPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
+            this.btnPurchasedBooksPanel.Location = new System.Drawing.Point(-27, 414);
+            this.btnPurchasedBooksPanel.Name = "btnPurchasedBooksPanel";
+            this.btnPurchasedBooksPanel.Size = new System.Drawing.Size(220, 45);
+            this.btnPurchasedBooksPanel.TabIndex = 19;
+            this.btnPurchasedBooksPanel.Text = "Purchase Books";
+            this.btnPurchasedBooksPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPurchasedBooksPanel.TextOffset = new System.Drawing.Point(60, 0);
+            // 
+            // btnDashboardPanel
+            // 
+            this.btnDashboardPanel.Animated = true;
+            this.btnDashboardPanel.BackColor = System.Drawing.Color.Transparent;
+            this.btnDashboardPanel.BorderRadius = 20;
+            this.btnDashboardPanel.FillColor = System.Drawing.Color.Transparent;
+            this.btnDashboardPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboardPanel.ForeColor = System.Drawing.Color.White;
+            this.btnDashboardPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
+            this.btnDashboardPanel.Location = new System.Drawing.Point(-27, 261);
+            this.btnDashboardPanel.Name = "btnDashboardPanel";
+            this.btnDashboardPanel.Size = new System.Drawing.Size(220, 45);
+            this.btnDashboardPanel.TabIndex = 17;
+            this.btnDashboardPanel.Text = "Dashboard";
+            this.btnDashboardPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDashboardPanel.TextOffset = new System.Drawing.Point(60, 0);
+            // 
+            // btnListBookPanel
+            // 
+            this.btnListBookPanel.Animated = true;
+            this.btnListBookPanel.BackColor = System.Drawing.Color.Transparent;
+            this.btnListBookPanel.BorderRadius = 20;
+            this.btnListBookPanel.FillColor = System.Drawing.Color.Transparent;
+            this.btnListBookPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListBookPanel.ForeColor = System.Drawing.Color.White;
+            this.btnListBookPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
+            this.btnListBookPanel.Location = new System.Drawing.Point(-27, 312);
+            this.btnListBookPanel.Name = "btnListBookPanel";
+            this.btnListBookPanel.Size = new System.Drawing.Size(220, 45);
+            this.btnListBookPanel.TabIndex = 18;
+            this.btnListBookPanel.Text = "Books";
+            this.btnListBookPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnListBookPanel.TextOffset = new System.Drawing.Point(60, 0);
+            // 
+            // btnCartBookPanel
+            // 
+            this.btnCartBookPanel.Animated = true;
+            this.btnCartBookPanel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCartBookPanel.BorderRadius = 20;
+            this.btnCartBookPanel.FillColor = System.Drawing.Color.Transparent;
+            this.btnCartBookPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCartBookPanel.ForeColor = System.Drawing.Color.White;
+            this.btnCartBookPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
+            this.btnCartBookPanel.Location = new System.Drawing.Point(-27, 363);
+            this.btnCartBookPanel.Name = "btnCartBookPanel";
+            this.btnCartBookPanel.Size = new System.Drawing.Size(220, 45);
+            this.btnCartBookPanel.TabIndex = 16;
+            this.btnCartBookPanel.Text = "Cart";
+            this.btnCartBookPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCartBookPanel.TextOffset = new System.Drawing.Point(60, 0);
             // 
             // guna2PictureBox2
             // 
@@ -135,73 +190,18 @@
             this.lbNameCustomer.TabIndex = 4;
             this.lbNameCustomer.Text = "Admin";
             // 
-            // btnListUserPanel
+            // guna2PictureBox1
             // 
-            this.btnListUserPanel.Animated = true;
-            this.btnListUserPanel.BackColor = System.Drawing.Color.Transparent;
-            this.btnListUserPanel.BorderRadius = 20;
-            this.btnListUserPanel.FillColor = System.Drawing.Color.Transparent;
-            this.btnListUserPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListUserPanel.ForeColor = System.Drawing.Color.White;
-            this.btnListUserPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.btnListUserPanel.Location = new System.Drawing.Point(-27, 414);
-            this.btnListUserPanel.Name = "btnListUserPanel";
-            this.btnListUserPanel.Size = new System.Drawing.Size(211, 45);
-            this.btnListUserPanel.TabIndex = 19;
-            this.btnListUserPanel.Text = "List user";
-            this.btnListUserPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnListUserPanel.TextOffset = new System.Drawing.Point(60, 0);
-            // 
-            // btnDashboardPanel
-            // 
-            this.btnDashboardPanel.Animated = true;
-            this.btnDashboardPanel.BackColor = System.Drawing.Color.Transparent;
-            this.btnDashboardPanel.BorderRadius = 20;
-            this.btnDashboardPanel.FillColor = System.Drawing.Color.Transparent;
-            this.btnDashboardPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboardPanel.ForeColor = System.Drawing.Color.White;
-            this.btnDashboardPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.btnDashboardPanel.Location = new System.Drawing.Point(-27, 261);
-            this.btnDashboardPanel.Name = "btnDashboardPanel";
-            this.btnDashboardPanel.Size = new System.Drawing.Size(211, 45);
-            this.btnDashboardPanel.TabIndex = 17;
-            this.btnDashboardPanel.Text = "Dashboard";
-            this.btnDashboardPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDashboardPanel.TextOffset = new System.Drawing.Point(60, 0);
-            // 
-            // btnListBookPanel
-            // 
-            this.btnListBookPanel.Animated = true;
-            this.btnListBookPanel.BackColor = System.Drawing.Color.Transparent;
-            this.btnListBookPanel.BorderRadius = 20;
-            this.btnListBookPanel.FillColor = System.Drawing.Color.Transparent;
-            this.btnListBookPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListBookPanel.ForeColor = System.Drawing.Color.White;
-            this.btnListBookPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.btnListBookPanel.Location = new System.Drawing.Point(-27, 312);
-            this.btnListBookPanel.Name = "btnListBookPanel";
-            this.btnListBookPanel.Size = new System.Drawing.Size(211, 45);
-            this.btnListBookPanel.TabIndex = 18;
-            this.btnListBookPanel.Text = "Books";
-            this.btnListBookPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnListBookPanel.TextOffset = new System.Drawing.Point(60, 0);
-            // 
-            // btnAddBookPanel
-            // 
-            this.btnAddBookPanel.Animated = true;
-            this.btnAddBookPanel.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddBookPanel.BorderRadius = 20;
-            this.btnAddBookPanel.FillColor = System.Drawing.Color.Transparent;
-            this.btnAddBookPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddBookPanel.ForeColor = System.Drawing.Color.White;
-            this.btnAddBookPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.btnAddBookPanel.Location = new System.Drawing.Point(-27, 363);
-            this.btnAddBookPanel.Name = "btnAddBookPanel";
-            this.btnAddBookPanel.Size = new System.Drawing.Size(211, 45);
-            this.btnAddBookPanel.TabIndex = 16;
-            this.btnAddBookPanel.Text = "Add book";
-            this.btnAddBookPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddBookPanel.TextOffset = new System.Drawing.Point(60, 0);
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 33);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(172, 68);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 1;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
             // 
             // FMainCustomer
             // 
@@ -218,8 +218,8 @@
             this.Load += new System.EventHandler(this.FMainCustomer_Load);
             this.pnControlCustomer.ResumeLayout(false);
             this.pnControlCustomer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -233,9 +233,9 @@
         public Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         public Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         public System.Windows.Forms.Label lbNameCustomer;
-        public Guna.UI2.WinForms.Guna2Button btnListUserPanel;
+        public Guna.UI2.WinForms.Guna2Button btnPurchasedBooksPanel;
         public Guna.UI2.WinForms.Guna2Button btnDashboardPanel;
         public Guna.UI2.WinForms.Guna2Button btnListBookPanel;
-        public Guna.UI2.WinForms.Guna2Button btnAddBookPanel;
+        public Guna.UI2.WinForms.Guna2Button btnCartBookPanel;
     }
 }

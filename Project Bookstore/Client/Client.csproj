@@ -52,11 +52,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\InfoUser.cs" />
+    <Compile Include="Class\InfoLogin.cs" />
+    <Compile Include="Class\IpConnection.cs" />
     <Compile Include="Forms\FLoginRegister.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FLoginRegister.Designer.cs">
       <DependentUpon>FLoginRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FMainAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FMainAdmin.Designer.cs">
+      <DependentUpon>FMainAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FMainCustomer.cs">
       <SubType>Form</SubType>
@@ -74,6 +83,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\FLoginRegister.resx">
       <DependentUpon>FLoginRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FMainAdmin.resx">
+      <DependentUpon>FMainAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FMainCustomer.resx">
       <DependentUpon>FMainCustomer.cs</DependentUpon>
@@ -104,8 +116,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Class\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
