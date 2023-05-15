@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -15,6 +17,8 @@ namespace Server.Class
         internal string[] userNameAndPasswordandEmail { get; private set; }
         internal string[] userNameAndPassword { get; private set; }
         internal string[] InforUsernameDashboard { get; private set; }
+        internal string[] addBookInfo { get; set; }
+        internal InfoBook infoBook { get; private set; }
         internal string password { get; private set; }
         internal string email { get; private set; }
         internal TcpClient client { get; private set; }
@@ -81,11 +85,39 @@ namespace Server.Class
                     username = InforUsernameDashboard[0];
                     server.SendMessage(server.dataBaseHandler.InforDashboardCustomerDB(username), this);
                 }
+                else if(checkGetstream(message) == 4)
+                {
+                    addBookInfo = message.Split(new string[] {"  "}, StringSplitOptions.None);
+                    infoBook = new InfoBook();
+                    infoBook.bookname = addBookInfo[0];
+                    infoBook.writername = addBookInfo[1];
+                    infoBook.category = addBookInfo[2];
+                    infoBook.country = addBookInfo[3];
+                    infoBook.price = Int32.Parse(addBookInfo[4]);
+                    infoBook.numberOfBookRemaining = Int32.Parse(addBookInfo[5]);
+                    infoBook.coverImage = addBookInfo[6];
+                    if(server.dataBaseHandler.AddBookAdminDB(infoBook.bookname, infoBook.writername, infoBook.category, infoBook.country, infoBook.price, infoBook.numberOfBookRemaining, infoBook.coverImage) == "add book success")
+                    {
+                        server.SendMessage(server.dataBaseHandler.AddBookAdminDB(infoBook.bookname, infoBook.writername, infoBook.category, infoBook.country, infoBook.price, infoBook.numberOfBookRemaining, infoBook.coverImage), this);
+                    }
+                    else
+                    {
+                        server.SendMessage(server.dataBaseHandler.AddBookAdminDB(infoBook.bookname, infoBook.writername, infoBook.category, infoBook.country, infoBook.price, infoBook.numberOfBookRemaining, infoBook.coverImage), this);
+                        Close();
+                    }
+                }
             }
             catch
             {
                 return;
             }
+        }
+        internal Image stringToImage(string strImage)
+        {
+            byte[] bytes = Encoding.Default.GetBytes(strImage);
+            MemoryStream ms = new MemoryStream(bytes);
+            Image img = Image.FromStream(ms);
+            return img;
         }
         internal int checkGetstream(string message)
         {
@@ -99,8 +131,10 @@ namespace Server.Class
                     return 2;
                 case "dashboardcustomer":
                     return 3;
-                default:
+                case "addbook":
                     return 4;
+                default:
+                    return 5;
             }
         }
         internal void Getstream()

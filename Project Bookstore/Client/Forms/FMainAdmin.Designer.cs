@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMainAdmin));
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.pnControlAdmin = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.btnListUserPanel = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboardPanel = new Guna.UI2.WinForms.Guna2Button();
             this.btnListBookPanel = new Guna.UI2.WinForms.Guna2Button();
@@ -40,28 +40,29 @@
             this.lbNameCustomer = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2GradientPanel1.SuspendLayout();
+            this.pnAdminContent = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.pnControlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // guna2GradientPanel1
+            // pnControlAdmin
             // 
-            this.guna2GradientPanel1.Controls.Add(this.btnListUserPanel);
-            this.guna2GradientPanel1.Controls.Add(this.btnDashboardPanel);
-            this.guna2GradientPanel1.Controls.Add(this.btnListBookPanel);
-            this.guna2GradientPanel1.Controls.Add(this.btnAddBookPanel);
-            this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox2);
-            this.guna2GradientPanel1.Controls.Add(this.lbMoney);
-            this.guna2GradientPanel1.Controls.Add(this.lbNameCustomer);
-            this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
-            this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(188)))), ((int)(((byte)(135)))));
-            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(200, 720);
-            this.guna2GradientPanel1.TabIndex = 0;
+            this.pnControlAdmin.Controls.Add(this.btnListUserPanel);
+            this.pnControlAdmin.Controls.Add(this.btnDashboardPanel);
+            this.pnControlAdmin.Controls.Add(this.btnListBookPanel);
+            this.pnControlAdmin.Controls.Add(this.btnAddBookPanel);
+            this.pnControlAdmin.Controls.Add(this.guna2PictureBox2);
+            this.pnControlAdmin.Controls.Add(this.lbMoney);
+            this.pnControlAdmin.Controls.Add(this.lbNameCustomer);
+            this.pnControlAdmin.Controls.Add(this.guna2PictureBox1);
+            this.pnControlAdmin.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnControlAdmin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(188)))), ((int)(((byte)(135)))));
+            this.pnControlAdmin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
+            this.pnControlAdmin.Location = new System.Drawing.Point(0, 0);
+            this.pnControlAdmin.Name = "pnControlAdmin";
+            this.pnControlAdmin.Size = new System.Drawing.Size(200, 720);
+            this.pnControlAdmin.TabIndex = 0;
             // 
             // btnListUserPanel
             // 
@@ -130,6 +131,7 @@
             this.btnAddBookPanel.Text = "Add book";
             this.btnAddBookPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAddBookPanel.TextOffset = new System.Drawing.Point(60, 0);
+            this.btnAddBookPanel.Click += new System.EventHandler(this.btnAddBookPanel_Click);
             // 
             // guna2PictureBox2
             // 
@@ -186,19 +188,28 @@
             this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this;
             // 
+            // pnAdminContent
+            // 
+            this.pnAdminContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnAdminContent.Location = new System.Drawing.Point(200, 0);
+            this.pnAdminContent.Name = "pnAdminContent";
+            this.pnAdminContent.Size = new System.Drawing.Size(861, 720);
+            this.pnAdminContent.TabIndex = 1;
+            // 
             // FMainAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 720);
-            this.Controls.Add(this.guna2GradientPanel1);
+            this.Controls.Add(this.pnAdminContent);
+            this.Controls.Add(this.pnControlAdmin);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FMainAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FMainAdmin";
-            this.guna2GradientPanel1.ResumeLayout(false);
-            this.guna2GradientPanel1.PerformLayout();
+            this.pnControlAdmin.ResumeLayout(false);
+            this.pnControlAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -207,7 +218,7 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2GradientPanel pnControlAdmin;
         public Guna.UI2.WinForms.Guna2Button btnListUserPanel;
         public Guna.UI2.WinForms.Guna2Button btnDashboardPanel;
         public Guna.UI2.WinForms.Guna2Button btnListBookPanel;
@@ -217,5 +228,6 @@
         public System.Windows.Forms.Label lbNameCustomer;
         public Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         public Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2GradientPanel pnAdminContent;
     }
 }

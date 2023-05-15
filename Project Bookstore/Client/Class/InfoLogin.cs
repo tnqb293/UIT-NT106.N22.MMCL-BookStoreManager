@@ -9,11 +9,11 @@ namespace Client.Class
 {
     public class InfoLogin
     {
-        public string username { get; set; }
-        public string password { get; set; }
-        public string email { get; set; }
-        public string repassword { get; set; }
-        public Thread receiveThread { get; set; }
-        public string passwordEncrypt { get; set; }
+        internal string username { get; set; }
+        internal string password { get; set; }
+        internal string email { get; set; }
+        internal string repassword { get; set; }
+        internal Thread receiveThread { get; set; }
+        internal string passwordEncrypt { get; set; }
     }
 }

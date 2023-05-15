@@ -138,7 +138,7 @@ namespace Client
                         infoLogin.receiveThread.IsBackground = true;
                         infoLogin.receiveThread.Start();
                         this.Invoke(new Action(() => MessageBox.Show("Đăng nhập thành công")));
-                        Form welcome = new FMainAdmin();
+                        Form welcome = new FMainAdmin(infoLogin.username);
                         welcome.Show();
                         this.Hide();
                     }

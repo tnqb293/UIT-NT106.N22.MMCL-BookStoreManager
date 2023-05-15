@@ -1,7 +1,11 @@
 ﻿using Server.Database;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -81,7 +85,6 @@ namespace Server.Class
         {
             try
             {
-                string inforDashboardCustomer;
                 connection.ConnectionOpen();
                 string request = "select Money, AmountPaid, NumberOfBookPurchase from Customer where Username = @username";
                 SqlCommand command = new SqlCommand(request, connection.sqlConnection);
@@ -96,10 +99,34 @@ namespace Server.Class
                     info.AmountPaid = reader.GetInt32(1);
                     info.NumberofBooksPurchase = reader.GetInt32(2);
                 }
-                inforDashboardCustomer = info.Money.ToString() + " " + info.AmountPaid.ToString() + " " + info.NumberofBooksPurchase.ToString();
+                string inforDashboardCustomer = info.Money.ToString() + " " + info.AmountPaid.ToString() + " " + info.NumberofBooksPurchase.ToString();
                 connection.ConnectionClose();
                 return inforDashboardCustomer;
 
+            }
+            catch
+            {
+                return "Error from server";
+            }
+        }
+        internal string AddBookAdminDB(string bookname, string writername, string category, string country, int price, int numberOfBookRemaining, string coverImage)
+        {
+            try
+            {
+                connection.ConnectionOpen();
+                string request = "INSERT INTO Book (Bookname, Writername, Category, Country, Price, NumberOfBookRemaining, CoverImage)" +
+                    "VALUES (@bookname, @writername, @category, @country, @price, @numberOfBookRemaining, @coverImage)";
+                SqlCommand command = new SqlCommand(request, connection.sqlConnection);
+                command.Parameters.AddWithValue("@bookname", bookname);
+                command.Parameters.AddWithValue("@writername", writername);
+                command.Parameters.AddWithValue("@category", category);
+                command.Parameters.AddWithValue("@country", country);
+                command.Parameters.AddWithValue("@price", price);
+                command.Parameters.AddWithValue("@numberOfBookRemaining", numberOfBookRemaining);
+                command.Parameters.AddWithValue("@coverImage", coverImage);
+                command.ExecuteNonQuery();
+                connection.ConnectionClose();
+                    return "add book success";
             }
             catch
             {

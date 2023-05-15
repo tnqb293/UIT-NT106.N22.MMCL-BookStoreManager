@@ -27,7 +27,7 @@ namespace Client.UC
             username = user;
         }
         IpConnection ipConnection = new IpConnection();
-        public Thread receiveThread { get; set; }
+        private Thread receiveThread { get; set; }
         public string username { get; set; }
         private void btnExitDashboardCustomer_Click(object sender, EventArgs e)
         {

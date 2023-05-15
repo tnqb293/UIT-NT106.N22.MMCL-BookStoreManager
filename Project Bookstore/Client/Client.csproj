@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\InfoBook.cs" />
     <Compile Include="Class\InfoUser.cs" />
     <Compile Include="Class\InfoLogin.cs" />
     <Compile Include="Class\IpConnection.cs" />
@@ -75,11 +76,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC\UCAddBookAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCAddBookAdmin.Designer.cs">
+      <DependentUpon>UCAddBookAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCDashboardCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC\UCDashboardCustomer.Designer.cs">
       <DependentUpon>UCDashboardCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCListBookAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCListBookAdmin.Designer.cs">
+      <DependentUpon>UCListBookAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCListBookCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCListBookCustomer.Designer.cs">
+      <DependentUpon>UCListBookCustomer.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\FLoginRegister.resx">
       <DependentUpon>FLoginRegister.cs</DependentUpon>
@@ -99,8 +118,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC\UCAddBookAdmin.resx">
+      <DependentUpon>UCAddBookAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UCDashboardCustomer.resx">
       <DependentUpon>UCDashboardCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCListBookAdmin.resx">
+      <DependentUpon>UCListBookAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
