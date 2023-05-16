@@ -14,7 +14,7 @@ namespace Client.Class
     {
         internal TcpClient client { get; set; }
         internal NetworkStream stream { get; set; }
-        internal readonly IPAddress ipAddr = IPAddress.Parse("172.16.0.182");
+        internal readonly IPAddress ipAddr = IPAddress.Parse("192.168.1.7");
         private readonly int port = 8888;
         internal void receiveMessage()
         {
@@ -72,6 +72,10 @@ namespace Client.Class
             } while (stream.DataAvailable);
             return builder;
         }
+
+        byte[] receive;
+
+
     }
     
 }

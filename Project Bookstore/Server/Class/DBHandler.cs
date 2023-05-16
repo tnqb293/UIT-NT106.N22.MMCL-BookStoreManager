@@ -81,6 +81,31 @@ namespace Server.Class
             }
         }
 
+        
+        internal string AddBookAdminDB(string bookname, string writername, string category, string country, int price, int numberOfBookRemaining, string coverImage)
+        {
+            try
+            {
+                connection.ConnectionOpen();
+                string request = "INSERT INTO Book (Bookname, Writername, Category, Country, Price, NumberOfBookRemaining, CoverImage)" +
+                    "VALUES (@bookname, @writername, @category, @country, @price, @numberOfBookRemaining, @coverImage)";
+                SqlCommand command = new SqlCommand(request, connection.sqlConnection);
+                command.Parameters.AddWithValue("@bookname", bookname);
+                command.Parameters.AddWithValue("@writername", writername);
+                command.Parameters.AddWithValue("@category", category);
+                command.Parameters.AddWithValue("@country", country);
+                command.Parameters.AddWithValue("@price", price);
+                command.Parameters.AddWithValue("@numberOfBookRemaining", numberOfBookRemaining);
+                command.Parameters.AddWithValue("@coverImage", coverImage);
+                command.ExecuteNonQuery();
+                connection.ConnectionClose();
+                return "add book success";
+            }
+            catch
+            {
+                return "Error from server";
+            }
+        }
         internal string InforDashboardCustomerDB(string username)
         {
             try
@@ -109,29 +134,28 @@ namespace Server.Class
                 return "Error from server";
             }
         }
-        internal string AddBookAdminDB(string bookname, string writername, string category, string country, int price, int numberOfBookRemaining, string coverImage)
+        internal List<InfoBook> LoadItemBook()
         {
-            try
+            connection.ConnectionOpen();
+            string request = "select * from Book";
+            SqlCommand command = new SqlCommand(request, connection.sqlConnection);
+            SqlDataReader reader = command.ExecuteReader();
+            List<InfoBook> ListInfoBook = new List<InfoBook>();
+            while (reader.Read())
             {
-                connection.ConnectionOpen();
-                string request = "INSERT INTO Book (Bookname, Writername, Category, Country, Price, NumberOfBookRemaining, CoverImage)" +
-                    "VALUES (@bookname, @writername, @category, @country, @price, @numberOfBookRemaining, @coverImage)";
-                SqlCommand command = new SqlCommand(request, connection.sqlConnection);
-                command.Parameters.AddWithValue("@bookname", bookname);
-                command.Parameters.AddWithValue("@writername", writername);
-                command.Parameters.AddWithValue("@category", category);
-                command.Parameters.AddWithValue("@country", country);
-                command.Parameters.AddWithValue("@price", price);
-                command.Parameters.AddWithValue("@numberOfBookRemaining", numberOfBookRemaining);
-                command.Parameters.AddWithValue("@coverImage", coverImage);
-                command.ExecuteNonQuery();
-                connection.ConnectionClose();
-                    return "add book success";
+                InfoBook infoBook = new InfoBook();
+                infoBook.bookname = reader.GetString(0);
+                infoBook.writername = reader.GetString(1);
+                infoBook.category = reader.GetString(2);
+                infoBook.country = reader.GetString(3);
+                infoBook.price = reader.GetInt32(4);
+                infoBook.numberOfBookRemaining = reader.GetInt32(5);
+                infoBook.coverImage = reader.GetString(6);
+                ListInfoBook.Add(infoBook);
             }
-            catch
-            {
-                return "Error from server";
-            }
+            reader.Close();
+            connection.ConnectionClose();
+            return ListInfoBook;
         }
     }
 }

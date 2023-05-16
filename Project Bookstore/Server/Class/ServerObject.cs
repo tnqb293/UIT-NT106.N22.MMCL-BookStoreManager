@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace Server.Class
     {
         internal static TcpListener listener { get; private set; }
         public List<ClientObject> clients = new List<ClientObject> ();
-        internal string IPAddr = "172.16.0.182";
+        internal string IPAddr = "192.168.1.7";
         internal int port = 8888;
         internal DBHandler dataBaseHandler = new DBHandler();
         internal void AddConnection(ClientObject client)
@@ -54,6 +55,10 @@ namespace Server.Class
         internal void SendMessage(string message, ClientObject client)
         {
             byte[] data = Encoding.Unicode.GetBytes(message);
+            client.stream.Write(data, 0, data.Length);
+        }
+        internal void SendMessageList(byte[] data, ClientObject client)
+        {
             client.stream.Write(data, 0, data.Length);
         }
         internal void Listen()

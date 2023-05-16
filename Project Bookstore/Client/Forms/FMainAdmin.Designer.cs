@@ -114,6 +114,7 @@
             this.btnListBookPanel.Text = "Books";
             this.btnListBookPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnListBookPanel.TextOffset = new System.Drawing.Point(60, 0);
+            this.btnListBookPanel.Click += new System.EventHandler(this.btnListBookPanel_Click);
             // 
             // btnAddBookPanel
             // 

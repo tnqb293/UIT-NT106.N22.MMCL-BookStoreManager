@@ -32,5 +32,11 @@ namespace Client.Forms
             UCAddBookAdmin uc = new UCAddBookAdmin(infoUser.username);
             addUserControl(uc);
         }
+
+        private void btnListBookPanel_Click(object sender, EventArgs e)
+        {
+            UCListBookAdmin uc = new UCListBookAdmin(infoUser.username);
+            addUserControl(uc);
+        }
     }
 }

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -106,6 +107,15 @@ namespace Server.Class
                         Close();
                     }
                 }
+                else if(checkGetstream(message) == 5)
+                {
+                    List<InfoBook> data = server.dataBaseHandler.LoadItemBook();
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    MemoryStream ms = new MemoryStream();
+                    formatter.Serialize(ms, data);
+                    byte[] serializedData = ms.ToArray();
+                    server.SendMessageList(serializedData, this);
+                }
             }
             catch
             {
@@ -133,8 +143,10 @@ namespace Server.Class
                     return 3;
                 case "addbook":
                     return 4;
-                default:
+                case "itembook":
                     return 5;
+                default:
+                    return 6;
             }
         }
         internal void Getstream()

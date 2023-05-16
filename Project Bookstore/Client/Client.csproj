@@ -88,6 +88,12 @@
     <Compile Include="UC\UCDashboardCustomer.Designer.cs">
       <DependentUpon>UCDashboardCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCItemListBookAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCItemListBookAdmin.Designer.cs">
+      <DependentUpon>UCItemListBookAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCListBookAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -124,8 +130,14 @@
     <EmbeddedResource Include="UC\UCDashboardCustomer.resx">
       <DependentUpon>UCDashboardCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCItemListBookAdmin.resx">
+      <DependentUpon>UCItemListBookAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UCListBookAdmin.resx">
       <DependentUpon>UCListBookAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCListBookCustomer.resx">
+      <DependentUpon>UCListBookCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
