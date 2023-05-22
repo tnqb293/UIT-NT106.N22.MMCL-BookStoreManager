@@ -11,3 +11,16 @@ F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.csproj.CopyComplete
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.exe
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.pdb
+C:\Users\abc\Desktop\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\bin\Debug\Client.exe.config
+C:\Users\abc\Desktop\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\bin\Debug\Client.exe
+C:\Users\abc\Desktop\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\bin\Debug\Client.pdb
+C:\Users\abc\Desktop\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\bin\Debug\Guna.UI2.dll
+C:\Users\abc\Desktop\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+C:\Users\abc\Desktop\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.csproj.SuggestedBindingRedirects.cache
+C:\Users\abc\Desktop\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.FLoginRegister.resources
+C:\Users\abc\Desktop\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\abc\Desktop\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.csproj.GenerateResource.cache
+C:\Users\abc\Desktop\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\abc\Desktop\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.csproj.CopyComplete
+C:\Users\abc\Desktop\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.exe
+C:\Users\abc\Desktop\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.pdb
