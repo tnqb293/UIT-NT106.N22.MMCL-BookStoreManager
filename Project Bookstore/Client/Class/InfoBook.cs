@@ -10,14 +10,14 @@ namespace Client.Class
 {
     internal class InfoBook
     {
-        internal string bookname { get; set; }
-        internal string writername { get; set; }
-        internal string category { get; set; }
-        internal string country { get; set; }
-        internal int price { get; set; }
-        internal int numberOfBookRemaining { get; set; }
-        internal Image coverImage { get; set; }
-        internal Thread receiveThread { get; set; }
+        public string bookname { get; set; }
+        public string writername { get; set; }
+        public string category { get; set; }
+        public string country { get; set; }
+        public int price { get; set; }
+        public int numberOfBookRemaining { get; set; }
+        public Image coverImage { get; set; }
+        public Thread receiveThread { get; set; }
 
     }
 }

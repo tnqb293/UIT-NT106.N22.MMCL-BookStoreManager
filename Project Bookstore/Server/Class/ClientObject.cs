@@ -56,7 +56,7 @@ namespace Server.Class
                     if (server.dataBaseHandler.RegisterDB(username, password, email) == "register success")
                     {
                         //server.BroadcastMessage(message, this.ID);
-                        server.SendMessage(server.dataBaseHandler.RegisterDB(username, password, email), this);
+                        server.SendMessage("register success", this);
                     }
                     else
                     {
@@ -99,7 +99,7 @@ namespace Server.Class
                     infoBook.coverImage = addBookInfo[6];
                     if(server.dataBaseHandler.AddBookAdminDB(infoBook.bookname, infoBook.writername, infoBook.category, infoBook.country, infoBook.price, infoBook.numberOfBookRemaining, infoBook.coverImage) == "add book success")
                     {
-                        server.SendMessage(server.dataBaseHandler.AddBookAdminDB(infoBook.bookname, infoBook.writername, infoBook.category, infoBook.country, infoBook.price, infoBook.numberOfBookRemaining, infoBook.coverImage), this);
+                        server.SendMessage("add book success", this);
                     }
                     else
                     {
@@ -109,12 +109,13 @@ namespace Server.Class
                 }
                 else if(checkGetstream(message) == 5)
                 {
-                    List<InfoBook> data = server.dataBaseHandler.LoadItemBook();
-                    BinaryFormatter formatter = new BinaryFormatter();
-                    MemoryStream ms = new MemoryStream();
-                    formatter.Serialize(ms, data);
-                    byte[] serializedData = ms.ToArray();
-                    server.SendMessageList(serializedData, this);
+                    if(server.dataBaseHandler.LoadItemBook() != "Error from server")
+                    server.SendMessage(server.dataBaseHandler.LoadItemBook(), this);
+                    else
+                    {
+                        server.SendMessage(server.dataBaseHandler.LoadItemBook(), this);
+                        Close();
+                    }
                 }
             }
             catch

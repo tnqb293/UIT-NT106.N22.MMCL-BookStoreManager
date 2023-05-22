@@ -1,4 +1,5 @@
-﻿using Server.Database;
+﻿using Newtonsoft.Json;
+using Server.Database;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -25,7 +26,7 @@ namespace Server.Class
                 SqlCommand command = new SqlCommand(request, connection.sqlConnection);
                 command.Parameters.AddWithValue("@username", username);
                 int count = (int)command.ExecuteScalar();
-                if (count > 1)
+                if (count > 0)
                 {
                     connection.ConnectionClose();
                     return "username already exist";
@@ -134,28 +135,62 @@ namespace Server.Class
                 return "Error from server";
             }
         }
-        internal List<InfoBook> LoadItemBook()
+        //internal List<InfoBook> LoadItemBook()
+        //{
+        //    connection.ConnectionOpen();
+        //    string request = "select * from Book";
+        //    SqlCommand command = new SqlCommand(request, connection.sqlConnection);
+        //    SqlDataReader reader = command.ExecuteReader();
+        //    List<InfoBook> ListInfoBook = new List<InfoBook>();
+        //    while (reader.Read())
+        //    {
+        //        InfoBook infoBook = new InfoBook();
+        //        infoBook.bookname = reader.GetString(0);
+        //        infoBook.writername = reader.GetString(1);
+        //        infoBook.category = reader.GetString(2);
+        //        infoBook.country = reader.GetString(3);
+        //        infoBook.price = reader.GetInt32(4);
+        //        infoBook.numberOfBookRemaining = reader.GetInt32(5);
+        //        infoBook.coverImage = reader.GetString(6);
+        //        ListInfoBook.Add(infoBook);
+        //    }
+        //    reader.Close();
+        //    connection.ConnectionClose();
+        //    return ListInfoBook;
+        //}
+
+        internal string LoadItemBook()
         {
-            connection.ConnectionOpen();
-            string request = "select * from Book";
-            SqlCommand command = new SqlCommand(request, connection.sqlConnection);
-            SqlDataReader reader = command.ExecuteReader();
-            List<InfoBook> ListInfoBook = new List<InfoBook>();
-            while (reader.Read())
+            try
             {
-                InfoBook infoBook = new InfoBook();
-                infoBook.bookname = reader.GetString(0);
-                infoBook.writername = reader.GetString(1);
-                infoBook.category = reader.GetString(2);
-                infoBook.country = reader.GetString(3);
-                infoBook.price = reader.GetInt32(4);
-                infoBook.numberOfBookRemaining = reader.GetInt32(5);
-                infoBook.coverImage = reader.GetString(6);
-                ListInfoBook.Add(infoBook);
+                List<InfoBook> infoBooks = new List<InfoBook>();
+                connection.ConnectionOpen();
+                string request = "select Bookname, Writername, Category, Country, Price, NumberOfBookRemaining, CoverImage from Book";
+                SqlCommand command = new SqlCommand(request, connection.sqlConnection);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        InfoBook infoBook = new InfoBook();
+                        infoBook.bookname = reader.GetString(0);
+                        infoBook.writername = reader.GetString(1);
+                        infoBook.category = reader.GetString(2);
+                        infoBook.country = reader.GetString(3);
+                        infoBook.price = reader.GetInt32(4);
+                        infoBook.numberOfBookRemaining = reader.GetInt32(5);
+                        infoBook.coverImage = reader.GetString(6);
+                        infoBooks.Add(infoBook);
+                    }
+                    string jsonObject = JsonConvert.SerializeObject(infoBooks);
+                    connection.ConnectionClose();
+                    return jsonObject;
+                }
+
             }
-            reader.Close();
-            connection.ConnectionClose();
-            return ListInfoBook;
+            catch
+            {
+                return "Error from server";
+            }
         }
     }
 }

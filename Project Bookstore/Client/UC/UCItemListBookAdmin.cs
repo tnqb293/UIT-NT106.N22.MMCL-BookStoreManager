@@ -33,16 +33,18 @@ namespace Client.UC
         }
         internal string category
         {
-            get { return lbCountry.Text; }
-            set { lbCountry.Text = value; }
+            get { return lbCategory.Text; }
+            set { lbCategory.Text = value; }
         }
         internal int price
         {
-            get; set;
+            get { return Int32.Parse(lbMoney.Text); }
+            set { lbMoney.Text = value.ToString() + " VND"; }
         }
         internal int numberOfBookRemaining
         {
-            get; set;
+            get { return Int32.Parse(lbNumberOfBookRemaining.Text); }
+            set { lbNumberOfBookRemaining.Text = "Số lượng còn lại: " + value.ToString(); }
         }
         internal Image coverImage
         {

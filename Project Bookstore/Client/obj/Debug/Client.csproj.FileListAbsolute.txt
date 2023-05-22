@@ -18,3 +18,5 @@ F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.UC.UCListBookAdmin.resources
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.UC.UCListBookCustomer.resources
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.UC.UCItemListBookAdmin.resources
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\bin\Debug\Newtonsoft.Json.dll
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\bin\Debug\Newtonsoft.Json.xml

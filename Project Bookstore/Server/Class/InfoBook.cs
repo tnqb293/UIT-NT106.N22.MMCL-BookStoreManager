@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace Server.Class
 {
-    internal class InfoBook
+    public class InfoBook
     {
-        internal string bookname { get; set; }
-        internal string writername { get; set; }
-        internal string category { get; set; }
-        internal string country { get; set; }
-        internal int price { get; set; }
-        internal int numberOfBookRemaining { get; set; }
-        internal string coverImage { get; set; }
+        public string bookname { get; set; }
+        public string writername { get; set; }
+        public string category { get; set; }
+        public string country { get; set; }
+        public int price { get; set; }
+        public int numberOfBookRemaining { get; set; }
+        public string coverImage { get; set; }
     }
 }

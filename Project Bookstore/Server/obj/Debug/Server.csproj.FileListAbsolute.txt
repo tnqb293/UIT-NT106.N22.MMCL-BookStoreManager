@@ -11,3 +11,6 @@ F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\obj\Debug\
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\obj\Debug\Server.exe
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\obj\Debug\Server.pdb
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\bin\Debug\Newtonsoft.Json.dll
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\bin\Debug\Newtonsoft.Json.xml
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\obj\Debug\Server.csproj.CopyComplete

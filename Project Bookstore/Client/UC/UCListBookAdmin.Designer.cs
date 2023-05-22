@@ -191,7 +191,6 @@
             this.flpListBookAdmin.Name = "flpListBookAdmin";
             this.flpListBookAdmin.Size = new System.Drawing.Size(1200, 413);
             this.flpListBookAdmin.TabIndex = 2;
-            this.flpListBookAdmin.Paint += new System.Windows.Forms.PaintEventHandler(this.flpListBookAdmin_Paint);
             // 
             // UCListBookAdmin
             // 
@@ -217,10 +216,10 @@
         private Guna.UI2.WinForms.Guna2ControlBox Guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox Guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2GradientPanel pnSortListBookAdmin;
-        private System.Windows.Forms.FlowLayoutPanel flpListBookAdmin;
         internal Guna.UI2.WinForms.Guna2Button guna2Button3;
         internal Guna.UI2.WinForms.Guna2Button guna2Button2;
         internal Guna.UI2.WinForms.Guna2Button guna2Button1;
         internal Guna.UI2.WinForms.Guna2Button Guna2Button13;
+        private System.Windows.Forms.FlowLayoutPanel flpListBookAdmin;
     }
 }
