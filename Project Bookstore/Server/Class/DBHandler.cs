@@ -81,12 +81,29 @@ namespace Server.Class
                 return "Error from server";
             }
         }
+        public Image byteToImage(byte[] coverImage)
+        {
+            using(MemoryStream ms = new MemoryStream(coverImage))
+            {
+                Image image = Image.FromStream(ms);
+                return image;
+            }
+        }
+        //public void saveImage(byte[] coverImage)
+        //{
+        //    using (MemoryStream ms = new MemoryStream(coverImage))
+        //    {
+        //        Image image = Image.FromStream(ms);
+        //        string path = @"F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\image.jpg";
+        //        image.Save(path);
 
-        
-        internal string AddBookAdminDB(string bookname, string writername, string category, string country, int price, int numberOfBookRemaining, string coverImage)
+        //    }
+        //}
+        public string AddBookAdminDB(string bookname, string writername, string category, string country, int price, int numberOfBookRemaining, byte[] coverImage)
         {
             try
             {
+                //saveImage(coverImage);
                 connection.ConnectionOpen();
                 string request = "INSERT INTO Book (Bookname, Writername, Category, Country, Price, NumberOfBookRemaining, CoverImage)" +
                     "VALUES (@bookname, @writername, @category, @country, @price, @numberOfBookRemaining, @coverImage)";
@@ -178,7 +195,7 @@ namespace Server.Class
                         infoBook.country = reader.GetString(3);
                         infoBook.price = reader.GetInt32(4);
                         infoBook.numberOfBookRemaining = reader.GetInt32(5);
-                        infoBook.coverImage = reader.GetString(6);
+                        //infoBook.coverImage = reader.GetString(6);
                         infoBooks.Add(infoBook);
                     }
                     string jsonObject = JsonConvert.SerializeObject(infoBooks);

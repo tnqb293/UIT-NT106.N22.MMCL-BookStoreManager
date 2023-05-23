@@ -17,6 +17,6 @@ namespace Server.Class
         public string country { get; set; }
         public int price { get; set; }
         public int numberOfBookRemaining { get; set; }
-        public string coverImage { get; set; }
+        public byte[] coverImage { get; set; }
     }
 }

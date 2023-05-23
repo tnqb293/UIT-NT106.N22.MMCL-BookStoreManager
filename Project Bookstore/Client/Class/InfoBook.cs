@@ -16,8 +16,6 @@ namespace Client.Class
         public string country { get; set; }
         public int price { get; set; }
         public int numberOfBookRemaining { get; set; }
-        public Image coverImage { get; set; }
-        public Thread receiveThread { get; set; }
-
+        public byte[] coverImage { get; set; }
     }
 }

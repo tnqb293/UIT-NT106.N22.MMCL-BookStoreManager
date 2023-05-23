@@ -1,4 +1,5 @@
 ﻿using Client.Class;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace Client.UC
         InfoUser infoUser = new InfoUser();
         private InfoBook infoBook { get; set; }
         private IpConnection ipConnection = new IpConnection();
+        private Thread receiveThread { get; set; }
         public UCAddBookAdmin(string user)
         {
             InitializeComponent();
@@ -44,7 +46,7 @@ namespace Client.UC
             infoBook.country = tbCountryAddBook.Text;
             infoBook.price = Int32.Parse(tbPriceAddBook.Text);
             infoBook.numberOfBookRemaining = Int32.Parse(tbNumberOfBookRemainingAddBook.Text);
-            infoBook.coverImage = pbImageBookAddBook.Image;
+            infoBook.coverImage = imageToBytes(pbImageBookAddBook.Image);
             if (tbBookNameAddBook != null && string.IsNullOrEmpty(tbBookNameAddBook.Text)
                 || tbWriterNameAddBook != null && string.IsNullOrEmpty(tbWriterNameAddBook.Text)
                 || cbCategoryAddBook != null && string.IsNullOrEmpty(cbCategoryAddBook.Text)
@@ -59,14 +61,15 @@ namespace Client.UC
             {
                 try
                 {
-                    string message = infoBook.bookname + "  " + infoBook.writername + "  " + infoBook.category + "  " +
-                    infoBook.country + "  " + infoBook.price.ToString() + "  " + infoBook.numberOfBookRemaining.ToString() + "  " +  ImageToString(infoBook.coverImage) + "  addbook";
+                    //string message = infoBook.bookname + "  " + infoBook.writername + "  " + infoBook.category + "  " +
+                    //infoBook.country + "  " + infoBook.price.ToString() + "  " + infoBook.numberOfBookRemaining.ToString() + "  " +  ImageToString(infoBook.coverImage) + "  addbook";
+                    string message = JsonConvert.SerializeObject(infoBook) + " request|addbook";
                     StringBuilder builder = ipConnection.messageFromServer(message);
                     if (builder.ToString() == "add book success")
                     {
-                        infoBook.receiveThread = new Thread(new ThreadStart(ipConnection.receiveMessage));
-                        infoBook.receiveThread.IsBackground = true;
-                        infoBook.receiveThread.Start();
+                        receiveThread = new Thread(new ThreadStart(ipConnection.receiveMessage));
+                        receiveThread.IsBackground = true;
+                        receiveThread.Start();
                         this.Invoke(new Action(() => MessageBox.Show("Thêm sách thành công")));
                     }
                     else if (builder.ToString() == "add book failed")
@@ -85,7 +88,7 @@ namespace Client.UC
 
             }
         }
-        private string ImageToString(Image coverBook)
+        private byte[] imageToBytes(Image coverBook)
         {
             byte[] imageBytes;
             using (MemoryStream ms = new MemoryStream())
@@ -93,8 +96,7 @@ namespace Client.UC
                 coverBook.Save(ms, coverBook.RawFormat);
                 imageBytes = ms.ToArray();
             }
-            string imageString = Convert.ToBase64String(imageBytes);
-            return imageString;
+            return imageBytes;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Server.Class
@@ -88,16 +90,20 @@ namespace Server.Class
                 }
                 else if(checkGetstream(message) == 4)
                 {
-                    addBookInfo = message.Split(new string[] {"  "}, StringSplitOptions.None);
+                    addBookInfo = message.Split(new string[] { " request|addbook" }, StringSplitOptions.None);
+
                     infoBook = new InfoBook();
-                    infoBook.bookname = addBookInfo[0];
-                    infoBook.writername = addBookInfo[1];
-                    infoBook.category = addBookInfo[2];
-                    infoBook.country = addBookInfo[3];
-                    infoBook.price = Int32.Parse(addBookInfo[4]);
-                    infoBook.numberOfBookRemaining = Int32.Parse(addBookInfo[5]);
-                    infoBook.coverImage = addBookInfo[6];
-                    if(server.dataBaseHandler.AddBookAdminDB(infoBook.bookname, infoBook.writername, infoBook.category, infoBook.country, infoBook.price, infoBook.numberOfBookRemaining, infoBook.coverImage) == "add book success")
+
+                    infoBook = JsonConvert.DeserializeObject<InfoBook>(addBookInfo[0]);
+                    //infoBook.bookname = addBookInfo[0];
+                    //infoBook.writername = addBookInfo[1];
+                    //infoBook.category = addBookInfo[2];
+                    //infoBook.country = addBookInfo[3];
+                    //infoBook.price = Int32.Parse(addBookInfo[4]);
+                    //infoBook.numberOfBookRemaining = Int32.Parse(addBookInfo[5]);
+                    //infoBook.coverImage = addBookInfo[6];
+                    saveImage(infoBook.coverImage, infoBook.bookname);
+                    if (server.dataBaseHandler.AddBookAdminDB(infoBook.bookname, infoBook.writername, infoBook.category, infoBook.country, infoBook.price, infoBook.numberOfBookRemaining, infoBook.coverImage) == "add book success")
                     {
                         server.SendMessage("add book success", this);
                     }
@@ -123,12 +129,18 @@ namespace Server.Class
                 return;
             }
         }
-        internal Image stringToImage(string strImage)
+        public void saveImage(byte[] coverImage, string bookname)
         {
-            byte[] bytes = Encoding.Default.GetBytes(strImage);
-            MemoryStream ms = new MemoryStream(bytes);
-            Image img = Image.FromStream(ms);
-            return img;
+            using (MemoryStream ms = new MemoryStream(coverImage))
+            {
+                string replacement = "";
+                string pattern = "[^a-zA-Z0-9]+";
+                string output = Regex.Replace(bookname, pattern, replacement);
+                Image image = Image.FromStream(ms);
+                string path = @"F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\Images\" + output + ".jpg";
+                image.Save(path);
+
+            }
         }
         internal int checkGetstream(string message)
         {
@@ -142,7 +154,7 @@ namespace Server.Class
                     return 2;
                 case "dashboardcustomer":
                     return 3;
-                case "addbook":
+                case "request|addbook":
                     return 4;
                 case "itembook":
                     return 5;

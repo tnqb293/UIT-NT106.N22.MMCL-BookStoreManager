@@ -14,9 +14,9 @@ namespace Server.Class
     {
         internal static TcpListener listener { get; private set; }
         public List<ClientObject> clients = new List<ClientObject>();
-        internal string IPAddr = "172.16.1.22";
+        internal string IPAddr = "172.30.159.54";
         internal int port = 8888;
-        internal DBHandler dataBaseHandler = new DBHandler();
+        public DBHandler dataBaseHandler = new DBHandler();
         internal void AddConnection(ClientObject client)
         {
             try

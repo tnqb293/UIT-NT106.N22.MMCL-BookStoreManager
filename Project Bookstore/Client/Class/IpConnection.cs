@@ -15,7 +15,7 @@ namespace Client.Class
     {
         internal TcpClient client { get; set; }
         internal NetworkStream stream { get; set; }
-        internal readonly IPAddress ipAddr = IPAddress.Parse("172.16.1.22");
+        internal readonly IPAddress ipAddr = IPAddress.Parse("172.30.159.54");
         private readonly int port = 8888;
         internal void receiveMessage()
         {
