@@ -16,6 +16,7 @@ namespace Server.Class
         public string language { get; set; }
         public string country { get; set; }
         public int price { get; set; }
+<<<<<<< HEAD
         public int pagenumber { get; set; }
         public byte[] coverImage { get; set; }
         public string isbn { get; set; }
@@ -24,5 +25,9 @@ namespace Server.Class
         public int numberofbookssold { get; set; }
         public int yearofpublication { get; set; }
         public byte[] contentbook { get; set; }
+=======
+        public int numberOfBookRemaining { get; set; }
+        public byte[] coverImage { get; set; }
+>>>>>>> 1f2fface7cc32121abf3fc0f11ccd2bf8df68dc0
     }
 }

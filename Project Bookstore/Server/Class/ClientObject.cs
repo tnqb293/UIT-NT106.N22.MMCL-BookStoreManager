@@ -72,6 +72,7 @@ namespace Server.Class
                 }
                 else if(checkGetstream(message) == 4)
                 {
+<<<<<<< HEAD
                     splitMessage = message.Split(new string[] {"request|addbook "}, StringSplitOptions.None);
                     infoBook = new InfoBook();
                     infoBook = JsonConvert.DeserializeObject<InfoBook>(splitMessage[1]);
@@ -81,6 +82,30 @@ namespace Server.Class
                     server.SendMessage(data, this);
                     server.RemoveConnection(this.ID);
                     Close();
+=======
+                    addBookInfo = message.Split(new string[] { " request|addbook" }, StringSplitOptions.None);
+
+                    infoBook = new InfoBook();
+
+                    infoBook = JsonConvert.DeserializeObject<InfoBook>(addBookInfo[0]);
+                    //infoBook.bookname = addBookInfo[0];
+                    //infoBook.writername = addBookInfo[1];
+                    //infoBook.category = addBookInfo[2];
+                    //infoBook.country = addBookInfo[3];
+                    //infoBook.price = Int32.Parse(addBookInfo[4]);
+                    //infoBook.numberOfBookRemaining = Int32.Parse(addBookInfo[5]);
+                    //infoBook.coverImage = addBookInfo[6];
+                    saveImage(infoBook.coverImage, infoBook.bookname);
+                    if (server.dataBaseHandler.AddBookAdminDB(infoBook.bookname, infoBook.writername, infoBook.category, infoBook.country, infoBook.price, infoBook.numberOfBookRemaining, infoBook.coverImage) == "add book success")
+                    {
+                        server.SendMessage("add book success", this);
+                    }
+                    else
+                    {
+                        server.SendMessage(server.dataBaseHandler.AddBookAdminDB(infoBook.bookname, infoBook.writername, infoBook.category, infoBook.country, infoBook.price, infoBook.numberOfBookRemaining, infoBook.coverImage), this);
+                        Close();
+                    }
+>>>>>>> 1f2fface7cc32121abf3fc0f11ccd2bf8df68dc0
                 }
                 else if(checkGetstream(message) == 5)
                 {
@@ -195,6 +220,7 @@ namespace Server.Class
         {
             using (MemoryStream ms = new MemoryStream(coverImage))
             {
+<<<<<<< HEAD
                 Image image = Image.FromStream(ms);
                 string path = formatPath(bookname);
                 image.Save(path);
@@ -206,6 +232,16 @@ namespace Server.Class
             string pattern = "[^a-zA-Z0-9]+";
             string output = Regex.Replace(bookname, pattern, replacement);
             return @"F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\Images\" + output + ".jpg";
+=======
+                string replacement = "";
+                string pattern = "[^a-zA-Z0-9]+";
+                string output = Regex.Replace(bookname, pattern, replacement);
+                Image image = Image.FromStream(ms);
+                string path = @"F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\Images\" + output + ".jpg";
+                image.Save(path);
+
+            }
+>>>>>>> 1f2fface7cc32121abf3fc0f11ccd2bf8df68dc0
         }
         internal int checkGetstream(string message)
         {

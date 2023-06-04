@@ -49,6 +49,7 @@ namespace Client.UC
             infoBook.language = tbLanguage.Text;
             infoBook.country = tbCountryAddBook.Text;
             infoBook.price = Int32.Parse(tbPriceAddBook.Text);
+<<<<<<< HEAD:Project Bookstore/Client/UCAdmin/UCAddBookAdmin.cs
             infoBook.pagenumber = Int32.Parse(tbPageNumber.Text);
             infoBook.coverImage = imageToBytes(pbImageBookAddBook.Image);
             infoBook.isbn = tbISBN.Text;
@@ -56,6 +57,10 @@ namespace Client.UC
             infoBook.index = tbIndex.Text;
             infoBook.yearofpublication = Int32.Parse(tbYearOfPublication.Text);
             infoBook.numberofbookssold = 0;
+=======
+            infoBook.numberOfBookRemaining = Int32.Parse(tbNumberOfBookRemainingAddBook.Text);
+            infoBook.coverImage = imageToBytes(pbImageBookAddBook.Image);
+>>>>>>> 1f2fface7cc32121abf3fc0f11ccd2bf8df68dc0:Project Bookstore/Client/UC/UCAddBookAdmin.cs
             if (tbBookNameAddBook != null && string.IsNullOrEmpty(tbBookNameAddBook.Text)
                 || tbWriterNameAddBook != null && string.IsNullOrEmpty(tbWriterNameAddBook.Text)
                 || tbLanguage != null && string.IsNullOrEmpty(tbLanguage.Text)
@@ -76,10 +81,20 @@ namespace Client.UC
                 {
                     //string message = infoBook.bookname + "  " + infoBook.writername + "  " + infoBook.category + "  " +
                     //infoBook.country + "  " + infoBook.price.ToString() + "  " + infoBook.numberOfBookRemaining.ToString() + "  " +  ImageToString(infoBook.coverImage) + "  addbook";
+<<<<<<< HEAD:Project Bookstore/Client/UCAdmin/UCAddBookAdmin.cs
                     string message = "request|addbook " + JsonConvert.SerializeObject(infoBook);
                     StringBuilder builder = ipConnection.ConnectToServer(message);
                     if (builder.ToString() == "add book success")
                     {
+=======
+                    string message = JsonConvert.SerializeObject(infoBook) + " request|addbook";
+                    StringBuilder builder = ipConnection.messageFromServer(message);
+                    if (builder.ToString() == "add book success")
+                    {
+                        receiveThread = new Thread(new ThreadStart(ipConnection.receiveMessage));
+                        receiveThread.IsBackground = true;
+                        receiveThread.Start();
+>>>>>>> 1f2fface7cc32121abf3fc0f11ccd2bf8df68dc0:Project Bookstore/Client/UC/UCAddBookAdmin.cs
                         this.Invoke(new Action(() => MessageBox.Show("Thêm sách thành công")));
                         
                     }
@@ -109,6 +124,7 @@ namespace Client.UC
                 imageBytes = ms.ToArray();
             }
             return imageBytes;
+<<<<<<< HEAD:Project Bookstore/Client/UCAdmin/UCAddBookAdmin.cs
         }
 
         public Image resizeImage(Image img, int width, int height)
@@ -123,6 +139,8 @@ namespace Client.UC
         private void pbImageBookAddBook_Click(object sender, EventArgs e)
         {
 
+=======
+>>>>>>> 1f2fface7cc32121abf3fc0f11ccd2bf8df68dc0:Project Bookstore/Client/UC/UCAddBookAdmin.cs
         }
     }
 }

@@ -18,6 +18,7 @@ namespace Client.Class
 {
     public class IpConnection
     {
+<<<<<<< HEAD
         TcpClient client { get; set; }
         NetworkStream stream { get; set; }
         IPAddress ipAddr { get; set; }
@@ -26,6 +27,13 @@ namespace Client.Class
         public XmlSerializer xmlSerializer { get; set; }
         public FileStream fs { get; set; }
         private void SendMessage(string message)
+=======
+        internal TcpClient client { get; set; }
+        internal NetworkStream stream { get; set; }
+        internal readonly IPAddress ipAddr = IPAddress.Parse("172.30.159.54");
+        private readonly int port = 8888;
+        internal void receiveMessage()
+>>>>>>> 1f2fface7cc32121abf3fc0f11ccd2bf8df68dc0
         {
             try
             {
