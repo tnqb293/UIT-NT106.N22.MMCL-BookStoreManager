@@ -1,0 +1,6 @@
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\ClassLibrary1\bin\Debug\Common.dll
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\ClassLibrary1\bin\Debug\Common.pdb
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\ClassLibrary1\obj\Debug\Common.csproj.AssemblyReference.cache
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\ClassLibrary1\obj\Debug\Common.csproj.CoreCompileInputs.cache
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\ClassLibrary1\obj\Debug\Common.dll
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\ClassLibrary1\obj\Debug\Common.pdb

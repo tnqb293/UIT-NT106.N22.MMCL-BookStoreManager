@@ -66,6 +66,7 @@
             // 
             // btnListUserPanel
             // 
+            this.btnListUserPanel.AllowDrop = true;
             this.btnListUserPanel.Animated = true;
             this.btnListUserPanel.BackColor = System.Drawing.Color.Transparent;
             this.btnListUserPanel.BorderRadius = 20;
@@ -73,13 +74,14 @@
             this.btnListUserPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListUserPanel.ForeColor = System.Drawing.Color.White;
             this.btnListUserPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.btnListUserPanel.Location = new System.Drawing.Point(-27, 393);
+            this.btnListUserPanel.Location = new System.Drawing.Point(-42, 393);
             this.btnListUserPanel.Name = "btnListUserPanel";
-            this.btnListUserPanel.Size = new System.Drawing.Size(211, 45);
+            this.btnListUserPanel.Size = new System.Drawing.Size(226, 64);
             this.btnListUserPanel.TabIndex = 27;
-            this.btnListUserPanel.Text = "List user";
+            this.btnListUserPanel.Text = "Danh sách khách hàng";
             this.btnListUserPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnListUserPanel.TextOffset = new System.Drawing.Point(60, 0);
+            this.btnListUserPanel.Click += new System.EventHandler(this.btnListUserPanel_Click);
             // 
             // btnDashboardPanel
             // 
@@ -87,16 +89,17 @@
             this.btnDashboardPanel.BackColor = System.Drawing.Color.Transparent;
             this.btnDashboardPanel.BorderRadius = 20;
             this.btnDashboardPanel.FillColor = System.Drawing.Color.Transparent;
-            this.btnDashboardPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboardPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnDashboardPanel.ForeColor = System.Drawing.Color.White;
             this.btnDashboardPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.btnDashboardPanel.Location = new System.Drawing.Point(-27, 240);
+            this.btnDashboardPanel.Location = new System.Drawing.Point(-43, 240);
             this.btnDashboardPanel.Name = "btnDashboardPanel";
-            this.btnDashboardPanel.Size = new System.Drawing.Size(211, 45);
+            this.btnDashboardPanel.Size = new System.Drawing.Size(227, 45);
             this.btnDashboardPanel.TabIndex = 25;
-            this.btnDashboardPanel.Text = "Dashboard";
+            this.btnDashboardPanel.Text = "Bảng điều khiển";
             this.btnDashboardPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDashboardPanel.TextOffset = new System.Drawing.Point(60, 0);
+            this.btnDashboardPanel.Click += new System.EventHandler(this.btnDashboardPanel_Click);
             // 
             // btnListBookPanel
             // 
@@ -107,11 +110,11 @@
             this.btnListBookPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListBookPanel.ForeColor = System.Drawing.Color.White;
             this.btnListBookPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.btnListBookPanel.Location = new System.Drawing.Point(-27, 291);
+            this.btnListBookPanel.Location = new System.Drawing.Point(-42, 291);
             this.btnListBookPanel.Name = "btnListBookPanel";
-            this.btnListBookPanel.Size = new System.Drawing.Size(211, 45);
+            this.btnListBookPanel.Size = new System.Drawing.Size(226, 45);
             this.btnListBookPanel.TabIndex = 26;
-            this.btnListBookPanel.Text = "Books";
+            this.btnListBookPanel.Text = "Danh sách ebook";
             this.btnListBookPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnListBookPanel.TextOffset = new System.Drawing.Point(60, 0);
             this.btnListBookPanel.Click += new System.EventHandler(this.btnListBookPanel_Click);
@@ -125,11 +128,11 @@
             this.btnAddBookPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddBookPanel.ForeColor = System.Drawing.Color.White;
             this.btnAddBookPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.btnAddBookPanel.Location = new System.Drawing.Point(-27, 342);
+            this.btnAddBookPanel.Location = new System.Drawing.Point(-42, 342);
             this.btnAddBookPanel.Name = "btnAddBookPanel";
-            this.btnAddBookPanel.Size = new System.Drawing.Size(211, 45);
+            this.btnAddBookPanel.Size = new System.Drawing.Size(226, 45);
             this.btnAddBookPanel.TabIndex = 24;
-            this.btnAddBookPanel.Text = "Add book";
+            this.btnAddBookPanel.Text = "Thêm sách";
             this.btnAddBookPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAddBookPanel.TextOffset = new System.Drawing.Point(60, 0);
             this.btnAddBookPanel.Click += new System.EventHandler(this.btnAddBookPanel_Click);
@@ -146,6 +149,7 @@
             this.guna2PictureBox2.TabIndex = 23;
             this.guna2PictureBox2.TabStop = false;
             this.guna2PictureBox2.UseTransparentBackground = true;
+            this.guna2PictureBox2.Visible = false;
             // 
             // lbMoney
             // 
@@ -158,6 +162,7 @@
             this.lbMoney.Size = new System.Drawing.Size(78, 25);
             this.lbMoney.TabIndex = 22;
             this.lbMoney.Text = "120000";
+            this.lbMoney.Visible = false;
             // 
             // lbNameCustomer
             // 
@@ -165,11 +170,12 @@
             this.lbNameCustomer.BackColor = System.Drawing.Color.Transparent;
             this.lbNameCustomer.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNameCustomer.ForeColor = System.Drawing.Color.White;
-            this.lbNameCustomer.Location = new System.Drawing.Point(88, 140);
+            this.lbNameCustomer.Location = new System.Drawing.Point(59, 127);
             this.lbNameCustomer.Name = "lbNameCustomer";
             this.lbNameCustomer.Size = new System.Drawing.Size(71, 25);
             this.lbNameCustomer.TabIndex = 21;
             this.lbNameCustomer.Text = "Admin";
+            this.lbNameCustomer.Click += new System.EventHandler(this.lbNameCustomer_Click);
             // 
             // guna2PictureBox1
             // 

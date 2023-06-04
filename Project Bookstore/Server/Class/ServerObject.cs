@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Server.Forms;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,16 +8,20 @@ using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading;
+using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace Server.Class
 {
     public class ServerObject
     {
-        internal static TcpListener listener { get; private set; }
+        internal TcpListener listener { get; private set; }
         public List<ClientObject> clients = new List<ClientObject>();
-        internal string IPAddr = "172.16.1.22";
-        internal int port = 8888;
-        internal DBHandler dataBaseHandler = new DBHandler();
+        internal string IPAddr;
+        internal int port;
+        internal XmlSerializer xmlSerializer { get; set; }
+        internal FileStream fs { get; private set; }
+        public DBHandler dataBaseHandler = new DBHandler();
         internal void AddConnection(ClientObject client)
         {
             try
@@ -38,7 +43,7 @@ namespace Server.Class
                     clients.Remove(client);
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 return;
             }
@@ -57,28 +62,18 @@ namespace Server.Class
             byte[] data = Encoding.Unicode.GetBytes(message);
             client.stream.Write(data, 0, data.Length);
         }
-        internal void SendMessageFormatter(List<InfoBook> infobook, ClientObject client)
-        {
-            //using(MemoryStream stream = new MemoryStream())
-            //{
-            //    BinaryFormatter formatter = new BinaryFormatter();
-            //    formatter.Serialize(stream, infobook);
-            //    byte[] data = stream.ToArray();
-            //    client.stream.Write(data, 0, data.Length);
-            //}
-
-        }
         internal void Listen()
         {
             try
             {
+                SelectServer(out IPAddr, out port);
                 listener = new TcpListener(IPAddress.Parse(IPAddr), port);
                 listener.Start();
                 while (true)
                 {
                     TcpClient client = listener.AcceptTcpClient();
                     ClientObject clientObj = new ClientObject(client, this);
-                    Thread clientThread = new Thread(new ThreadStart(clientObj.ProcessRegister));
+                    Thread clientThread = new Thread(new ThreadStart(clientObj.Process));
                     clientThread.IsBackground = true;
                     clientThread.Start();
                 }
@@ -86,6 +81,31 @@ namespace Server.Class
             catch
             {
                 return;
+            }
+        }
+        internal void SelectServer(out string IPAddr, out int port)
+        {
+            xmlSerializer = new XmlSerializer(typeof(FSetting.Settings));
+            fs = new FileStream("settings.xml", FileMode.OpenOrCreate);
+            try
+            {
+                FSetting.Settings desSettings = (FSetting.Settings)xmlSerializer.Deserialize(fs);
+                IPAddr = desSettings.ipaddr;
+                port = desSettings.port;
+            }
+            catch
+            {
+                var host = Dns.GetHostName();
+                var ip = Dns.GetHostEntry(host).AddressList[2];
+                IPAddr = Convert.ToString(ip);
+                port = 8888;
+                FSetting.Settings settings = new FSetting.Settings(IPAddr, port);
+                xmlSerializer.Serialize(fs, settings);
+                MessageBox.Show("Cannot loads settings, default was set");
+            }
+            finally
+            {
+                fs.Close();
             }
         }
     }

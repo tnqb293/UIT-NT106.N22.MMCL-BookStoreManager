@@ -1,5 +1,6 @@
 ﻿using Client.Class;
 using Client.UC;
+using Client.UCAdmin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,6 +37,23 @@ namespace Client.Forms
         private void btnListBookPanel_Click(object sender, EventArgs e)
         {
             UCListBookAdmin uc = new UCListBookAdmin(infoUser.username);
+            addUserControl(uc);
+        }
+
+        private void btnDashboardPanel_Click(object sender, EventArgs e)
+        {
+            UCDashboardAdmin uc = new UCDashboardAdmin(infoUser.username);
+            addUserControl(uc);
+        }
+
+        private void lbNameCustomer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListUserPanel_Click(object sender, EventArgs e)
+        {
+            UCListCustomerAdmin uc = new UCListCustomerAdmin();
             addUserControl(uc);
         }
     }

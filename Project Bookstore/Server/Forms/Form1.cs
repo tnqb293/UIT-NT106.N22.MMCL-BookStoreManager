@@ -1,14 +1,17 @@
 ﻿using Server.Class;
+using Server.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace Server
 {
@@ -19,9 +22,8 @@ namespace Server
             InitializeComponent();
         }
         internal static ServerObject server;
-
         static Thread listenThread;
-        static Thread thread;
+        StreamWriter logWriter;
         private void Form1_Load(object sender, EventArgs e)
         {
             try
@@ -37,6 +39,13 @@ namespace Server
                 MessageBox.Show($"{ex}");
                 server.Disconnect();
             }
+        }
+
+
+        private void btnsSetting_Click(object sender, EventArgs e)
+        {
+            FSetting fsettings = new FSetting();
+            fsettings.Show();
         }
     }
 }

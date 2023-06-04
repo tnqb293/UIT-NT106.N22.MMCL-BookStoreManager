@@ -39,6 +39,9 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Spire.Pdf, Version=9.5.4.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.PDF.9.5.4\lib\net40\Spire.Pdf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -55,11 +58,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\InfoChangePassword.cs" />
     <Compile Include="Class\InfoBook.cs" />
     <Compile Include="Class\InfoBookList.cs" />
+    <Compile Include="Class\InfoBuyBook.cs" />
+    <Compile Include="Class\InfoCustomer.cs" />
+    <Compile Include="Class\InfoDashboardAdmin.cs" />
+    <Compile Include="Class\InfoDashboardCustomer.cs" />
+    <Compile Include="Class\InfoHistoryPurchased.cs" />
+    <Compile Include="Class\InfoPurchasedBook.cs" />
+    <Compile Include="Class\InfoRecharge.cs" />
     <Compile Include="Class\InfoUser.cs" />
     <Compile Include="Class\InfoLogin.cs" />
     <Compile Include="Class\IpConnection.cs" />
+    <Compile Include="Forms\FEditEbookAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FEditEbookAdmin.Designer.cs">
+      <DependentUpon>FEditEbookAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FLoginRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,38 +95,113 @@
     <Compile Include="Forms\FMainCustomer.Designer.cs">
       <DependentUpon>FMainCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FReadBookCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FReadBookCustomer.Designer.cs">
+      <DependentUpon>FReadBookCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FSettingsIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FSettingsIP.Designer.cs">
+      <DependentUpon>FSettingsIP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FVerifyBuyBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FVerifyBuyBook.Designer.cs">
+      <DependentUpon>FVerifyBuyBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UC\UCAddBookAdmin.cs">
+    <Compile Include="UCAdmin\UCAddBookAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\UCAddBookAdmin.Designer.cs">
+    <Compile Include="UCAdmin\UCAddBookAdmin.Designer.cs">
       <DependentUpon>UCAddBookAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UCDashboardCustomer.cs">
+    <Compile Include="UCAdmin\UCDashboardAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\UCDashboardCustomer.Designer.cs">
+    <Compile Include="UCAdmin\UCDashboardAdmin.Designer.cs">
+      <DependentUpon>UCDashboardAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCAdmin\UCItemCustomerAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAdmin\UCItemCustomerAdmin.Designer.cs">
+      <DependentUpon>UCItemCustomerAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCAdmin\UCListCustomerAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAdmin\UCListCustomerAdmin.Designer.cs">
+      <DependentUpon>UCListCustomerAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCustomer\UCDashboardCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCustomer\UCDashboardCustomer.Designer.cs">
       <DependentUpon>UCDashboardCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UCItemListBookAdmin.cs">
+    <Compile Include="UCAdmin\UCItemListBookAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\UCItemListBookAdmin.Designer.cs">
+    <Compile Include="UCAdmin\UCItemListBookAdmin.Designer.cs">
       <DependentUpon>UCItemListBookAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UCListBookAdmin.cs">
+    <Compile Include="UCCustomer\UCItemListBookCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\UCListBookAdmin.Designer.cs">
+    <Compile Include="UCCustomer\UCItemListBookCustomer.Designer.cs">
+      <DependentUpon>UCItemListBookCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCustomer\UCItemPurchaseHistoryCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCustomer\UCItemPurchaseHistoryCustomer.Designer.cs">
+      <DependentUpon>UCItemPurchaseHistoryCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCustomer\UCItemReadBookCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCustomer\UCItemReadBookCustomer.Designer.cs">
+      <DependentUpon>UCItemReadBookCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCAdmin\UCListBookAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAdmin\UCListBookAdmin.Designer.cs">
       <DependentUpon>UCListBookAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UCListBookCustomer.cs">
+    <Compile Include="UCCustomer\UCListBookCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\UCListBookCustomer.Designer.cs">
+    <Compile Include="UCCustomer\UCListBookCustomer.Designer.cs">
       <DependentUpon>UCListBookCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCCustomer\UCListPurchaseBookCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCustomer\UCListPurchaseBookCustomer.Designer.cs">
+      <DependentUpon>UCListPurchaseBookCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCustomer\UCListPurchaseHistoryCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCustomer\UCListPurchaseHistoryCustomer.Designer.cs">
+      <DependentUpon>UCListPurchaseHistoryCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCustomer\UCSettingAccountCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCustomer\UCSettingAccountCustomer.Designer.cs">
+      <DependentUpon>UCSettingAccountCustomer.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\FEditEbookAdmin.resx">
+      <DependentUpon>FEditEbookAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FLoginRegister.resx">
       <DependentUpon>FLoginRegister.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +210,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FMainCustomer.resx">
       <DependentUpon>FMainCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FReadBookCustomer.resx">
+      <DependentUpon>FReadBookCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FSettingsIP.resx">
+      <DependentUpon>FSettingsIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FVerifyBuyBook.resx">
+      <DependentUpon>FVerifyBuyBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -128,20 +229,47 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UC\UCAddBookAdmin.resx">
+    <EmbeddedResource Include="UCAdmin\UCAddBookAdmin.resx">
       <DependentUpon>UCAddBookAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\UCDashboardCustomer.resx">
+    <EmbeddedResource Include="UCAdmin\UCDashboardAdmin.resx">
+      <DependentUpon>UCDashboardAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCAdmin\UCItemCustomerAdmin.resx">
+      <DependentUpon>UCItemCustomerAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCAdmin\UCListCustomerAdmin.resx">
+      <DependentUpon>UCListCustomerAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCustomer\UCDashboardCustomer.resx">
       <DependentUpon>UCDashboardCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\UCItemListBookAdmin.resx">
+    <EmbeddedResource Include="UCAdmin\UCItemListBookAdmin.resx">
       <DependentUpon>UCItemListBookAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\UCListBookAdmin.resx">
+    <EmbeddedResource Include="UCCustomer\UCItemListBookCustomer.resx">
+      <DependentUpon>UCItemListBookCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCustomer\UCItemPurchaseHistoryCustomer.resx">
+      <DependentUpon>UCItemPurchaseHistoryCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCustomer\UCItemReadBookCustomer.resx">
+      <DependentUpon>UCItemReadBookCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCAdmin\UCListBookAdmin.resx">
       <DependentUpon>UCListBookAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\UCListBookCustomer.resx">
+    <EmbeddedResource Include="UCCustomer\UCListBookCustomer.resx">
       <DependentUpon>UCListBookCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCustomer\UCListPurchaseBookCustomer.resx">
+      <DependentUpon>UCListPurchaseBookCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCustomer\UCListPurchaseHistoryCustomer.resx">
+      <DependentUpon>UCListPurchaseHistoryCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCustomer\UCSettingAccountCustomer.resx">
+      <DependentUpon>UCSettingAccountCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -157,6 +285,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

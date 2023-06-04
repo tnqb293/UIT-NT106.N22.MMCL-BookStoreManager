@@ -34,10 +34,11 @@
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnControlCustomer = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.btnPurchasedBooksPanel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSettingAccountPanel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPurchaseHistoryPanel = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboardPanel = new Guna.UI2.WinForms.Guna2Button();
             this.btnListBookPanel = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCartBookPanel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPurchaseBookPanel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lbMoney = new System.Windows.Forms.Label();
             this.lbNameCustomer = new System.Windows.Forms.Label();
@@ -68,10 +69,11 @@
             // 
             // pnControlCustomer
             // 
-            this.pnControlCustomer.Controls.Add(this.btnPurchasedBooksPanel);
+            this.pnControlCustomer.Controls.Add(this.btnSettingAccountPanel);
+            this.pnControlCustomer.Controls.Add(this.btnPurchaseHistoryPanel);
             this.pnControlCustomer.Controls.Add(this.btnDashboardPanel);
             this.pnControlCustomer.Controls.Add(this.btnListBookPanel);
-            this.pnControlCustomer.Controls.Add(this.btnCartBookPanel);
+            this.pnControlCustomer.Controls.Add(this.btnPurchaseBookPanel);
             this.pnControlCustomer.Controls.Add(this.guna2PictureBox2);
             this.pnControlCustomer.Controls.Add(this.lbMoney);
             this.pnControlCustomer.Controls.Add(this.lbNameCustomer);
@@ -85,22 +87,41 @@
             this.pnControlCustomer.TabIndex = 4;
             this.pnControlCustomer.Paint += new System.Windows.Forms.PaintEventHandler(this.pnControlCustomer_Paint);
             // 
-            // btnPurchasedBooksPanel
+            // btnSettingAccountPanel
             // 
-            this.btnPurchasedBooksPanel.Animated = true;
-            this.btnPurchasedBooksPanel.BackColor = System.Drawing.Color.Transparent;
-            this.btnPurchasedBooksPanel.BorderRadius = 20;
-            this.btnPurchasedBooksPanel.FillColor = System.Drawing.Color.Transparent;
-            this.btnPurchasedBooksPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPurchasedBooksPanel.ForeColor = System.Drawing.Color.White;
-            this.btnPurchasedBooksPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.btnPurchasedBooksPanel.Location = new System.Drawing.Point(-27, 414);
-            this.btnPurchasedBooksPanel.Name = "btnPurchasedBooksPanel";
-            this.btnPurchasedBooksPanel.Size = new System.Drawing.Size(220, 45);
-            this.btnPurchasedBooksPanel.TabIndex = 19;
-            this.btnPurchasedBooksPanel.Text = "Purchase Books";
-            this.btnPurchasedBooksPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnPurchasedBooksPanel.TextOffset = new System.Drawing.Point(60, 0);
+            this.btnSettingAccountPanel.Animated = true;
+            this.btnSettingAccountPanel.BackColor = System.Drawing.Color.Transparent;
+            this.btnSettingAccountPanel.BorderRadius = 20;
+            this.btnSettingAccountPanel.FillColor = System.Drawing.Color.Transparent;
+            this.btnSettingAccountPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnSettingAccountPanel.ForeColor = System.Drawing.Color.White;
+            this.btnSettingAccountPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
+            this.btnSettingAccountPanel.Location = new System.Drawing.Point(-36, 465);
+            this.btnSettingAccountPanel.Name = "btnSettingAccountPanel";
+            this.btnSettingAccountPanel.Size = new System.Drawing.Size(220, 45);
+            this.btnSettingAccountPanel.TabIndex = 20;
+            this.btnSettingAccountPanel.Text = "Tài khoản";
+            this.btnSettingAccountPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSettingAccountPanel.TextOffset = new System.Drawing.Point(60, 0);
+            this.btnSettingAccountPanel.Click += new System.EventHandler(this.btnSettingAccountPanel_Click);
+            // 
+            // btnPurchaseHistoryPanel
+            // 
+            this.btnPurchaseHistoryPanel.Animated = true;
+            this.btnPurchaseHistoryPanel.BackColor = System.Drawing.Color.Transparent;
+            this.btnPurchaseHistoryPanel.BorderRadius = 20;
+            this.btnPurchaseHistoryPanel.FillColor = System.Drawing.Color.Transparent;
+            this.btnPurchaseHistoryPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnPurchaseHistoryPanel.ForeColor = System.Drawing.Color.White;
+            this.btnPurchaseHistoryPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
+            this.btnPurchaseHistoryPanel.Location = new System.Drawing.Point(-36, 414);
+            this.btnPurchaseHistoryPanel.Name = "btnPurchaseHistoryPanel";
+            this.btnPurchaseHistoryPanel.Size = new System.Drawing.Size(220, 45);
+            this.btnPurchaseHistoryPanel.TabIndex = 19;
+            this.btnPurchaseHistoryPanel.Text = "Lịch sử mua";
+            this.btnPurchaseHistoryPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPurchaseHistoryPanel.TextOffset = new System.Drawing.Point(60, 0);
+            this.btnPurchaseHistoryPanel.Click += new System.EventHandler(this.btnPurchaseHistory_Click);
             // 
             // btnDashboardPanel
             // 
@@ -111,13 +132,14 @@
             this.btnDashboardPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboardPanel.ForeColor = System.Drawing.Color.White;
             this.btnDashboardPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.btnDashboardPanel.Location = new System.Drawing.Point(-27, 261);
+            this.btnDashboardPanel.Location = new System.Drawing.Point(-36, 261);
             this.btnDashboardPanel.Name = "btnDashboardPanel";
             this.btnDashboardPanel.Size = new System.Drawing.Size(220, 45);
             this.btnDashboardPanel.TabIndex = 17;
-            this.btnDashboardPanel.Text = "Dashboard";
+            this.btnDashboardPanel.Text = "Bảng điều khiển";
             this.btnDashboardPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDashboardPanel.TextOffset = new System.Drawing.Point(60, 0);
+            this.btnDashboardPanel.Click += new System.EventHandler(this.btnDashboardPanel_Click);
             // 
             // btnListBookPanel
             // 
@@ -128,30 +150,32 @@
             this.btnListBookPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListBookPanel.ForeColor = System.Drawing.Color.White;
             this.btnListBookPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.btnListBookPanel.Location = new System.Drawing.Point(-27, 312);
+            this.btnListBookPanel.Location = new System.Drawing.Point(-36, 312);
             this.btnListBookPanel.Name = "btnListBookPanel";
             this.btnListBookPanel.Size = new System.Drawing.Size(220, 45);
             this.btnListBookPanel.TabIndex = 18;
-            this.btnListBookPanel.Text = "Books";
+            this.btnListBookPanel.Text = "Cửa hàng ebook";
             this.btnListBookPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnListBookPanel.TextOffset = new System.Drawing.Point(60, 0);
+            this.btnListBookPanel.Click += new System.EventHandler(this.btnListBookPanel_Click);
             // 
-            // btnCartBookPanel
+            // btnPurchaseBookPanel
             // 
-            this.btnCartBookPanel.Animated = true;
-            this.btnCartBookPanel.BackColor = System.Drawing.Color.Transparent;
-            this.btnCartBookPanel.BorderRadius = 20;
-            this.btnCartBookPanel.FillColor = System.Drawing.Color.Transparent;
-            this.btnCartBookPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCartBookPanel.ForeColor = System.Drawing.Color.White;
-            this.btnCartBookPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.btnCartBookPanel.Location = new System.Drawing.Point(-27, 363);
-            this.btnCartBookPanel.Name = "btnCartBookPanel";
-            this.btnCartBookPanel.Size = new System.Drawing.Size(220, 45);
-            this.btnCartBookPanel.TabIndex = 16;
-            this.btnCartBookPanel.Text = "Cart";
-            this.btnCartBookPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCartBookPanel.TextOffset = new System.Drawing.Point(60, 0);
+            this.btnPurchaseBookPanel.Animated = true;
+            this.btnPurchaseBookPanel.BackColor = System.Drawing.Color.Transparent;
+            this.btnPurchaseBookPanel.BorderRadius = 20;
+            this.btnPurchaseBookPanel.FillColor = System.Drawing.Color.Transparent;
+            this.btnPurchaseBookPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnPurchaseBookPanel.ForeColor = System.Drawing.Color.White;
+            this.btnPurchaseBookPanel.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
+            this.btnPurchaseBookPanel.Location = new System.Drawing.Point(-36, 363);
+            this.btnPurchaseBookPanel.Name = "btnPurchaseBookPanel";
+            this.btnPurchaseBookPanel.Size = new System.Drawing.Size(220, 45);
+            this.btnPurchaseBookPanel.TabIndex = 16;
+            this.btnPurchaseBookPanel.Text = "Sách đã mua";
+            this.btnPurchaseBookPanel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPurchaseBookPanel.TextOffset = new System.Drawing.Point(60, 0);
+            this.btnPurchaseBookPanel.Click += new System.EventHandler(this.btnPurchaseBookPanel_Click);
             // 
             // guna2PictureBox2
             // 
@@ -233,9 +257,10 @@
         public Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         public Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         public System.Windows.Forms.Label lbNameCustomer;
-        public Guna.UI2.WinForms.Guna2Button btnPurchasedBooksPanel;
+        public Guna.UI2.WinForms.Guna2Button btnPurchaseHistoryPanel;
         public Guna.UI2.WinForms.Guna2Button btnDashboardPanel;
         public Guna.UI2.WinForms.Guna2Button btnListBookPanel;
-        public Guna.UI2.WinForms.Guna2Button btnCartBookPanel;
+        public Guna.UI2.WinForms.Guna2Button btnPurchaseBookPanel;
+        public Guna.UI2.WinForms.Guna2Button btnSettingAccountPanel;
     }
 }

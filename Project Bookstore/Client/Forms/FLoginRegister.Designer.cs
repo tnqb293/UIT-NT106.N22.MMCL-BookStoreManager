@@ -53,16 +53,17 @@
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
+            this.pbSetting = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.pnLogin.SuspendLayout();
             this.pnRegister.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSetting)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2PictureBox1
             // 
             this.guna2Transition1.SetDecoration(this.guna2PictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
@@ -405,12 +406,26 @@
             animation1.TransparencyCoeff = 0F;
             this.guna2Transition1.DefaultAnimation = animation1;
             // 
+            // pbSetting
+            // 
+            this.guna2Transition1.SetDecoration(this.pbSetting, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pbSetting.Image = ((System.Drawing.Image)(resources.GetObject("pbSetting.Image")));
+            this.pbSetting.ImageRotate = 0F;
+            this.pbSetting.Location = new System.Drawing.Point(704, 12);
+            this.pbSetting.Name = "pbSetting";
+            this.pbSetting.Size = new System.Drawing.Size(33, 25);
+            this.pbSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSetting.TabIndex = 26;
+            this.pbSetting.TabStop = false;
+            this.pbSetting.Click += new System.EventHandler(this.pbSetting_Click);
+            // 
             // FLoginRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(815, 481);
+            this.Controls.Add(this.pbSetting);
             this.Controls.Add(this.pnLogin);
             this.Controls.Add(this.Guna2ControlBox2);
             this.Controls.Add(this.Guna2ControlBox1);
@@ -426,6 +441,7 @@
             this.pnLogin.PerformLayout();
             this.pnRegister.ResumeLayout(false);
             this.pnRegister.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSetting)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -454,6 +470,7 @@
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
+        private Guna.UI2.WinForms.Guna2PictureBox pbSetting;
     }
 }
 

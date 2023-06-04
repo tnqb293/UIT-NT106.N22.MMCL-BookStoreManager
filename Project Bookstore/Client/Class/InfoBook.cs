@@ -12,12 +12,16 @@ namespace Client.Class
     {
         public string bookname { get; set; }
         public string writername { get; set; }
-        public string category { get; set; }
+        public string language { get; set; }
         public string country { get; set; }
         public int price { get; set; }
-        public int numberOfBookRemaining { get; set; }
-        public Image coverImage { get; set; }
-        public Thread receiveThread { get; set; }
-
+        public int pagenumber { get; set; }
+        public byte[] coverImage { get; set; }
+        public string isbn { get; set; }
+        public string index { get; set; }
+        public string summary { get; set; }
+        public int numberofbookssold { get; set; }
+        public int yearofpublication { get; set; }
+        public byte[] contentBook { get; set; }
     }
 }

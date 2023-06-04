@@ -26,6 +26,7 @@ namespace Client
         }
         //Khởi tạo get set cho các thuộc tính có trong FLoginRegister
         private IpConnection ipConnection = new IpConnection();
+
         private InfoLogin infoLogin;
         //Đây là chức năng hiện form Login bằng nút Login
         private void btnLoginRegister_Click(object sender, EventArgs e)
@@ -47,6 +48,7 @@ namespace Client
             infoLogin.email = tbEmailRegister.Text;
             infoLogin.passwordEncrypt = Encrypt(infoLogin.password);
             infoLogin.repassword = tbReEnterPasswordRegister.Text;
+
             //Kiểm tra người dùng đã nhập đủ thông tin chưa, nếu chưa thì yêu cầu người dùng nhập lại
             if (tbUsernameResgister != null && string.IsNullOrEmpty(tbUsernameResgister.Text)
                 || tbPasswordRegister != null && string.IsNullOrEmpty(tbPasswordRegister.Text)
@@ -64,13 +66,10 @@ namespace Client
             {
                 try
                 {
-                    string message = infoLogin.username + " " + infoLogin.passwordEncrypt + " " + infoLogin.email + " register";
-                    StringBuilder builder = ipConnection.messageFromServer(message);
+                    string message = "register " + infoLogin.username + " " + infoLogin.passwordEncrypt + " " + infoLogin.email;
+                    StringBuilder builder = ipConnection.ConnectToServer(message);
                     if (builder.ToString() == "register success")
                     {
-                        infoLogin.receiveThread = new Thread(new ThreadStart(ipConnection.receiveMessage));
-                        infoLogin.receiveThread.IsBackground = true;
-                        infoLogin.receiveThread.Start();
                         this.Invoke(new Action(() => MessageBox.Show("Đăng ký thành công")));
 
                     }
@@ -87,7 +86,7 @@ namespace Client
                 }
                 catch
                 {
-                    this.Invoke(new Action(() => MessageBox.Show($"Không tìm thấy máy chủ {ipConnection.ipAddr}.")));
+                    this.Invoke(new Action(() => MessageBox.Show($"Không tìm thấy máy chủ.")));
 
                 }
             }
@@ -119,24 +118,18 @@ namespace Client
             {
                 try
                 {
-                    string message = infoLogin.username + " " + infoLogin.passwordEncrypt + " login";
-                    StringBuilder builder = ipConnection.messageFromServer(message);
+                    string message = "login " + infoLogin.username + " " + infoLogin.passwordEncrypt;
+                    StringBuilder builder = ipConnection.ConnectToServer(message);
                     if (builder.ToString() == "login success")
                     {
-
-                        infoLogin.receiveThread = new Thread(new ThreadStart(ipConnection.receiveMessage));
-                        infoLogin.receiveThread.IsBackground = true;
-                        infoLogin.receiveThread.Start();
                         this.Invoke(new Action(() => MessageBox.Show("Đăng nhập thành công")));
-                        Form welcome = new FMainCustomer(infoLogin.username);
+                        FMainCustomer welcome = new FMainCustomer(infoLogin.username);
+                        
                         welcome.Show();
                         this.Hide();
                     }
                     else if(builder.ToString() == "login admin success")
                     {
-                        infoLogin.receiveThread = new Thread(new ThreadStart(ipConnection.receiveMessage));
-                        infoLogin.receiveThread.IsBackground = true;
-                        infoLogin.receiveThread.Start();
                         this.Invoke(new Action(() => MessageBox.Show("Đăng nhập thành công")));
                         Form welcome = new FMainAdmin(infoLogin.username);
                         welcome.Show();
@@ -155,11 +148,16 @@ namespace Client
                 }
                 catch
                 {
-                    this.Invoke(new Action(() => MessageBox.Show($"Không tìm thấy máy chủ {ipConnection.ipAddr}.")));
+                    this.Invoke(new Action(() => MessageBox.Show($"Không tìm thấy máy chủ.")));
 
                 }
             }
         }
 
+        private void pbSetting_Click(object sender, EventArgs e)
+        {
+            FSettingsIP fSettingsIP = new FSettingsIP();
+            fSettingsIP.Show();
+        }
     }
 }

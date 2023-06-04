@@ -20,12 +20,18 @@ namespace Client.Forms
     {
         private IpConnection ipConnection = new IpConnection();
         public Thread receiveThread { get; set; }
-        InfoUser info = new InfoUser();
+        private static InfoUser info = new InfoUser();
+        //--------
+        public static FMainCustomer instance;
+        public Label lbtext;
+        //--------
         public FMainCustomer(string user)
         {
             InitializeComponent();
+            instance = this;
+            lbtext = lbMoney;
             info.username = user;
-
+           
         }
         private void pnContentAdmin_Paint(object sender, PaintEventArgs e)
         {
@@ -39,31 +45,58 @@ namespace Client.Forms
             pnContentCustomer.Controls.Add(userControl);
             userControl.BringToFront();
         }
+     
         private void FMainCustomer_Load(object sender, EventArgs e)
         {
             try
             {
-                string data;
-                string[] dataSplit;
-                string message = info.username + " dashboardcustomer";
-                StringBuilder builder = ipConnection.messageFromServer(message);
-                data = builder.ToString();
-                dataSplit = data.Split(' ');
+                string message = "request|moneyCustomer " + info.username;
+                StringBuilder builder = ipConnection.ConnectToServer(message);
                 lbNameCustomer.Text = info.username;
-                lbMoney.Text = dataSplit[0];
-                receiveThread = new Thread(new ThreadStart(ipConnection.receiveMessage));
-                receiveThread.IsBackground = true;
-                receiveThread.Start();
+                lbMoney.Text = builder.ToString();
             }
             catch
             {
                 this.Invoke(new Action(() => MessageBox.Show("Lỗi", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error)));
 
             }
+        
         }
         private void pnControlCustomer_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnListBookPanel_Click(object sender, EventArgs e)
+        {
+            UCListBookCustomer uc = new UCListBookCustomer(info.username);
+            addUserControl(uc);
+        }
+
+        private void btnDashboardPanel_Click(object sender, EventArgs e)
+        {
+            UCDashboardCustomer uc = new UCDashboardCustomer(info.username);
+            addUserControl(uc);
+            
+        }
+
+        private void btnPurchaseBookPanel_Click(object sender, EventArgs e)
+        {
+            
+            UCListPurchaseBookCustomer uc = new UCListPurchaseBookCustomer(info.username);
+            addUserControl(uc);
+        }
+
+        private void btnPurchaseHistory_Click(object sender, EventArgs e)
+        {
+            UCListPurchaseHistoryCustomer uc = new UCListPurchaseHistoryCustomer(info.username);
+            addUserControl(uc);
+        }
+
+        private void btnSettingAccountPanel_Click(object sender, EventArgs e)
+        {
+            UCSettingAccountCustomer uc = new UCSettingAccountCustomer(info.username);
+            addUserControl(uc);
         }
     }
 }
