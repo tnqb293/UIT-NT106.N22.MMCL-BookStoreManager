@@ -17,15 +17,10 @@ namespace Server.Class
     {
         internal TcpListener listener { get; private set; }
         public List<ClientObject> clients = new List<ClientObject>();
-<<<<<<< HEAD
         internal string IPAddr;
         internal int port;
         internal XmlSerializer xmlSerializer { get; set; }
         internal FileStream fs { get; private set; }
-=======
-        internal string IPAddr = "172.30.159.54";
-        internal int port = 8888;
->>>>>>> 1f2fface7cc32121abf3fc0f11ccd2bf8df68dc0
         public DBHandler dataBaseHandler = new DBHandler();
         internal void AddConnection(ClientObject client)
         {

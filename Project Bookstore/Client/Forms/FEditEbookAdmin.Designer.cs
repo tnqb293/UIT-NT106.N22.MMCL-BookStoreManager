@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pbImageBook = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tbYearOfPublication = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbISBN = new Guna.UI2.WinForms.Guna2TextBox();
@@ -42,6 +43,9 @@
             this.btnChangeImage = new Guna.UI2.WinForms.Guna2Button();
             this.Guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImageBook)).BeginInit();
             this.SuspendLayout();
             // 
@@ -300,7 +304,7 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
-            this.btnSave.Location = new System.Drawing.Point(304, 410);
+            this.btnSave.Location = new System.Drawing.Point(189, 410);
             this.btnSave.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(125, 39);
@@ -308,12 +312,40 @@
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 10;
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Animated = true;
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderRadius = 10;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(65)))), ((int)(((byte)(54)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(109)))), ((int)(((byte)(228)))));
+            this.guna2Button1.Location = new System.Drawing.Point(445, 410);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(125, 39);
+            this.guna2Button1.TabIndex = 108;
+            this.guna2Button1.Text = "Delete Book";
+            // 
             // FEditEbookAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(725, 471);
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.Guna2ControlBox1);
             this.Controls.Add(this.btnChangeImage);
@@ -355,5 +387,8 @@
         internal Guna.UI2.WinForms.Guna2Button btnChangeImage;
         private Guna.UI2.WinForms.Guna2ControlBox Guna2ControlBox1;
         internal Guna.UI2.WinForms.Guna2Button btnSave;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        internal Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

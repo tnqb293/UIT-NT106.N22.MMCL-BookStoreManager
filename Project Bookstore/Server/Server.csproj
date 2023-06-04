@@ -75,6 +75,7 @@
     <Compile Include="Class\InfoCustomer.cs" />
     <Compile Include="Class\InfoDashboardAdmin.cs" />
     <Compile Include="Class\InfoDashboardCustomer.cs" />
+    <Compile Include="Class\InfoDetailCustomer.cs" />
     <Compile Include="Class\InfoHistoryPurchased.cs" />
     <Compile Include="Class\InfoPurchaseBook.cs" />
     <Compile Include="Class\InfoRecharge.cs" />

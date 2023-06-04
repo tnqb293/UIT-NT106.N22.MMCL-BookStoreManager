@@ -66,6 +66,7 @@
             this.btnDetail.Size = new System.Drawing.Size(95, 38);
             this.btnDetail.TabIndex = 71;
             this.btnDetail.Text = "Chi tiết";
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // lbDatetime
             // 

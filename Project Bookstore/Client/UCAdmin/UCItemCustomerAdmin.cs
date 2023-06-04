@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,6 +41,12 @@ namespace Client.UCAdmin
         {
             get { return DateTime.Parse(lbDatetime.Text); }
             set { lbDatetime.Text = value.ToString(); }
+        }
+
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            FDetailInfoCustomer form = new FDetailInfoCustomer(idCustomer);
+            form.ShowDialog();
         }
     }
 }

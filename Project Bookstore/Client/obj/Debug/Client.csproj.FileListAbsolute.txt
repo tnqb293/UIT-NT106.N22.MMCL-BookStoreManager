@@ -31,8 +31,6 @@ F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.Forms.FSettingsIP.resources
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.UC.UCDashboardAdmin.resources
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.Forms.FEditEbookAdmin.resources
-F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\bin\Debug\Spire.Pdf.dll
-F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\bin\Debug\Microsoft.mshtml.dll
-F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\bin\Debug\Spire.Pdf.xml
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.UCAdmin.UCItemCustomerAdmin.resources
 F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.UCAdmin.UCListCustomerAdmin.resources
+F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Client\obj\Debug\Client.Forms.FDetailInfoCustomer.resources

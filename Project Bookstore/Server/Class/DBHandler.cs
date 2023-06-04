@@ -19,7 +19,7 @@ namespace Server.Class
     public class DBHandler
     {
         DbConnection connection = new DbConnection();
-
+        static string usernamee;
         internal string RegisterDB(string username,string password, string email)
         {
             try
@@ -88,36 +88,11 @@ namespace Server.Class
                 return "Error from server";
             }
         }
-<<<<<<< HEAD
         public string AddBookAdminDB(string bookname, string writername, string language, string country, int price, int numberofbookssold, string coverImage, int pagenumber, string isbn, string index, string summary, int yearofpublication)
         {
             try
             {
                 DateTime datetime = DateTime.Now;
-=======
-        public Image byteToImage(byte[] coverImage)
-        {
-            using(MemoryStream ms = new MemoryStream(coverImage))
-            {
-                Image image = Image.FromStream(ms);
-                return image;
-            }
-        }
-        //public void saveImage(byte[] coverImage)
-        //{
-        //    using (MemoryStream ms = new MemoryStream(coverImage))
-        //    {
-        //        Image image = Image.FromStream(ms);
-        //        string path = @"F:\NT106\UIT-NT106.N22.MMCL-BookStoreManager\Project Bookstore\Server\image.jpg";
-        //        image.Save(path);
-
-        //    }
-        //}
-        public string AddBookAdminDB(string bookname, string writername, string category, string country, int price, int numberOfBookRemaining, byte[] coverImage)
-        {
-            try
-            {
->>>>>>> 1f2fface7cc32121abf3fc0f11ccd2bf8df68dc0
                 //saveImage(coverImage);
                 connection.ConnectionOpen();
                 string request = "INSERT INTO Book (TENSACH, TENTACGIA, NGONNGU, QUOCGIA, GIABIA, SACHDABAN, ANHBIA, SOTRANG, ISBN, MUCLUC, TOMTAT, NAMXUATBAN, NGAYTHEM)" +
@@ -227,7 +202,6 @@ namespace Server.Class
                 {
                     while (reader1.Read())
                     {
-<<<<<<< HEAD
                         InfoBook infoBook = new InfoBook();  
                         infoBook.bookname = reader1.GetString(0);
                         infoBook.writername = reader1.GetString(1);
@@ -241,16 +215,6 @@ namespace Server.Class
                         infoBook.index = reader1.GetString(9);
                         infoBook.summary = reader1.GetString(10);
                         infoBook.yearofpublication = reader1.GetInt32(11);
-=======
-                        InfoBook infoBook = new InfoBook();
-                        infoBook.bookname = reader.GetString(0);
-                        infoBook.writername = reader.GetString(1);
-                        infoBook.category = reader.GetString(2);
-                        infoBook.country = reader.GetString(3);
-                        infoBook.price = reader.GetInt32(4);
-                        infoBook.numberOfBookRemaining = reader.GetInt32(5);
-                        //infoBook.coverImage = reader.GetString(6);
->>>>>>> 1f2fface7cc32121abf3fc0f11ccd2bf8df68dc0
                         infoBooks.Add(infoBook);
                     }
                     string jsonObject = JsonConvert.SerializeObject(infoBooks);
@@ -714,5 +678,81 @@ namespace Server.Class
                 return "Error from server";
             }
         }
+        internal string InfoDetailCustomer(int id)
+        {
+            try
+            {
+                InfoDetailCustomer info = new InfoDetailCustomer();
+                info.listPurchaseHistories = new List<ListPurchaseHistory>();
+                info.listRechargeHistories = new List<ListRechargeHistory>();
+                connection.ConnectionOpen();
+                string request = "SELECT TENKH, Email, TIENCONDU, TIENDACHI, SOTIENNAP, DIEMTICHLUY, NGAYTAO from Customer where MAKH = @id";
+                SqlCommand command = new SqlCommand(request, connection.sqlConnection);
+                command.Parameters.AddWithValue("@id", id);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    info.username = reader.GetString(0);
+                    info.email = reader.GetString(1);
+                    info.money = reader.GetInt32(2);
+                    info.spend = reader.GetInt32(3);
+                    info.recharge = reader.GetInt32(4);
+                    info.getpoints = reader.GetInt32(5);
+                    info.createtime = reader.GetDateTime(6);
+                }
+                connection.ConnectionClose();
+                connection.ConnectionOpen();
+                request = "SELECT MAGIAODICH, MENHGIA, TGNAP, LOAITHE, SOSERI, SOTHE FROM RechargeHistory where MAKH = @id";
+                command = new SqlCommand(request, connection.sqlConnection);
+                command.Parameters.AddWithValue("@id", id);
+                reader = command.ExecuteReader();
+                while(reader.Read())
+                {
+                    ListRechargeHistory history = new ListRechargeHistory();
+                    history.idtrade = reader.GetInt32(0);
+                    history.denomination = reader.GetInt32(1);
+                    history.timerecharge = reader.GetDateTime(2);
+                    history.categoryCard = reader.GetString(3);
+                    history.serinumber = reader.GetString(4);
+                    history.cardnumber = reader.GetString(5);
+                    info.listRechargeHistories.Add(history);
+                }
+                connection.ConnectionClose();
+                connection.ConnectionOpen();
+                
+                request = "select TENKH FROM Customer where MAKH = @id";
+                command = new SqlCommand(request, connection.sqlConnection);
+                command.Parameters.AddWithValue("@id", id);
+                reader = command.ExecuteReader();
+                while(reader.Read())
+                {
+                    usernamee = reader.GetString(0);
+                }
+                connection.ConnectionClose();
+                connection.ConnectionOpen();
+                request = "select TENSACH, GIATIEN, TGMUA, CONGDIEM From PurchaseHistory where TENKH = @username";
+                command = new SqlCommand(request, connection.sqlConnection);
+                command.Parameters.AddWithValue("@username", usernamee);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    ListPurchaseHistory history = new ListPurchaseHistory();
+                    history.bookname = reader.GetString(0);
+                    history.price = reader.GetInt32(1);
+                    history.dateBuy = reader.GetDateTime(2);
+                    history.pointPlus = reader.GetInt32(3);
+                    info.listPurchaseHistories.Add(history);
+                }
+                connection.ConnectionClose();
+                string message = JsonConvert.SerializeObject(info);
+                return message;
+            }
+            catch
+            {
+                connection.ConnectionClose();
+                return "Error from server";
+            }
+        }
     }
 }
+

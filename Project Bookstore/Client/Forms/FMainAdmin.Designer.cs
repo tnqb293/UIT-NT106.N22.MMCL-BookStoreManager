@@ -41,6 +41,7 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnAdminContent = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.pnControlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -192,7 +193,7 @@
             // 
             // guna2Elipse1
             // 
-            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.BorderRadius = 10;
             this.guna2Elipse1.TargetControl = this;
             // 
             // pnAdminContent
@@ -202,6 +203,12 @@
             this.pnAdminContent.Name = "pnAdminContent";
             this.pnAdminContent.Size = new System.Drawing.Size(861, 720);
             this.pnAdminContent.TabIndex = 1;
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.pnAdminContent;
+            this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // FMainAdmin
             // 
@@ -236,5 +243,6 @@
         public Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         public Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2GradientPanel pnAdminContent;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
     }
 }
