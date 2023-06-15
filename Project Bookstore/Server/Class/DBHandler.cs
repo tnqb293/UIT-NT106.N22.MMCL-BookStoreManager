@@ -245,7 +245,6 @@ namespace Server.Class
                     iduser = reader.GetInt32(0);
                 }
                 connection.ConnectionClose();
-                //string request = "select TENSACH, TENTACGIA, NGONNGU, QUOCGIA, GIABIA, SACHDABAN, ANHBIA, SOTRANG, ISBN, MUCLUC, TOMTAT, NAMXUATBAN from Book";
                 request = "select TENSACH, TENTACGIA, NGONNGU, QUOCGIA, GIABIA, SACHDABAN, ANHBIA, SOTRANG, ISBN, MUCLUC, TOMTAT,NAMXUATBAN from Book left join BookUserManagement on Book.MASACH = BookUserManagement.MASACH  left join Customer on BookUserManagement.MAKH = Customer.MAKH where BookUserManagement.MAKH = @iduser";
                 connection.ConnectionOpen();
                 command = new SqlCommand(request, connection.sqlConnection);

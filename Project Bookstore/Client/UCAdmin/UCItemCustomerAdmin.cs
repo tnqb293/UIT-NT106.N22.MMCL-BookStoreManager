@@ -17,6 +17,8 @@ namespace Client.UCAdmin
         {
             InitializeComponent();
         }
+        // Các biến inCustomer, nameCustomer, moeny, getPoints, datetime sẽ được gán giá trị từ 
+        // get và lưu giá trị vào biến value cuối cùng gán chúng vào các lb tương ứng
         internal int idCustomer
         {
             get { return Int32.Parse(lbIdCustomer.Text); }

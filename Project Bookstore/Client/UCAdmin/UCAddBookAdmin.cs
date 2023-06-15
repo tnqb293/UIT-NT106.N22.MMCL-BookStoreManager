@@ -19,10 +19,9 @@ namespace Client.UC
     {
         InfoUser infoUser = new InfoUser();
         private static string fileImage { get; set; }
-        private static byte[] bytepdf;
         private InfoBook infoBook { get; set; }
         private IpConnection ipConnection = new IpConnection();
-        private Thread receiveThread { get; set; }
+        //Lấy tên của người dùng ở FMainAdmin và gán vào biến infoUser.username
         public UCAddBookAdmin(string user)
         {
             InitializeComponent();
@@ -32,6 +31,7 @@ namespace Client.UC
         private void btnUploadPicture_AddBook_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
+            // Mở dialog lên và chọn hình theo các định dạng .bmp, .jpg, .jpeg, .png
             ofd.Filter = "Image Files (*.bmp;*.jpg;*.jpeg;*.png;)|*.BMP;*JPG;*JPEG;*.PNG;";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -43,6 +43,7 @@ namespace Client.UC
         private void btnAddBookAddBook_Click(object sender, EventArgs e)
         {
             infoBook = new InfoBook();
+            //Lấy các giá trị từ các textbox tương ứng
             infoBook.bookname = tbBookNameAddBook.Text;
             infoBook.writername = tbWriterNameAddBook.Text;
             infoBook.language = tbLanguage.Text;
@@ -55,6 +56,7 @@ namespace Client.UC
             infoBook.index = tbIndex.Text;
             infoBook.yearofpublication = Int32.Parse(tbYearOfPublication.Text);
             infoBook.numberofbookssold = 0;
+            // Kiểm tra xem người dùng đã nhập đủ thông tin chưa
             if (tbBookNameAddBook != null && string.IsNullOrEmpty(tbBookNameAddBook.Text)
                 || tbWriterNameAddBook != null && string.IsNullOrEmpty(tbWriterNameAddBook.Text)
                 || tbLanguage != null && string.IsNullOrEmpty(tbLanguage.Text)
@@ -73,9 +75,10 @@ namespace Client.UC
             {
                 try
                 {
-                    //string message = infoBook.bookname + "  " + infoBook.writername + "  " + infoBook.category + "  " +
-                    //infoBook.country + "  " + infoBook.price.ToString() + "  " + infoBook.numberOfBookRemaining.ToString() + "  " +  ImageToString(infoBook.coverImage) + "  addbook";
+                    // Đóng gói biến infobook bằng json rồi lưu vào biến message
                     string message = "request|addbook " + JsonConvert.SerializeObject(infoBook);
+                    //Gửi yêu cầu tới server bằng hàm ConnectToServer và lưu lại phản hồi từ server
+                    // vào biến builder
                     StringBuilder builder = ipConnection.ConnectToServer(message);
                     if (builder.ToString() == "add book success")
                     {
@@ -98,6 +101,7 @@ namespace Client.UC
 
             }
         }
+        // Chuyển kiểu Image sang kiểu Bytes
         private byte[] imageToBytes(Image coverBook)
         {
             byte[] imageBytes;
@@ -109,7 +113,7 @@ namespace Client.UC
             }
             return imageBytes;
         }
-
+        // Giảm kích thước hình ảnh nếu ảnh vượt quá kích thước quy định
         public Image resizeImage(Image img, int width, int height)
         {
             Bitmap b = new Bitmap(width, height);

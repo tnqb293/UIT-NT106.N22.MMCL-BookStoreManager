@@ -108,6 +108,7 @@ namespace Client
             infoLogin.username = tbUsernameLogin.Text;
             infoLogin.password = tbPasswordLogin.Text;
             infoLogin.passwordEncrypt = Encrypt(tbPasswordLogin.Text);
+            // Kiểm tra người dùng đã nhập đủ thông tin chưa
             if (tbUsernameLogin != null && string.IsNullOrEmpty(tbUsernameLogin.Text)
                 || tbPasswordLogin != null && string.IsNullOrEmpty(tbPasswordLogin.Text))
             {
@@ -119,6 +120,8 @@ namespace Client
                 try
                 {
                     string message = "login " + infoLogin.username + " " + infoLogin.passwordEncrypt;
+                    // Gửi yêu cầu tới server bằng hàm ConnectToServer với biến message
+                    // và biến builder lưu trữ dữ liệu phản hồi từ server 
                     StringBuilder builder = ipConnection.ConnectToServer(message);
                     if (builder.ToString() == "login success")
                     {
@@ -153,7 +156,7 @@ namespace Client
                 }
             }
         }
-
+        // Cài đặt địa chỉ Ip và port trước khi kết nối tới server
         private void pbSetting_Click(object sender, EventArgs e)
         {
             FSettingsIP fSettingsIP = new FSettingsIP();

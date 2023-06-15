@@ -16,48 +16,18 @@ using System.Xml.Serialization;
 
 namespace Client.Class
 {
+    //Class IpConnection có nhiệm vụ thiết lập kết nối với máy chủ, gửi yêu cầu
+    // và nhận phản hồi từ máy chủ
     public class IpConnection
     {
         TcpClient client { get; set; }
         NetworkStream stream { get; set; }
         IPAddress ipAddr { get; set; }
         int port { get; set; }
-        Thread recieveThread { get; set; }
+        // Biến xmlSerializer giúp lưu địa chỉ ip và port mà người dùng nhập, vào file xml
         public XmlSerializer xmlSerializer { get; set; }
         public FileStream fs { get; set; }
-        //internal string receiveMessage()
-        //{
-        //    StringBuilder builder;
-        //    int length;
-            
-        //    try
-        //    {
-        //        while (true)
-        //        {
-        //            try
-        //            {
-        //                do
-        //                {
-        //                    byte[] bytes = new byte[1024];
-        //                    builder = new StringBuilder();
-        //                    length = stream.Read(bytes, 0, bytes.Length);
-        //                    builder.Append(Encoding.Unicode.GetString(bytes, 0 , length));
-        //                } while (stream.DataAvailable);
-        //                return builder.ToString();
-        //            }
-        //            catch
-        //            {
-        //                Disconnect();
-        //                return "Không thể giao tiếp được với server";
-        //            }
-        //        }
-        //    }
-        //    catch
-        //    {
-        //        Disconnect();
-        //        return "Không thể giao tiếp được với server";
-        //    }
-        //}
+        //Hàm Disconnnect có nhiệm vụ ngắt kết nối tới máy chủ
         internal void Disconnect()
         {
             if(stream != null)
@@ -65,6 +35,8 @@ namespace Client.Class
             if (client != null)
                 client.Close();
         }
+        // Cài đặt địa chỉ ip và port rồi lưu chúng vào file .xml và kết nối với server,
+        // gửi yêu cầu và nhận phản hồi từ phía server
         #region desirializeSettings
 
         internal StringBuilder ConnectToServer(string message)
@@ -113,74 +85,5 @@ namespace Client.Class
             
         }
         #endregion
-        //internal StringBuilder messageFromServer(string message)
-        //{
-        //    StringBuilder builder;
-        //    int length;
-        //    //using (FSettingsIP settings = new FSettingsIP())
-        //    //{
-        //    //    ipAddr = IPAddress.Parse(settings.tbIP.Text);
-        //    //    port = Int32.Parse(settings.tbPort.Text);
-        //    //}
-        //    try
-        //    {
-        //        while (true)
-        //        {
-        //            try
-        //            {
-
-        //            }
-        //        }
-        //    }
-        //    client = new TcpClient();
-        //    client.Connect(ipAddr, port);
-        //    stream = client.GetStream();
-        //    byte[] bytes = Encoding.Unicode.GetBytes(message);
-        //    builder = new StringBuilder();
-        //    stream.Write(bytes, 0, bytes.Length);
-        //    byte[] buffer = new byte[1024];
-        //    length = stream.Read(buffer, 0, buffer.Length);
-        //    builder.Append(Encoding.Unicode.GetString(buffer, 0, length));
-        //    int byteSize = Int32.Parse(builder.ToString());
-        //    builder = new StringBuilder();
-        //    //Chuẩn bị số bytes của buffer mà server sẽ gửi
-        //    do
-        //    {
-        //        byte[] receiveBytess = new byte[byteSize];
-
-        //        length = stream.Read(receiveBytess, 0, receiveBytess.Length);
-        //        builder.Append(Encoding.Unicode.GetString(receiveBytess, 0, length));
-        //    } while (stream.DataAvailable);
-        //    return builder;
-        //}
-        //internal StringBuilder messageFromServer(string message)
-        //{
-        //    StringBuilder builder = new StringBuilder();
-        //    int length;
-        //    using (TcpClient client = new TcpClient())
-        //    {
-        //        client.Connect(ipAddr, port);
-        //        using (NetworkStream stream = client.GetStream())
-        //        {
-        //            byte[] bytes = Encoding.Unicode.GetBytes(message);
-        //            stream.Write(bytes, 0, bytes.Length);
-        //            do
-        //            {
-        //                byte[] receiveBytes = new byte[1024];
-        //                length = stream.Read(receiveBytes, 0, receiveBytes.Length);
-        //                builder.Append(Encoding.Unicode.GetString(receiveBytes, 0, length));
-        //            } while (length > 0);
-        //        }
-        //    }
-        //    return builder;
-        //}
-        //private int sizeBytes(string messsage)
-        //{
-        //    client = new TcpClient();
-        //    client.Connect(ipAddr, port);
-        //    stream.
-        //}
-    }
-    
-    
+    } 
 }

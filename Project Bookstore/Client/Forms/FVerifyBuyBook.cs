@@ -23,6 +23,8 @@ namespace Client.Forms
         public static FVerifyBuyBook instance;
 
         //-------------------------------
+        // Biến instance dùng để cập nhật tiền của người dùng ngay khi tiền tăng hoặc giảm
+        // mà không phải load lại form
         public FVerifyBuyBook(string bookname, string username)
         {
             infobuybook.bookname = bookname;
@@ -35,6 +37,7 @@ namespace Client.Forms
         {
 
         }
+        // Chuyển kiểu Image sang kiểu byte
         public Image byteToImage(byte[] bytesPicture)
         {
             using (MemoryStream ms = new MemoryStream(bytesPicture))
@@ -54,23 +57,18 @@ namespace Client.Forms
             try
             {
                 InfoBook infobook = new InfoBook();
+                //Gửi yêu cầu tới server bằng hàm ConnectToServer và lưu lại phản hồi từ server
+                // vào biến builder
                 StringBuilder builder = ipConnection.ConnectToServer("request|findabook " + infobuybook.bookname);
+                // Giải nén đối tượng InfoBook mà server phản hồi
                 infobook = JsonConvert.DeserializeObject<InfoBook>(builder.ToString());
                 lbMoneyBook.Text = infobook.price.ToString() + " VND";
-                //rtbContent.Lines[0] = "Tên sách: " + infobook.bookname;
-                //rtbContent.Lines[1] = "Tác giả: " + infobook.writername;
-                //rtbContent.Lines[2] = "Năm xuất bản: 2019";
-                //rtbContent.Lines[3] = "Quốc gia: " + infobook.country;
-                //rtbContent.Lines[4] = "Số trang: " + infobook.pagenumber.ToString();
-                //rtbContent.Lines[5] = "ISBN: " + infobook.isbn;
-                //rtbContent.Lines[6] = "Mục luc: \n" + infobook.index;
-                //rtbContent.Lines[7] = "Tóm tắt: \n" + infobook.summary;
                 string data = "Tên sách: " + infobook.bookname + "\rTên tác giả: " + infobook.writername
                     + "\rNăm xuất bản: " + infobook.yearofpublication.ToString() + "\rQuốc gia: " + infobook.country + "\rSố trang: " + infobook.pagenumber.ToString()
                     + "\rISBN: " + infobook.isbn + "\rMục luc: \r" + infobook.index + "\rTóm tắt: \r" + infobook.summary;
+                // Hiển thị dữ liệu sang richtextbox
                 rtbContent.Text = data;
-                //rtbContent.SelectAll();
-                //rtbContent.SelectionAlignment = HorizontalAlignment.Center;
+                // Chuyển kiểu byte sang image
                 pbCoverImage.Image = byteToImage(infobook.coverImage);
             }
             catch
@@ -82,13 +80,18 @@ namespace Client.Forms
         
         private void btnBuy_Click(object sender, EventArgs e)
         {
+            // Lấy giá trị giờ hiện tại lưu vào biến infobuybook.datetime
             infobuybook.datetime = DateTime.Now;
+            // biến message sẽ lưu trữ 1 chuỗi đã đóng với Json bởi vì infobuybook có rất nhiều thuộc tính
             string message = "request|buybook " + JsonConvert.SerializeObject(infobuybook);
+            //Gửi yêu cầu tới server bằng hàm ConnectToServer và lưu lại phản hồi từ server
+            // vào biến builder
             StringBuilder builder = ipConnection.ConnectToServer(message);
             string data = builder.ToString();
             string[] splitData =  data.Split(',');
             if (splitData[0].ToString() == "Purchase success")
             {
+                // Cập nhật giá trị tiền lên lbMoney mà không phải load lại form
                 FMainCustomer.instance.lbtext.Text = splitData[1];
                 UCListBookCustomer form = new UCListBookCustomer(infobuybook.username);
                 form.Refresh();
@@ -96,6 +99,7 @@ namespace Client.Forms
             }
             else if (builder.ToString() == "Not enough money")
                 this.Invoke(new Action(() => MessageBox.Show("Mua sách thất bại! Vui lòng kiểm tra số dư!")));
+            // Thông báo khi người dùng đã mua quyển sách đó rồi
             else if (builder.ToString() == "Already own")
                 this.Invoke(new Action(() => MessageBox.Show($"Sách {infobuybook.bookname} đã sở hữu")));
             else

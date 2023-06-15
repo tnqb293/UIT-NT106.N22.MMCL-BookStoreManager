@@ -15,6 +15,7 @@ namespace Client.Forms
     public partial class FSettingsIP : Form
     {
         [Serializable]
+        // class Settings để lưu trữ địa chỉ Ip và và port
         public class Settings
         {
             public int port { get; set; }
@@ -32,6 +33,7 @@ namespace Client.Forms
         }
         XmlSerializer xmlSerializer;
         FileStream fs;
+        // FSettingIP_Load dùng để lấy giá trị Ip và port từ file settings.xml
         private void FSettingsIP_Load(object sender, EventArgs e)
         {
             xmlSerializer = new XmlSerializer(typeof(Settings));
@@ -42,6 +44,7 @@ namespace Client.Forms
                 tbIP.Text = desSettings.ipAdd.ToString();
                 tbPort.Text = desSettings.port.ToString();
             }
+            // Nếu Ip và số port không thể lưu được thì sẽ lưu giá trị mặc định được thiết lập sẵn
             catch
             {
                 tbIP.Text = "172.16.0.192";
@@ -53,7 +56,7 @@ namespace Client.Forms
                 fs.Close();
             }
         }
-
+        // Hàm btnSave_Click dùng để lưu ip và port vào file settings.xml
         private void btnSave_Click(object sender, EventArgs e)
         {
             if(tbIP.Text != null && tbPort.Text != null)
@@ -75,6 +78,7 @@ namespace Client.Forms
                         MessageBox.Show("Cannot save settings, try to reload application");
                     }
                 }
+                // Nếu địa chỉ ip hay port không đúng 
                 catch
                 {
                     MessageBox.Show("Incorrect port or ip address");

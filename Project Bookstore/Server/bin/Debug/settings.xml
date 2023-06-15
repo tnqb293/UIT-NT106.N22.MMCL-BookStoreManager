@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ipaddr>172.16.1.2</ipaddr>
+  <port>8888</port>
+</Settings>gs><?xml version="1.0"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ipaddr>fe80::cec3:14fb:fe26:b49b%4</ipaddr>
+  <port>8888</port>
+</Settings><?xml version="1.0"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ipaddr>fe80::cec3:14fb:fe26:b49b%4</ipaddr>
+  <port>8888</port>
+</Settings><?xml version="1.0"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ipaddr>fe80::cec3:14fb:fe26:b49b%4</ipaddr>
+  <port>8888</port>
+</Settings><?xml version="1.0"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ipaddr>fe80::cec3:14fb:fe26:b49b%4</ipaddr>
+  <port>8888</port>
+</Settings>

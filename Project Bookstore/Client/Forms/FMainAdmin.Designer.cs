@@ -176,7 +176,7 @@
             this.lbNameCustomer.Size = new System.Drawing.Size(71, 25);
             this.lbNameCustomer.TabIndex = 21;
             this.lbNameCustomer.Text = "Admin";
-            this.lbNameCustomer.Click += new System.EventHandler(this.lbNameCustomer_Click);
+
             // 
             // guna2PictureBox1
             // 

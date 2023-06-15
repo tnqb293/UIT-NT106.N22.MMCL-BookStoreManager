@@ -21,6 +21,7 @@ namespace Client.Forms
             InitializeComponent();
             infoUser.username = user;
         }
+        // Hàm addUserControl dùng để chuyển UC mỗi khi người dùng click và UC bất kì
         private void addUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
@@ -45,12 +46,6 @@ namespace Client.Forms
             UCDashboardAdmin uc = new UCDashboardAdmin(infoUser.username);
             addUserControl(uc);
         }
-
-        private void lbNameCustomer_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnListUserPanel_Click(object sender, EventArgs e)
         {
             UCListCustomerAdmin uc = new UCListCustomerAdmin();

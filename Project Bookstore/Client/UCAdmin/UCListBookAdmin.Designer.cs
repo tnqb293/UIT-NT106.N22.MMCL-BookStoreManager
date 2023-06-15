@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCListBookAdmin));
             this.pnSearchListBookAdmin = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.Guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.Guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.Guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnSortListBookAdmin = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.flpListBookAdmin = new System.Windows.Forms.FlowLayoutPanel();
             this.pnSearchListBookAdmin.SuspendLayout();
@@ -42,7 +40,6 @@
             // 
             this.pnSearchListBookAdmin.Controls.Add(this.Guna2ControlBox2);
             this.pnSearchListBookAdmin.Controls.Add(this.Guna2ControlBox1);
-            this.pnSearchListBookAdmin.Controls.Add(this.Guna2TextBox1);
             this.pnSearchListBookAdmin.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnSearchListBookAdmin.Location = new System.Drawing.Point(0, 0);
             this.pnSearchListBookAdmin.Name = "pnSearchListBookAdmin";
@@ -69,30 +66,6 @@
             this.Guna2ControlBox1.Name = "Guna2ControlBox1";
             this.Guna2ControlBox1.Size = new System.Drawing.Size(36, 36);
             this.Guna2ControlBox1.TabIndex = 28;
-            // 
-            // Guna2TextBox1
-            // 
-            this.Guna2TextBox1.Animated = true;
-            this.Guna2TextBox1.BorderRadius = 18;
-            this.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Guna2TextBox1.DefaultText = "";
-            this.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Guna2TextBox1.IconLeft = ((System.Drawing.Image)(resources.GetObject("Guna2TextBox1.IconLeft")));
-            this.Guna2TextBox1.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.Guna2TextBox1.Location = new System.Drawing.Point(195, 7);
-            this.Guna2TextBox1.Name = "Guna2TextBox1";
-            this.Guna2TextBox1.PasswordChar = '\0';
-            this.Guna2TextBox1.PlaceholderText = "Search Books";
-            this.Guna2TextBox1.SelectedText = "";
-            this.Guna2TextBox1.Size = new System.Drawing.Size(429, 36);
-            this.Guna2TextBox1.TabIndex = 26;
             // 
             // pnSortListBookAdmin
             // 
@@ -130,7 +103,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2GradientPanel pnSearchListBookAdmin;
-        internal Guna.UI2.WinForms.Guna2TextBox Guna2TextBox1;
         private Guna.UI2.WinForms.Guna2ControlBox Guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox Guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2GradientPanel pnSortListBookAdmin;

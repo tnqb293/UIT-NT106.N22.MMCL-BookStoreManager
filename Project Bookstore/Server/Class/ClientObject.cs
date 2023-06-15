@@ -15,23 +15,15 @@ namespace Server.Class
     public  class ClientObject
     {
         internal string ID { get; private set; }
-        internal string message { get; private set; }
         internal NetworkStream stream { get; private set; }
         internal string username { get; private set; }
-        internal string[] userNameAndPasswordandEmail { get; private set; }
-        internal string[] userNameAndPassword { get; private set; }
-        internal string[] InforUsernameDashboard { get; private set; }
-        internal string[] addBookInfo { get; private set; }
         internal string[] splitMessage { get; private set; }
         internal InfoBook infoBook { get; private set; }
         internal InfoBuyBook infobuybook { get; private set; }
         internal ChangePassword changepassword { get; private set; }
         internal InfoRecharge recharge { get; private set; }
-        internal string password { get; private set; }
-        internal string email { get; private set; } 
         internal TcpClient client { get; private set; }
         internal ServerObject server { get; private set; }
-        internal string inforDashboardCustomer { get; private set; }
         internal ClientObject(TcpClient client, ServerObject server)
         {
             ID = Guid.NewGuid().ToString();
@@ -261,17 +253,13 @@ namespace Server.Class
         private string GetMessage()
         {
             int length;
-            StringBuilder builder = new StringBuilder();
-            //byte[] buffer = new byte[1024];
-            //length = stream.Read(buffer, 0, buffer.Length);
-            //builder.Append(Encoding.Unicode.GetString(buffer, 0, length));
-            //int byteSize = Int32.Parse(builder.ToString());
-            builder = new StringBuilder();
-            byte[] data = new byte[1024 * 1024 * 5];
+            StringBuilder builder;
             do
             {
-                length = stream.Read(data, 0, data.Length);
-                builder.Append(Encoding.Unicode.GetString(data, 0, length));
+                byte[] receiveBytes = new byte[1024 * 1024 * 50];
+                builder = new StringBuilder();
+                length = stream.Read(receiveBytes, 0, receiveBytes.Length);
+                builder.Append(Encoding.Unicode.GetString(receiveBytes, 0, length));
             }
             while (stream.DataAvailable);
             return builder.ToString();

@@ -18,39 +18,28 @@ namespace Client.UC
 {
     public partial class UCListBookAdmin : UserControl
     {
-        //internal class Infobook
-        //{
-        //    internal string bookname { get; set; }
-        //    internal string writername { get; set; }
-        //    internal string category { get; set; }
-        //    internal string country { get; set; }
-        //    internal int price { get; set; }
-        //    internal int numberOfBookRemaining { get; set; }
-        //    internal string coverImage { get; set; }
-        //}
         InfoUser infoUser = new InfoUser();
         internal IpConnection ipConnection = new IpConnection();
-        internal Thread receiveThread { get; set; }
         public UCListBookAdmin(string user)
         {
             InitializeComponent();
             infoUser.username = user;
         }
 
-        private void flpListBookAdmin_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void UCListBookAdmin_Load(object sender, EventArgs e)
         {
             try
             {
+                // Khởi tạo danh sách với kiểu InfoBookList và biến infobookList
                 List<InfoBookList> infobookList = new List<InfoBookList>();
                 string message = "itembook " + infoUser.username;
+                //Gửi yêu cầu tới server bằng hàm ConnectToServer và lưu lại phản hồi từ server
+                // vào biến builder
                 StringBuilder builder = ipConnection.ConnectToServer(message);
                 string data = builder.ToString();
+                // Giải nén biến data bằng json với List kiểu dữ liệu là InfoBookList
                 infobookList = JsonConvert.DeserializeObject<List<InfoBookList>>(data);
+                // Hiển thị danh sách các ebook
                 foreach (InfoBookList book in infobookList)
                 {
                     AddItem(book.bookname, book.writername, book.country, book.language, book.price, book.numberofbookssold, byteToImage(book.coverImage));
@@ -73,8 +62,10 @@ namespace Client.UC
                 numberofbookssold = numberofbookssold,
                 coverImage = coverimage
             };
+            // Sau khi gán các giá trị trên xong thì sẽ thêm 1 item vào flowLayoutPanel
             flpListBookAdmin.Controls.Add(w);
         }
+        // Chuyển từ kiểu byte sang Image
         public Image byteToImage(byte[] bytesPicture)
         {
             using (MemoryStream ms = new MemoryStream(bytesPicture))

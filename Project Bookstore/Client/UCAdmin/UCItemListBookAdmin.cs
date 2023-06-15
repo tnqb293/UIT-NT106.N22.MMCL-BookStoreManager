@@ -17,6 +17,8 @@ namespace Client.UC
         {
             InitializeComponent();
         }
+        // Các biến bookName, country, writerName, language, price, numberofbooksold, coverImage sẽ được gán giá trị từ 
+        // get và lưu giá trị vào biến value cuối cùng gán chúng vào các lb tương ứng
         internal string bookName
         {
             get { return lbBookName.Text; }
